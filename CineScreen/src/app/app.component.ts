@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, input} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -9,8 +9,18 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'untitled';
-  Funkcija1(): void {
-    alert("kako si")
+  name:string = "Benjamin"
+  getname():string{
+    let r = Math.random();
+    return "HELLO " + this.name + " " + r;
+  }
+  brojac:number=0;
+  button1click():void{
+    this.name += ("." + this.brojac++);
+  }
+  nameChangeEvent($event: Event) {
+    // @ts-ignore
+    let v= $event.target.value;
+
   }
 }

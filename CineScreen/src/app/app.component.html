@@ -1,4 +1,12 @@
-<h1>Hello RS1 - FIT</h1>
+<h1>{{name}}</h1>
 
-<button (click)="Funkcija1()">KLIK</button>
+<h1>
 
+  {{getname()}}
+</h1>
+
+{{brojac}}
+<button (click)="button1click()">button1</button>
+<hr>
+<labe>My name</labe>
+<input [value] = name (change)="nameChangeEvent($event)">
