@@ -1,12 +1,18 @@
-<h1>{{name}}</h1>
+<div *ngIf="showHeader()">
+  <h1>{{ name }}</h1>
 
-<h1>
+  <h1>
 
-  {{getname()}}
-</h1>
+    {{ getname() }}
+  </h1>
+</div>
+{{ brojac }}
+<ng-container *ngFor="let x of niz">
+  <p>
+    {{x}}
+  </p>
+</ng-container>
 
-{{brojac}}
 <button (click)="button1click()">button1</button>
 <hr>
-<labe>My name</labe>
-<input [value] = name (change)="nameChangeEvent($event)">
+<input (ngModelChange)="name = $event" [ngModel]="name">
