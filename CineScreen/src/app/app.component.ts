@@ -1,10 +1,7 @@
-import {Component, Input, input} from '@angular/core';
+import {Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {NgForOf, NgIf, NgStyle} from '@angular/common';
-import {argsArgArrayOrObject} from 'rxjs/internal/util/argsArgArrayOrObject';
-import {colors} from '@angular/cli/src/utilities/color';
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -26,6 +23,8 @@ niz:string[] = ["jedan", "dva", "tri", "cetri"];
     return this.name.length>2;
   }
 
-  protected readonly argsArgArrayOrObject = argsArgArrayOrObject;
-  protected readonly colors = colors;
+
+  ChangeColors() {
+    return this.name.startsWith('A')?{backgroundColor:'Red'}:{backgroundColor:'Blue'};
+  }
 }

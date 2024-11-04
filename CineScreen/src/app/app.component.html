@@ -1,10 +1,12 @@
-<div *ngIf="showHeader()" [ngStyle]="{backgroundColor:'red'}">
+<div *ngIf="showHeader()" [ngStyle]="ChangeColors()">
+
   <h1>{{ name }}</h1>
 
-  <h1>
-
+  <p>
     {{ getname() }}
-  </h1>
+
+  </p>
+
 </div>
 {{ brojac }}
 <ng-container *ngFor="let x of niz; let i = index">
