@@ -1,4 +1,4 @@
-<div *ngIf="showHeader()">
+<div *ngIf="showHeader()" [ngStyle]="{backgroundColor:'red'}">
   <h1>{{ name }}</h1>
 
   <h1>
@@ -7,8 +7,9 @@
   </h1>
 </div>
 {{ brojac }}
-<ng-container *ngFor="let x of niz">
+<ng-container *ngFor="let x of niz; let i = index">
   <p>
+    <span>{{i+1}}</span>
     {{x}}
   </p>
 </ng-container>
