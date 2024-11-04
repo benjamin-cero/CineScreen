@@ -11,6 +11,7 @@ import {NgForOf, NgIf, NgStyle} from '@angular/common';
 })
 export class AppComponent {
   name:string = "Benjamin"
+   temp: string = "";
   getname():string{
     return "HELLO " + " " + this.name;
   }
@@ -26,5 +27,16 @@ niz:string[] = ["jedan", "dva", "tri", "cetri"];
 
   ChangeColors() {
     return this.name.startsWith('A')?{backgroundColor:'Red'}:{backgroundColor:'Blue'};
+  }
+
+  fetchData() {
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=Mostar&appid=917b026a997320574cd4315b9bf4c73a   `)
+      .then(response => {
+        response.json().then(pr => {
+          this.temp = (pr.main.temp - 273).toFixed(1);
+
+
+        })
+      })
   }
 }
