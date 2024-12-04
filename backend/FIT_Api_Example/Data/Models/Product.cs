@@ -8,7 +8,7 @@ namespace FIT_Api_Example.Data.Models
         [Key]
         public int ProductID { get; set; }
         public string Name { get; set; }
-        public int Price { get; set; }
+        public double Price { get; set; }
         public int ManufacturerID { get; set; }
         [ForeignKey(nameof(ManufacturerID))]
         public Manufacturer Manufacturer { get; set; }

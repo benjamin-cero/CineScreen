@@ -23,7 +23,7 @@ namespace FIT_Api_Example.Controllers
 
 
         [HttpGet]
-        public ActionResult<List<City>> Get()
+        public ActionResult <List<City>> Get()
         {
 
             var cities = _dbContext.City.ToList();
@@ -101,8 +101,6 @@ namespace FIT_Api_Example.Controllers
             _dbContext.SaveChanges();
 
             return updatedCity;
-
-
         }
 
         //
