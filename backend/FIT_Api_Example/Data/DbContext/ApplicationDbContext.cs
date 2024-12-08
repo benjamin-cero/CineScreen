@@ -29,7 +29,7 @@ namespace FIT_Api_Example.Data
         public DbSet<Movie> Movie { get; set; }
         public DbSet<MovieActor> MovieActor { get; set; }
         public DbSet<MovieType> MovieType { get; set; }
-        public DbSet<Product> Product { get; set; }
+        public DbSet<Menu> Menu { get; set; }
         public DbSet<ProductionHouse> ProductionHouse { get; set; }
         public DbSet<Projection> Projection { get; set; }
         public DbSet<Seat> Seat { get; set; }

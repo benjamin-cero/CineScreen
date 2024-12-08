@@ -10,9 +10,9 @@ namespace FIT_Api_Example.Data.Models
         public int UserID { get; set; }
         [ForeignKey(nameof(UserID))]
         public User User { get; set; }
-        public int ProductID { get; set; }
-        [ForeignKey(nameof(ProductID))]
-        public Product Product { get; set; }
+        public int MenuID { get; set; }
+        [ForeignKey(nameof(MenuID))]
+        public Menu Menu { get; set; }
         public int Quantity { get; set; }
         public DateTime OrderDate { get; set; }
         public string Status { get; set; }

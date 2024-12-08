@@ -202,48 +202,58 @@ namespace FIT_Api_Example.Data
 
 
                         modelBuilder.Entity<Manufacturer>().HasData(
-                new Manufacturer { ManufacturerID = 1, Name = "Orville Redenbacher’s" },
-                new Manufacturer { ManufacturerID = 2, Name = "Act II" },
-                new Manufacturer { ManufacturerID = 3, Name = "Lay’s" },
-                new Manufacturer { ManufacturerID = 4, Name = "Pringles" },
-                new Manufacturer { ManufacturerID = 5, Name = "Doritos" },
-                new Manufacturer { ManufacturerID = 6, Name = "Cheetos" },
-                new Manufacturer { ManufacturerID = 7, Name = "Ruffles" },
-                new Manufacturer { ManufacturerID = 8, Name = "Tostitos" },
-                new Manufacturer { ManufacturerID = 9, Name = "M&M’s" },
-                new Manufacturer { ManufacturerID = 10, Name = "Snickers" },
-                new Manufacturer { ManufacturerID = 11, Name = "Twix" },
-                new Manufacturer { ManufacturerID = 12, Name = "Reese’s" },
-                new Manufacturer { ManufacturerID = 13, Name = "KitKat" },
-                new Manufacturer { ManufacturerID = 14, Name = "Nestlé" },
-                new Manufacturer { ManufacturerID = 15, Name = "Haribo" },
-                new Manufacturer { ManufacturerID = 16, Name = "Sour Patch Kids" }
+                new Manufacturer { ManufacturerID = 1, Name = "Sultan" },//kola
+                new Manufacturer { ManufacturerID = 2, Name = "Orville Redenbacher" },//kokice
+                new Manufacturer { ManufacturerID = 3, Name = "Nathan's Famous" },//hotdogovi
+                new Manufacturer { ManufacturerID = 4, Name = "Tostitos" },//nachos
+                new Manufacturer { ManufacturerID = 5, Name = "Chio" },//cips
+                new Manufacturer { ManufacturerID = 6, Name = "Kühne" },//pomfrit
+                new Manufacturer { ManufacturerID = 7, Name = "The Hershey Company" }
             );
 
-            modelBuilder.Entity<Product>().HasData(
-                new Product { ProductID = 1, Name = "Popcorn", Price = 3.50, ManufacturerID = 1 },
-                new Product { ProductID = 2, Name = "Popcorn", Price = 2.50, ManufacturerID = 2 },
-                new Product { ProductID = 3, Name = "Potato Chips", Price = 1.99, ManufacturerID = 3 },
-                new Product { ProductID = 4, Name = "Chips", Price = 2.99, ManufacturerID = 4 },
-                new Product { ProductID = 5, Name = "Nachos", Price = 2.49, ManufacturerID = 5 },
-                new Product { ProductID = 6, Name = "Cheese Puffs", Price = 1.89, ManufacturerID = 6 },
-                new Product { ProductID = 7, Name = "Potato Chips", Price = 2.99, ManufacturerID = 7 },
-                new Product { ProductID = 8, Name = "Tortilla Chips", Price = 3.29, ManufacturerID = 8 },
-                new Product { ProductID = 9, Name = "Chocolate Candies", Price = 4.00, ManufacturerID = 9 },
-                new Product { ProductID = 10, Name = "Bars", Price = 1.50, ManufacturerID = 10 },
-                new Product { ProductID = 11, Name = "Bars", Price = 1.70, ManufacturerID = 11 },
-                new Product { ProductID = 12, Name = "Peanut Butter Cups", Price = 1.60, ManufacturerID = 12 },
-                new Product { ProductID = 13, Name = "Chocolate Bars", Price = 1.40, ManufacturerID = 13 },
-                new Product { ProductID = 14, Name = "Chocolate", Price = 2.20, ManufacturerID = 14 },
-                new Product { ProductID = 15, Name = "Gummy Bears", Price = 2.50, ManufacturerID = 15 },
-                new Product { ProductID = 16, Name = "Gummy Candy", Price = 1.80, ManufacturerID = 16 }
+            modelBuilder.Entity<Menu>().HasData(
+                new Menu { MenuID = 1, Name = "Popcorn S", Price = 3, Image = ConvertImageToByteArray("wwwroot", "1. Popcorn S.png") },
+                new Menu { MenuID = 2, Name = "Popcorn M", Price = 5, Image = ConvertImageToByteArray("wwwroot", "2. Popcorn M.png")},
+                new Menu { MenuID = 3, Name = "Popcorn L", Price = 7,Image = ConvertImageToByteArray("wwwroot", "3. Popcorn L.png")},
+                new Menu { MenuID = 4, Name = "Nachos", Price = 5, Image = ConvertImageToByteArray("wwwroot", "4. Nachos.png")},
+                new Menu { MenuID = 5, Name = "Soda", Price = 3, Image = ConvertImageToByteArray("wwwroot", "5. Soda.png")},
+                new Menu { MenuID = 6, Name = "Chips", Price = 4, Image = ConvertImageToByteArray("wwwroot", "6. Chips.png")},
+                new Menu { MenuID = 7, Name = "Hot dog", Price = 5, Image = ConvertImageToByteArray("wwwroot", "7. Hot dog.png")},
+                new Menu { MenuID = 8, Name = "French fries", Price = 4, Image = ConvertImageToByteArray("wwwroot", "8. French fries.png")},
+                new Menu { MenuID = 9, Name = "Nachos + Soda", Price = 7, Image = ConvertImageToByteArray("wwwroot", "9. Nachos + Soda.png")},
+                new Menu { MenuID = 10, Name = "Popcorn L + Soda", Price = 9, Image = ConvertImageToByteArray("wwwroot", "10 .Popcorn L + Soda.png")},
+                new Menu { MenuID = 11, Name = "Chips + Soda", Price = 6, Image = ConvertImageToByteArray("wwwroot", "11. Chips + Soda.png")},
+                new Menu { MenuID = 12, Name = "French fries + Soda", Price = 7, Image = ConvertImageToByteArray("wwwroot", "12. French fries + Soda.png")},
+                new Menu { MenuID = 13, Name = "Hot dog + Soda", Price = 7, Image = ConvertImageToByteArray("wwwroot", "13. Hot dog + Soda.png")},
+                new Menu { MenuID = 14, Name = "Hershey's chocolate bar", Price = 3, Image = ConvertImageToByteArray("wwwroot", "14. Hershey's Chocholate bar.png")}
+            );
+            modelBuilder.Entity<MenuManufacturer>().HasData(
+                new MenuManufacturer { MenuManufacturerID = 1, MenuID = 1 , ManufacturerID = 2},
+                new MenuManufacturer { MenuManufacturerID = 2, MenuID = 2 , ManufacturerID = 2},
+                new MenuManufacturer { MenuManufacturerID = 3, MenuID = 3 , ManufacturerID = 2},
+                new MenuManufacturer { MenuManufacturerID = 4, MenuID = 3 , ManufacturerID = 4},
+                new MenuManufacturer { MenuManufacturerID = 5, MenuID = 5 , ManufacturerID = 1},
+                new MenuManufacturer { MenuManufacturerID = 6, MenuID = 6 , ManufacturerID = 5},
+                new MenuManufacturer { MenuManufacturerID = 7, MenuID = 7 , ManufacturerID = 3},
+                new MenuManufacturer { MenuManufacturerID = 8, MenuID = 8 , ManufacturerID = 6},
+                new MenuManufacturer { MenuManufacturerID = 9, MenuID = 9 , ManufacturerID = 4},
+                new MenuManufacturer { MenuManufacturerID = 10, MenuID = 9 , ManufacturerID = 1},
+                new MenuManufacturer { MenuManufacturerID = 11, MenuID = 10 , ManufacturerID = 2},
+                new MenuManufacturer { MenuManufacturerID = 12, MenuID = 10 , ManufacturerID = 1},
+                new MenuManufacturer { MenuManufacturerID = 13, MenuID = 11 , ManufacturerID = 1},
+                new MenuManufacturer { MenuManufacturerID = 14, MenuID = 11 , ManufacturerID = 5},
+                new MenuManufacturer { MenuManufacturerID = 15, MenuID = 12 , ManufacturerID = 1},
+                new MenuManufacturer { MenuManufacturerID = 16, MenuID = 12 , ManufacturerID = 6},
+                new MenuManufacturer { MenuManufacturerID = 17, MenuID = 13 , ManufacturerID = 1},
+                new MenuManufacturer { MenuManufacturerID = 18, MenuID = 13 , ManufacturerID = 3},
+                new MenuManufacturer { MenuManufacturerID = 19, MenuID = 14 , ManufacturerID = 7}
+
             );
 
 
 
 
-
-            modelBuilder.Entity<ProductionHouse>().HasData(
+           modelBuilder.Entity<ProductionHouse>().HasData(
                 new ProductionHouse { ProductionHouseID = 1, Name = "Warner Bros." },
                 new ProductionHouse { ProductionHouseID = 2, Name = "Universal Pictures" },
                 new ProductionHouse { ProductionHouseID = 3, Name = "20th Century Studios" },
