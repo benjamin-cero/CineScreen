@@ -104,104 +104,109 @@ namespace FIT_Api_Example.Data
                 new Genre { GenreID = 36, Name = "Cyberpunk" },
                 new Genre { GenreID = 37, Name = "Steampunk" },
                 new Genre { GenreID = 38, Name = "Space Opera" },
-                new Genre { GenreID = 39, Name = "Time Travel" }
+                new Genre { GenreID = 39, Name = "Time Travel" },
+                new Genre { GenreID = 40, Name = "Anime" }
             );
 
-                       modelBuilder.Entity<Actor>().HasData(
-                new Actor { ActorID = 1, FirstName = "Leonardo", LastName = "DiCaprio" },
-                new Actor { ActorID = 2, FirstName = "Brad", LastName = "Pitt" },
-                new Actor { ActorID = 3, FirstName = "Tom", LastName = "Cruise" },
-                new Actor { ActorID = 4, FirstName = "Robert", LastName = "Downey Jr." },
-                new Actor { ActorID = 5, FirstName = "Chris", LastName = "Hemsworth" },
-                new Actor { ActorID = 6, FirstName = "Dwayne", LastName = "Johnson" },
-                new Actor { ActorID = 7, FirstName = "Ryan", LastName = "Reynolds" },
-                new Actor { ActorID = 8, FirstName = "Keanu", LastName = "Reeves" },
-                new Actor { ActorID = 9, FirstName = "Chris", LastName = "Evans" },
-                new Actor { ActorID = 10, FirstName = "Joaquin", LastName = "Phoenix" },
-                new Actor { ActorID = 11, FirstName = "Timothée", LastName = "Chalamet" },
-                new Actor { ActorID = 12, FirstName = "Zendaya", LastName = "" },
-                new Actor { ActorID = 13, FirstName = "Florence", LastName = "Pugh" },
-                new Actor { ActorID = 14, FirstName = "Margot", LastName = "Robbie" },
-                new Actor { ActorID = 15, FirstName = "Christian", LastName = "Bale" },
-                new Actor { ActorID = 16, FirstName = "Will", LastName = "Smith" },
-                new Actor { ActorID = 17, FirstName = "Matt", LastName = "Damon" },
-                new Actor { ActorID = 18, FirstName = "Benedict", LastName = "Cumberbatch" },
-                new Actor { ActorID = 19, FirstName = "Hugh", LastName = "Jackman" },
-                new Actor { ActorID = 20, FirstName = "Scarlett", LastName = "Johansson" },
-                new Actor { ActorID = 21, FirstName = "Emma", LastName = "Stone" },
-                new Actor { ActorID = 22, FirstName = "Jennifer", LastName = "Lawrence" },
-                new Actor { ActorID = 23, FirstName = "Gal", LastName = "Gadot" },
-                new Actor { ActorID = 24, FirstName = "Anne", LastName = "Hathaway" },
-                new Actor { ActorID = 25, FirstName = "Cillian", LastName = "Murphy" },
-                new Actor { ActorID = 26, FirstName = "Tom", LastName = "Holland" },
-                new Actor { ActorID = 27, FirstName = "Andrew", LastName = "Garfield" },
-                new Actor { ActorID = 28, FirstName = "Zac", LastName = "Efron" },
-                new Actor { ActorID = 29, FirstName = "Jake", LastName = "Gyllenhaal" },
-                new Actor { ActorID = 30, FirstName = "Oscar", LastName = "Isaac" },
-                new Actor { ActorID = 31, FirstName = "Eddie", LastName = "Redmayne" },
-                new Actor { ActorID = 32, FirstName = "Pedro", LastName = "Pascal" },
-                new Actor { ActorID = 33, FirstName = "Millie", LastName = "Bobby Brown" },
-                new Actor { ActorID = 34, FirstName = "Natalie", LastName = "Portman" },
-                new Actor { ActorID = 35, FirstName = "Javier", LastName = "Bardem" },
-                new Actor { ActorID = 36, FirstName = "Daniel", LastName = "Craig" },
-                new Actor { ActorID = 37, FirstName = "Michael", LastName = "Fassbender" },
-                new Actor { ActorID = 38, FirstName = "Idris", LastName = "Elba" },
-                new Actor { ActorID = 39, FirstName = "Paul", LastName = "Rudd" },
-                new Actor { ActorID = 40, FirstName = "Jared", LastName = "Leto" },
-                new Actor { ActorID = 41, FirstName = "Emma", LastName = "Watson" },
-                new Actor { ActorID = 42, FirstName = "Saoirse", LastName = "Ronan" },
-                new Actor { ActorID = 43, FirstName = "Daniel", LastName = "Radcliffe" },
-                new Actor { ActorID = 44, FirstName = "Ryan", LastName = "Gosling" },
-                new Actor { ActorID = 45, FirstName = "Robert", LastName = "Pattinson" },
-                new Actor { ActorID = 46, FirstName = "Jason", LastName = "Momoa" },
-                new Actor { ActorID = 47, FirstName = "Angelina", LastName = "Jolie" },
-                new Actor { ActorID = 48, FirstName = "Meryl", LastName = "Streep" },
-                new Actor { ActorID = 49, FirstName = "Reese", LastName = "Witherspoon" },
-                new Actor { ActorID = 50, FirstName = "Cate", LastName = "Blanchett" },
-                new Actor { ActorID = 51, FirstName = "Viola", LastName = "Davis" },
-                new Actor { ActorID = 52, FirstName = "Julia", LastName = "Roberts" },
-                new Actor { ActorID = 53, FirstName = "Sandra", LastName = "Bullock" },
-                new Actor { ActorID = 54, FirstName = "Halle", LastName = "Berry" },
-                new Actor { ActorID = 55, FirstName = "Nicole", LastName = "Kidman" },
-                new Actor { ActorID = 56, FirstName = "Amy", LastName = "Adams" },
-                new Actor { ActorID = 57, FirstName = "Jessica", LastName = "Chastain" },
-                new Actor { ActorID = 58, FirstName = "Tom", LastName = "Hanks" },
-                new Actor { ActorID = 59, FirstName = "Billie", LastName = "Eilish" },
-                new Actor { ActorID = 60, FirstName = "Robin", LastName = "Wright" },
-                new Actor { ActorID = 61, FirstName = "Winona", LastName = "Ryder" },
-                new Actor { ActorID = 62, FirstName = "Chadwick", LastName = "Boseman" },
-                new Actor { ActorID = 63, FirstName = "Ewan", LastName = "McGregor" },
-                new Actor { ActorID = 64, FirstName = "Sam", LastName = "Rockwell" },
-                new Actor { ActorID = 65, FirstName = "Mahershala", LastName = "Ali" },
-                new Actor { ActorID = 66, FirstName = "Elizabeth", LastName = "Olsen" },
-                new Actor { ActorID = 67, FirstName = "Mark", LastName = "Ruffalo" },
-                new Actor { ActorID = 68, FirstName = "Tilda", LastName = "Swinton" },
-                new Actor { ActorID = 69, FirstName = "Eva", LastName = "Green" },
-                new Actor { ActorID = 70, FirstName = "John", LastName = "Boyega" },
-                new Actor { ActorID = 71, FirstName = "Natalie", LastName = "Dormer" },
-                new Actor { ActorID = 72, FirstName = "David", LastName = "Harbour" },
-                new Actor { ActorID = 73, FirstName = "Anya", LastName = "Taylor-Joy" },
-                new Actor { ActorID = 74, FirstName = "Rami", LastName = "Malek" },
-                new Actor { ActorID = 75, FirstName = "Sophia", LastName = "Lillis" },
-                new Actor { ActorID = 76, FirstName = "Finn", LastName = "Wolfhard" },
-                new Actor { ActorID = 77, FirstName = "Noah", LastName = "Schnapp" },
-                new Actor { ActorID = 78, FirstName = "Sadie", LastName = "Sink" },
-                new Actor { ActorID = 79, FirstName = "Maya", LastName = "Hawke" },
-                new Actor { ActorID = 80, FirstName = "Steve", LastName = "Carell" },
-                new Actor { ActorID = 81, FirstName = "Kristen", LastName = "Bell" },
-                new Actor { ActorID = 82, FirstName = "Elle", LastName = "Fanning" },
-                new Actor { ActorID = 83, FirstName = "Dakota", LastName = "Fanning" },
-                new Actor { ActorID = 84, FirstName = "Lily", LastName = "Collins" },
-                new Actor { ActorID = 85, FirstName = "Henry", LastName = "Golding" },
-                new Actor { ActorID = 86, FirstName = "Emma", LastName = "Corrin" },
-                new Actor { ActorID = 87, FirstName = "Lana", LastName = "Condor" },
-                new Actor { ActorID = 88, FirstName = "Ross", LastName = "Butler" },
-                new Actor { ActorID = 89, FirstName = "Samara", LastName = "Weaving" },
-                new Actor { ActorID = 90, FirstName = "Jack", LastName = "Black" }
+            modelBuilder.Entity<Actor>().HasData(
+                new Actor { ActorID = 1, FirstName = "Auliʻi", LastName = "Cravalho" },
+                new Actor { ActorID = 2, FirstName = "Dwayne", LastName = "Johnson" },
+                new Actor { ActorID = 3, FirstName = "Aaron", LastName = "Pierre" },
+                new Actor { ActorID = 4, FirstName = "Kelvin", LastName = "Harrison Jr." },
+                new Actor { ActorID = 5, FirstName = "Beyoncé", LastName = "" },
+                new Actor { ActorID = 6, FirstName = "Donald", LastName = "Glover" },
+                new Actor { ActorID = 7, FirstName = "Seth", LastName = "Rogen" },
+                new Actor { ActorID = 8, FirstName = "Billy", LastName = "Eichner" },
+                new Actor { ActorID = 9, FirstName = "Anika", LastName = "Noni Rose" },
+                new Actor { ActorID = 10, FirstName = "Mads", LastName = "Mikkelsen" },
+                new Actor { ActorID = 11, FirstName = "Keanu", LastName = "Reeves" },
+                new Actor { ActorID = 12, FirstName = "Jim", LastName = "Carrey" },
+                new Actor { ActorID = 13, FirstName = "Ben", LastName = "Schwartz" },
+                new Actor { ActorID = 14, FirstName = "Brian", LastName = "Cox" },
+                new Actor { ActorID = 15, FirstName = "Gaia", LastName = "Wise" },
+                new Actor { ActorID = 16, FirstName = "Luke", LastName = "Pasqualino" },
+                new Actor { ActorID = 17, FirstName = "Shaun", LastName = "Dooley" },
+                new Actor { ActorID = 18, FirstName = "Miranda", LastName = "Otto" },
+                new Actor { ActorID = 19, FirstName = "Frank", LastName = "Grillo" },
+                new Actor { ActorID = 20, FirstName = "Katrina", LastName = "Law" },
+                new Actor { ActorID = 21, FirstName = "Lou Diamond", LastName = "Phillips" },
+                new Actor { ActorID = 22, FirstName = "Ilfenesh", LastName = "Hadera" },
+                new Actor { ActorID = 23, FirstName = "Kamdynn", LastName = "Gary" },
+                new Actor { ActorID = 24, FirstName = "Aaron", LastName = "Taylor-Johnson" },
+                new Actor { ActorID = 25, FirstName = "Ariana", LastName = "DeBose" },
+                new Actor { ActorID = 26, FirstName = "Fred", LastName = "Hechinger" },
+                new Actor { ActorID = 27, FirstName = "Christopher", LastName = "Abbott" },
+                new Actor { ActorID = 28, FirstName = "Alessandro", LastName = "Nivola" },
+                new Actor { ActorID = 29, FirstName = "Russell", LastName = "Crowe" },
+                new Actor { ActorID = 30, FirstName = "Paul", LastName = "Mescal" },
+                new Actor { ActorID = 31, FirstName = "Connie", LastName = "Nielsen" },
+                new Actor { ActorID = 32, FirstName = "Derek", LastName = "Jacobi" },
+                new Actor { ActorID = 33, FirstName = "Djimon", LastName = "Hounsou" },
+                new Actor { ActorID = 34, FirstName = "Joseph", LastName = "Quinn" },
+                new Actor { ActorID = 35, FirstName = "Denzel", LastName = "Washington" },
+                new Actor { ActorID = 36, FirstName = "Pedro", LastName = "Pascal" },
+                new Actor { ActorID = 37, FirstName = "Jai", LastName = "Courtney" },
+                new Actor { ActorID = 38, FirstName = "Deborah", LastName = "Mailman" },
+                new Actor { ActorID = 39, FirstName = "Jack", LastName = "Thompson" },
+                new Actor { ActorID = 40, FirstName = "Matt", LastName = "Day" },
+                new Actor { ActorID = 41, FirstName = "Geneviève", LastName = "Lemon" },
+                new Actor { ActorID = 42, FirstName = "Celeste", LastName = "Barber" },
+                new Actor { ActorID = 43, FirstName = "Lily", LastName = "LeTorre" },
+                new Actor { ActorID = 44, FirstName = "Ben", LastName = "Wang" },
+                new Actor { ActorID = 45, FirstName = "Ralph", LastName = "Macchio" },
+                new Actor { ActorID = 46, FirstName = "Jackie", LastName = "Chan" },
+                new Actor { ActorID = 47, FirstName = "Joshua", LastName = "Jackson" },
+                new Actor { ActorID = 48, FirstName = "Ming-Na", LastName = "Wen" },
+                new Actor { ActorID = 49, FirstName = "Sadie", LastName = "Stanley" },
+                new Actor { ActorID = 50, FirstName = "Jesse", LastName = "Eisenberg" },
+                new Actor { ActorID = 51, FirstName = "Mark", LastName = "Ruffalo" },
+                new Actor { ActorID = 52, FirstName = "Woody", LastName = "Harrelson" },
+                new Actor { ActorID = 53, FirstName = "Dave", LastName = "Franco" },
+                new Actor { ActorID = 54, FirstName = "Isla", LastName = "Fisher" },
+                new Actor { ActorID = 55, FirstName = "Rosamund", LastName = "Pike" },
+                new Actor { ActorID = 56, FirstName = "Justice", LastName = "Smith" },
+                new Actor { ActorID = 57, FirstName = "Ariana", LastName = "Greenblatt" },
+                new Actor { ActorID = 58, FirstName = "Dominic", LastName = "Sessa" },
+                new Actor { ActorID = 59, FirstName = "Mason", LastName = "Thames" },
+                new Actor { ActorID = 60, FirstName = "Nico", LastName = "Parker" },
+                new Actor { ActorID = 61, FirstName = "Gerard", LastName = "Butler" },
+                new Actor { ActorID = 62, FirstName = "Nick", LastName = "Frost" },
+                new Actor { ActorID = 63, FirstName = "Julian", LastName = "Dennison" },
+                new Actor { ActorID = 64, FirstName = "Gabriel", LastName = "Howell" },
+                new Actor { ActorID = 65, FirstName = "Bronwyn", LastName = "James" },
+                new Actor { ActorID = 66, FirstName = "Jason", LastName = "Momoa" },
+                new Actor { ActorID = 67, FirstName = "Jack", LastName = "Black" },
+                new Actor { ActorID = 68, FirstName = "Danielle", LastName = "Brooks" },
+                new Actor { ActorID = 69, FirstName = "Emma", LastName = "Myers" },
+                new Actor { ActorID = 70, FirstName = "Matt", LastName = "Berry" },
+                new Actor { ActorID = 71, FirstName = "Tom", LastName = "Cruise" },
+                new Actor { ActorID = 72, FirstName = "Kelly", LastName = "McGillis" },
+                new Actor { ActorID = 73, FirstName = "Val", LastName = "Kilmer" },
+                new Actor { ActorID = 74, FirstName = "Anthony", LastName = "Edwards" },
+                new Actor { ActorID = 75, FirstName = "Tom", LastName = "Skerritt" },
+                new Actor { ActorID = 76, FirstName = "Michael", LastName = "Ironside" },
+                new Actor { ActorID = 77, FirstName = "Meg", LastName = "Ryan" },
+                new Actor { ActorID = 78, FirstName = "Roy", LastName = "Scheider" },
+                new Actor { ActorID = 79, FirstName = "Robert", LastName = "Shaw" },
+                new Actor { ActorID = 80, FirstName = "Richard", LastName = "Dreyfuss" },
+                new Actor { ActorID = 81, FirstName = "Lorraine", LastName = "Gary" },
+                new Actor { ActorID = 82, FirstName = "Murray", LastName = "Hamilton" },
+                new Actor { ActorID = 83, FirstName = "Rumi", LastName = "Hiiragi" },
+                new Actor { ActorID = 84, FirstName = "Miyu", LastName = "Irino" },
+                new Actor { ActorID = 85, FirstName = "Bunta", LastName = "Sugawara" },
+                new Actor { ActorID = 86, FirstName = "Mari", LastName = "Natsuki" },
+                new Actor { ActorID = 87, FirstName = "Takehiko", LastName = "Ono" },
+                new Actor { ActorID = 88, FirstName = "Tobey", LastName = "Maguire" },
+                new Actor { ActorID = 89, FirstName = "Willem", LastName = "Dafoe" },
+                new Actor { ActorID = 90, FirstName = "Kirsten", LastName = "Dunst" },
+                new Actor { ActorID = 91, FirstName = "James", LastName = "Franco" },
+                new Actor { ActorID = 92, FirstName = "Cliff", LastName = "Robertson" },
+                new Actor { ActorID = 93, FirstName = "Rosemary", LastName = "Harris" }
             );
 
 
-                        modelBuilder.Entity<Manufacturer>().HasData(
+
+            modelBuilder.Entity<Manufacturer>().HasData(
                 new Manufacturer { ManufacturerID = 1, Name = "Sultan" },//kola
                 new Manufacturer { ManufacturerID = 2, Name = "Orville Redenbacher" },//kokice
                 new Manufacturer { ManufacturerID = 3, Name = "Nathan's Famous" },//hotdogovi
@@ -209,6 +214,8 @@ namespace FIT_Api_Example.Data
                 new Manufacturer { ManufacturerID = 5, Name = "Chio" },//cips
                 new Manufacturer { ManufacturerID = 6, Name = "Kühne" },//pomfrit
                 new Manufacturer { ManufacturerID = 7, Name = "The Hershey Company" }
+
+
             );
 
             modelBuilder.Entity<Menu>().HasData(
@@ -253,209 +260,50 @@ namespace FIT_Api_Example.Data
 
 
 
-           modelBuilder.Entity<ProductionHouse>().HasData(
-                new ProductionHouse { ProductionHouseID = 1, Name = "Warner Bros." },
-                new ProductionHouse { ProductionHouseID = 2, Name = "Universal Pictures" },
-                new ProductionHouse { ProductionHouseID = 3, Name = "20th Century Studios" },
-                new ProductionHouse { ProductionHouseID = 4, Name = "Paramount Pictures" },
-                new ProductionHouse { ProductionHouseID = 5, Name = "Walt Disney Pictures" },
-                new ProductionHouse { ProductionHouseID = 6, Name = "Columbia Pictures" },
-                new ProductionHouse { ProductionHouseID = 7, Name = "Sony Pictures" },
-                new ProductionHouse { ProductionHouseID = 8, Name = "Lionsgate" },
-                new ProductionHouse { ProductionHouseID = 9, Name = "Metro-Goldwyn-Mayer (MGM)" },
-                new ProductionHouse { ProductionHouseID = 10, Name = "New Line Cinema" },
-                new ProductionHouse { ProductionHouseID = 11, Name = "DreamWorks Pictures" },
-                new ProductionHouse { ProductionHouseID = 12, Name = "Warner Independent Pictures" },
-                new ProductionHouse { ProductionHouseID = 13, Name = "Fox Searchlight Pictures" },
-                new ProductionHouse { ProductionHouseID = 14, Name = "A24" },
-                new ProductionHouse { ProductionHouseID = 15, Name = "Lionsgate Films" },
-                new ProductionHouse { ProductionHouseID = 16, Name = "Blumhouse Productions" },
-                new ProductionHouse { ProductionHouseID = 17, Name = "TriStar Pictures" },
-                new ProductionHouse { ProductionHouseID = 18, Name = "Legendary Entertainment" },
-                new ProductionHouse { ProductionHouseID = 19, Name = "Focus Features" },
-                new ProductionHouse { ProductionHouseID = 20, Name = "Studio Ghibli" },
-                new ProductionHouse { ProductionHouseID = 21, Name = "Paramount Vantage" },
-                new ProductionHouse { ProductionHouseID = 22, Name = "Village Roadshow Pictures" },
-                new ProductionHouse { ProductionHouseID = 23, Name = "New Regency Productions" },
-                new ProductionHouse { ProductionHouseID = 24, Name = "Amblin Entertainment" },
-                new ProductionHouse { ProductionHouseID = 25, Name = "Castle Rock Entertainment" },
-                new ProductionHouse { ProductionHouseID = 26, Name = "The Weinstein Company" },
-                new ProductionHouse { ProductionHouseID = 27, Name = "Miramax Films" },
-                new ProductionHouse { ProductionHouseID = 28, Name = "Aardman Animations" },
-                new ProductionHouse { ProductionHouseID = 29, Name = "Blue Sky Studios" },
-                new ProductionHouse { ProductionHouseID = 30, Name = "Pixar Animation Studios" },
-                new ProductionHouse { ProductionHouseID = 31, Name = "The Walt Disney Company" },
-                new ProductionHouse { ProductionHouseID = 32, Name = "Illumination Entertainment" },
-                new ProductionHouse { ProductionHouseID = 33, Name = "GK Films" },
-                new ProductionHouse { ProductionHouseID = 34, Name = "Bleecker Street" },
-                new ProductionHouse { ProductionHouseID = 35, Name = "Open Road Films" },
-                new ProductionHouse { ProductionHouseID = 36, Name = "Film4 Productions" },
-                new ProductionHouse { ProductionHouseID = 37, Name = "STX Entertainment" },
-                new ProductionHouse { ProductionHouseID = 38, Name = "Pathé" },
-                new ProductionHouse { ProductionHouseID = 39, Name = "Cineplex Entertainment" },
-                new ProductionHouse { ProductionHouseID = 40, Name = "Toho" },
-                new ProductionHouse { ProductionHouseID = 41, Name = "The Asylum" },
-                new ProductionHouse { ProductionHouseID = 42, Name = "United Artists" },
-                new ProductionHouse { ProductionHouseID = 43, Name = "TriStar Pictures" },
-                new ProductionHouse { ProductionHouseID = 44, Name = "Castle Rock Entertainment" },
-                new ProductionHouse { ProductionHouseID = 45, Name = "Broad Green Pictures" },
-                new ProductionHouse { ProductionHouseID = 46, Name = "FilmDistrict" },
-                new ProductionHouse { ProductionHouseID = 47, Name = "Hammer Films" },
-                new ProductionHouse { ProductionHouseID = 48, Name = "Lions Gate Entertainment" },
-                new ProductionHouse { ProductionHouseID = 49, Name = "Sam Raimi's Ghost House Pictures" },
-                new ProductionHouse { ProductionHouseID = 50, Name = "Sundance Institute" },
-                new ProductionHouse { ProductionHouseID = 51, Name = "Shudder" },
-                new ProductionHouse { ProductionHouseID = 52, Name = "Aardman Animations" },
-                new ProductionHouse { ProductionHouseID = 53, Name = "Laika Studios" },
-                new ProductionHouse { ProductionHouseID = 54, Name = "Constantin Film" },
-                new ProductionHouse { ProductionHouseID = 55, Name = "DreamWorks Animation" },
-                new ProductionHouse { ProductionHouseID = 56, Name = "Saban Films" },
-                new ProductionHouse { ProductionHouseID = 57, Name = "Blue Sky Studios" },
-                new ProductionHouse { ProductionHouseID = 58, Name = "Walt Disney Television Animation" },
-                new ProductionHouse { ProductionHouseID = 59, Name = "Warner Bros. Animation" },
-                new ProductionHouse { ProductionHouseID = 60, Name = "Big Beach Films" },
-                new ProductionHouse { ProductionHouseID = 61, Name = "Pinewood Studios" },
-                new ProductionHouse { ProductionHouseID = 62, Name = "Boll KG" },
-                new ProductionHouse { ProductionHouseID = 63, Name = "Red Hour Films" },
-                new ProductionHouse { ProductionHouseID = 64, Name = "MadRiver Pictures" },
-                new ProductionHouse { ProductionHouseID = 65, Name = "Ink Factory" },
-                new ProductionHouse { ProductionHouseID = 66, Name = "Crackle" },
-                new ProductionHouse { ProductionHouseID = 67, Name = "Elevation Pictures" },
-                new ProductionHouse { ProductionHouseID = 68, Name = "Nighthawk Pictures" },
-                new ProductionHouse { ProductionHouseID = 69, Name = "Wild Bunch" },
-                new ProductionHouse { ProductionHouseID = 70, Name = "Yash Raj Films" },
-                new ProductionHouse { ProductionHouseID = 71, Name = "Eros International" },
-                new ProductionHouse { ProductionHouseID = 72, Name = "T-Series" },
-                new ProductionHouse { ProductionHouseID = 73, Name = "Balaji Telefilms" },
-                new ProductionHouse { ProductionHouseID = 74, Name = "Reliance Entertainment" },
-                new ProductionHouse { ProductionHouseID = 75, Name = "Fox Film Corporation" },
-                new ProductionHouse { ProductionHouseID = 76, Name = "Filmax" },
-                new ProductionHouse { ProductionHouseID = 77, Name = "Cineworld" },
-                new ProductionHouse { ProductionHouseID = 78, Name = "Polygon Pictures" },
-                new ProductionHouse { ProductionHouseID = 79, Name = "StudioCanal" },
-                new ProductionHouse { ProductionHouseID = 80, Name = "Bauer Media Group" },
-                new ProductionHouse { ProductionHouseID = 81, Name = "Koch Media" },
-                new ProductionHouse { ProductionHouseID = 82, Name = "IFC Films" },
-                new ProductionHouse { ProductionHouseID = 83, Name = "Tokyo Movie Shinsha" },
-                new ProductionHouse { ProductionHouseID = 84, Name = "Toei Animation" },
-                new ProductionHouse { ProductionHouseID = 85, Name = "Shinji Aramaki" },
-                new ProductionHouse { ProductionHouseID = 86, Name = "Manga Entertainment" },
-                new ProductionHouse { ProductionHouseID = 87, Name = "Studio Ponoc" },
-                new ProductionHouse { ProductionHouseID = 88, Name = "Toho Company" },
-                new ProductionHouse { ProductionHouseID = 89, Name = "Sega Sammy Holdings" },
-                new ProductionHouse { ProductionHouseID = 90, Name = "Marvel Studios" },
-                new ProductionHouse { ProductionHouseID = 91, Name = "DC Films" },
-                new ProductionHouse { ProductionHouseID = 92, Name = "Pixar Animation Studios" },
-                new ProductionHouse { ProductionHouseID = 93, Name = "Studio Ghibli" },
-                new ProductionHouse { ProductionHouseID = 94, Name = "The Jim Henson Company" },
-                new ProductionHouse { ProductionHouseID = 95, Name = "Legendary Entertainment" },
-                new ProductionHouse { ProductionHouseID = 96, Name = "Blumhouse Productions" },
-                new ProductionHouse { ProductionHouseID = 97, Name = "Bad Robot Productions" },
-                new ProductionHouse { ProductionHouseID = 98, Name = "Chernin Entertainment" },
-                new ProductionHouse { ProductionHouseID = 99, Name = "Silver Pictures" },
-                new ProductionHouse { ProductionHouseID = 100, Name = "Platinum Dunes" }
+            modelBuilder.Entity<ProductionHouse>().HasData(
+              
+               new ProductionHouse { ProductionHouseID = 1, Name = "Walt Disney Studios" },
+               new ProductionHouse { ProductionHouseID = 2, Name = "Paramount Pictures" },
+               new ProductionHouse { ProductionHouseID = 3, Name = "Blur Studio" },
+               new ProductionHouse { ProductionHouseID = 4, Name = "Sega Sammy Holdings" },
+               new ProductionHouse { ProductionHouseID = 5, Name = "Marza Animation Planet" },
+               new ProductionHouse { ProductionHouseID = 6, Name = "New Line Cinema" },
+               new ProductionHouse { ProductionHouseID = 7, Name = "Warner Bros. Animation" },
+               new ProductionHouse { ProductionHouseID = 8, Name = "Briarcliff Entertainment" },
+               new ProductionHouse { ProductionHouseID = 9, Name = "Sony Pictures" },
+               new ProductionHouse { ProductionHouseID = 10, Name = "Marvel Entertainment" },
+               new ProductionHouse { ProductionHouseID = 11, Name = "Universal Pictures" },
+               new ProductionHouse { ProductionHouseID = 12, Name = "StudioCanal" },
+               new ProductionHouse { ProductionHouseID = 13, Name = "Screen Australia" },
+               new ProductionHouse { ProductionHouseID = 14, Name = "ScreenWest" },
+               new ProductionHouse { ProductionHouseID = 15, Name = "Lotterywest" },
+               new ProductionHouse { ProductionHouseID = 16, Name = "Lionsgate" },
+               new ProductionHouse { ProductionHouseID = 17, Name = "Studio Ghibli" },
+               new ProductionHouse { ProductionHouseID = 18, Name = "Tokuma Shoten" },
+               new ProductionHouse { ProductionHouseID = 19, Name = "Nippon Television Network" },
+               new ProductionHouse { ProductionHouseID = 20, Name = "Dentsu" },
+               new ProductionHouse { ProductionHouseID = 21, Name = "Columbia Pictures" }
+
             );
             modelBuilder.Entity<Director>().HasData(
                 new Director { DirectorID = 1, FirstName = "Steven", LastName = "Spielberg" },
-                new Director { DirectorID = 2, FirstName = "Martin", LastName = "Scorsese" },
-                new Director { DirectorID = 3, FirstName = "Quentin", LastName = "Tarantino" },
-                new Director { DirectorID = 4, FirstName = "Christopher", LastName = "Nolan" },
-                new Director { DirectorID = 5, FirstName = "Alfred", LastName = "Hitchcock" },
-                new Director { DirectorID = 6, FirstName = "James", LastName = "Cameron" },
-                new Director { DirectorID = 7, FirstName = "Stanley", LastName = "Kubrick" },
-                new Director { DirectorID = 8, FirstName = "Ridley", LastName = "Scott" },
-                new Director { DirectorID = 9, FirstName = "Francis", LastName = "Ford Coppola" },
-                new Director { DirectorID = 10, FirstName = "Tim", LastName = "Burton" },
-                new Director { DirectorID = 11, FirstName = "Wes", LastName = "Anderson" },
-                new Director { DirectorID = 12, FirstName = "David", LastName = "Fincher" },
-                new Director { DirectorID = 13, FirstName = "George", LastName = "Lucas" },
-                new Director { DirectorID = 14, FirstName = "Woody", LastName = "Allen" },
-                new Director { DirectorID = 15, FirstName = "Roman", LastName = "Polanski" },
-                new Director { DirectorID = 16, FirstName = "Michael", LastName = "Bay" },
-                new Director { DirectorID = 17, FirstName = "Zack", LastName = "Snyder" },
-                new Director { DirectorID = 18, FirstName = "Peter", LastName = "Jackson" },
-                new Director { DirectorID = 19, FirstName = "Christopher", LastName = "McQuarrie" },
-                new Director { DirectorID = 20, FirstName = "Paul", LastName = "Thomas Anderson" },
-                new Director { DirectorID = 21, FirstName = "Joel", LastName = "Coen" },
-                new Director { DirectorID = 22, FirstName = "Ethan", LastName = "Coen" },
-                new Director { DirectorID = 23, FirstName = "John", LastName = "Carpenter" },
-                new Director { DirectorID = 24, FirstName = "Spike", LastName = "Lee" },
-                new Director { DirectorID = 25, FirstName = "Hayao", LastName = "Miyazaki" },
-                new Director { DirectorID = 26, FirstName = "Guillermo", LastName = "del Toro" },
-                new Director { DirectorID = 27, FirstName = "Jean-Pierre", LastName = "Jeunet" },
-                new Director { DirectorID = 28, FirstName = "Frank", LastName = "Darabont" },
-                new Director { DirectorID = 29, FirstName = "Ang", LastName = "Lee" },
-                new Director { DirectorID = 30, FirstName = "Barry", LastName = "Jenkins" },
-                new Director { DirectorID = 31, FirstName = "Kathryn", LastName = "Bigelow" },
-                new Director { DirectorID = 32, FirstName = "Danny", LastName = "Boyle" },
-                new Director { DirectorID = 33, FirstName = "Martin", LastName = "McDonagh" },
-                new Director { DirectorID = 34, FirstName = "Taika", LastName = "Waititi" },
-                new Director { DirectorID = 35, FirstName = "J.J.", LastName = "Abrams" },
-                new Director { DirectorID = 36, FirstName = "Danny", LastName = "DeVito" },
-                new Director { DirectorID = 37, FirstName = "Lana", LastName = "Wachowski" },
-                new Director { DirectorID = 38, FirstName = "Lilly", LastName = "Wachowski" },
-                new Director { DirectorID = 39, FirstName = "Robert", LastName = "Zemeckis" },
-                new Director { DirectorID = 40, FirstName = "Richard", LastName = "Linklater" },
-                new Director { DirectorID = 41, FirstName = "Steven", LastName = "Soderbergh" },
-                new Director { DirectorID = 42, FirstName = "James", LastName = "Wan" },
-                new Director { DirectorID = 43, FirstName = "M. Night", LastName = "Shyamalan" },
-                new Director { DirectorID = 44, FirstName = "Bong", LastName = "Joon-ho" },
-                new Director { DirectorID = 45, FirstName = "Terry", LastName = "Gilliam" },
-                new Director { DirectorID = 46, FirstName = "Richard", LastName = "Curtis" },
-                new Director { DirectorID = 47, FirstName = "Ron", LastName = "Howard" },
-                new Director { DirectorID = 48, FirstName = "Oliver", LastName = "Stone" },
-                new Director { DirectorID = 49, FirstName = "Sam", LastName = "Mendes" },
-                new Director { DirectorID = 50, FirstName = "Robert", LastName = "Rodriguez" },
-                new Director { DirectorID = 51, FirstName = "John", LastName = "Hughes" },
-                new Director { DirectorID = 52, FirstName = "Paul", LastName = "Verhoeven" },
-                new Director { DirectorID = 53, FirstName = "Michael", LastName = "Mann" },
-                new Director { DirectorID = 54, FirstName = "Rian", LastName = "Johnson" },
-                new Director { DirectorID = 55, FirstName = "Bryan", LastName = "Singer" },
-                new Director { DirectorID = 56, FirstName = "Lenny", LastName = "Abrahamson" },
-                new Director { DirectorID = 57, FirstName = "Joe", LastName = "Wright" },
-                new Director { DirectorID = 58, FirstName = "Terry", LastName = "Gilliam" },
-                new Director { DirectorID = 59, FirstName = "Greta", LastName = "Gerwig" },
-                new Director { DirectorID = 60, FirstName = "Ethan", LastName = "Coen" },
-                new Director { DirectorID = 61, FirstName = "Joel", LastName = "Coen" },
-                new Director { DirectorID = 62, FirstName = "Jason", LastName = "Reitman" },
-                new Director { DirectorID = 63, FirstName = "Bryan", LastName = "Singer" },
-                new Director { DirectorID = 64, FirstName = "Stephen", LastName = "King" },
-                new Director { DirectorID = 65, FirstName = "Guy", LastName = "Ritchie" },
-                new Director { DirectorID = 66, FirstName = "Paul", LastName = "Greengrass" },
-                new Director { DirectorID = 67, FirstName = "Ron", LastName = "Howard" },
-                new Director { DirectorID = 68, FirstName = "John", LastName = "Woo" },
-                new Director { DirectorID = 69, FirstName = "Sylvester", LastName = "Stallone" },
-                new Director { DirectorID = 70, FirstName = "Stephen", LastName = "Spielberg" },
-                new Director { DirectorID = 71, FirstName = "James", LastName = "Cameron" },
-                new Director { DirectorID = 72, FirstName = "Ridley", LastName = "Scott" },
-                new Director { DirectorID = 73, FirstName = "Peter", LastName = "Jackson" },
-                new Director { DirectorID = 74, FirstName = "Tim", LastName = "Burton" },
-                new Director { DirectorID = 75, FirstName = "J.J.", LastName = "Abrams" },
-                new Director { DirectorID = 76, FirstName = "M. Night", LastName = "Shyamalan" },
-                new Director { DirectorID = 77, FirstName = "Ang", LastName = "Lee" },
-                new Director { DirectorID = 78, FirstName = "John", LastName = "Hughes" },
-                new Director { DirectorID = 79, FirstName = "Greta", LastName = "Gerwig" },
-                new Director { DirectorID = 80, FirstName = "Guillermo", LastName = "del Toro" },
-                new Director { DirectorID = 81, FirstName = "Martin", LastName = "Scorsese" },
-                new Director { DirectorID = 82, FirstName = "Christopher", LastName = "Nolan" },
-                new Director { DirectorID = 83, FirstName = "Spike", LastName = "Lee" },
-                new Director { DirectorID = 84, FirstName = "Hayao", LastName = "Miyazaki" },
-                new Director { DirectorID = 85, FirstName = "Quentin", LastName = "Tarantino" },
-                new Director { DirectorID = 86, FirstName = "Alfred", LastName = "Hitchcock" },
-                new Director { DirectorID = 87, FirstName = "Wes", LastName = "Anderson" },
-                new Director { DirectorID = 88, FirstName = "Stanley", LastName = "Kubrick" },
-                new Director { DirectorID = 89, FirstName = "Ridley", LastName = "Scott" },
-                new Director { DirectorID = 90, FirstName = "David", LastName = "Fincher" },
-                new Director { DirectorID = 91, FirstName = "James", LastName = "Wan" },
-                new Director { DirectorID = 92, FirstName = "Danny", LastName = "Boyle" },
-                new Director { DirectorID = 93, FirstName = "M. Night", LastName = "Shyamalan" },
-                new Director { DirectorID = 94, FirstName = "Terry", LastName = "Gilliam" },
-                new Director { DirectorID = 95, FirstName = "Frank", LastName = "Darabont" },
-                new Director { DirectorID = 96, FirstName = "Rian", LastName = "Johnson" },
-                new Director { DirectorID = 97, FirstName = "Paul", LastName = "Greengrass" },
-                new Director { DirectorID = 98, FirstName = "Bryan", LastName = "Singer" },
-                new Director { DirectorID = 99, FirstName = "Ron", LastName = "Howard" },
-                new Director { DirectorID = 100, FirstName = "Stephen", LastName = "Spielberg" }
+                new Director { DirectorID = 2, FirstName = "David", LastName = "Derrick Jr." },
+                new Director { DirectorID = 3, FirstName = "Jason", LastName = "Hand" },
+                new Director { DirectorID = 4, FirstName = "Dana Ledoux", LastName = "Miller" },
+                new Director { DirectorID = 5, FirstName = "Barry", LastName = "Jenkins" },
+                new Director { DirectorID = 6, FirstName = "Jeff", LastName = "Fowler" },
+                new Director { DirectorID = 7, FirstName = "Kenji", LastName = "Kamiyama" },
+                new Director { DirectorID = 8, FirstName = "Steven C.", LastName = "Miller" },
+                new Director { DirectorID = 9, FirstName = "J.C.", LastName = "Chandor" },
+                new Director { DirectorID = 10, FirstName = "Ridley", LastName = "Scott" },
+                new Director { DirectorID = 11, FirstName = "John", LastName = "Sheedy" },
+                new Director { DirectorID = 12, FirstName = "Jonathan", LastName = "Entwistle" },
+                new Director { DirectorID = 13, FirstName = "Ruben", LastName = "Fleischer" },
+                new Director { DirectorID = 14, FirstName = "Dean", LastName = "DeBlois" },
+                new Director { DirectorID = 15, FirstName = "Jared", LastName = "Hess" },
+                new Director { DirectorID = 16, FirstName = "Tony", LastName = "Scott" },
+                new Director { DirectorID = 17, FirstName = "Hayao", LastName = "Miyazaki" },
+                new Director { DirectorID = 18, FirstName = "Sam", LastName = "Raimi" }
             );
             modelBuilder.Entity<MovieType>().HasData(
                 new MovieType { MovieTypeID = 1, Type = "2D" },
@@ -470,8 +318,350 @@ namespace FIT_Api_Example.Data
                 new MovieType { MovieTypeID = 10, Type = "VR (Virtual Reality)" }
             );
 
+            modelBuilder.Entity<Status>().HasData(
+               new Status { StatusID = 1, Name = "Active" },
+               new Status { StatusID = 2, Name = "Upcoming" },
+               new Status { StatusID = 3, Name = "Classic" },
+               new Status { StatusID = 4, Name = "Hidden" }
+           );
+            modelBuilder.Entity<Movie>().HasData(
+                new Movie { MovieID = 1, Title = "Moana 2",ReleaseDate = new DateTime(2024,11,27,0,0,0), Description = "Moana, Maui, Pua, and Heihei are back in a Disney sequel that takes the gang to uncharted waters. After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania for an adventure unlike anything she’s ever faced.",Duration = 100,Poster = ConvertImageToByteArray("wwwroot", "1. Moana 2.jpg"), Trailer = "https://www.youtube.com/watch?v=hDZ7y8RP5HE&t=1s",StatusID = 1 },
+                new Movie { MovieID = 2, Title = "Mufasa: The Lion King", ReleaseDate = new DateTime(2024,12,20,0,0,0), Description = "Mufasa: The Lion King is a prequel to the original Lion King film, focusing on the rise of Mufasa, exploring his origins as an orphaned cub and his bond with his brother Taka, who eventually becomes the villain Scar. The story is told through the eyes of Timon, Pumbaa, and Rafiki, with the legend being shared with Kiara, Simba and Nala's daughter. The film portrays Mufasa's journey from a humble orphan to a king, with a focus on friendships and destiny​.", Duration = 118,Poster = ConvertImageToByteArray("wwwroot", "2. Mufasa The Lion King.jpg"), Trailer = "https://www.youtube.com/watch?v=o17MF9vnabg", StatusID = 1 },
+
+                new Movie { MovieID = 3, Title = "Sonic the Hedgehog 3", ReleaseDate = new DateTime(2024, 12, 20, 0, 0, 0), Description = "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.", Duration = 109, Poster = ConvertImageToByteArray("wwwroot", "3. Sonic 3.png"), Trailer = "https://www.youtube.com/watch?v=qSu6i2iFMO0", StatusID = 1 },
+                new Movie
+                {
+                    MovieID = 4,
+                    Title = "The Lord of the Rings: The War of the Rohirrim",
+                    ReleaseDate = new DateTime(2024, 12, 13, 0, 0, 0),
+                    Description = "Set in the legendary world of Middle-earth, this animated prequel explores the story of Helm Hammerhand, the legendary King of Rohan, and the creation of Helm’s Deep. The film delves into the complex history of Rohan and the war that led to the formation of the iconic stronghold. Helm battles against the forces of the villainous Wulf, with the fate of Rohan hanging in the balance.",
+                    Duration = 150,
+                    Poster = ConvertImageToByteArray("wwwroot", "4. The Lord of the Rings The War of the Rohirrim.png"),
+                    Trailer = "https://www.youtube.com/watch?v=gCUg6Td5fgQ",
+                    StatusID = 1
+                },
+                new Movie
+                {
+                    MovieID = 5,
+                    Title = "Werewolves",
+                    ReleaseDate = new DateTime(2024, 12, 06, 0, 0, 0),
+                    Description = "The film is set during a Supermoon event, where a latent gene is triggered in humans,  transforming them into werewolves for the night. The story follows the chaos caused by this phenomenon, with  nearly a billion people dying, and focuses on the protagonists who must confront the danger of the next Supermoon. The movie blends horror and action, with some campy elements, and showcases a fight for survival.",
+                    Duration = 94,
+                    Poster = ConvertImageToByteArray("wwwroot", "5. Werewolves.png"),
+                    Trailer = "https://www.youtube.com/watch?v=iAAUDfGSdqs",
+                    StatusID = 1
+                },
+                new Movie
+                {
+                    MovieID = 6,
+                    Title = "Kraven the Hunter",
+                    ReleaseDate = new DateTime(2024, 12, 13, 0, 0, 0),
+                    Description = "The film follows Sergei Kravinoff (Kraven), a skilled big-game hunter, portrayed as an antihero rather than a villain. The story explores his traumatic childhood, his relationship with his father (played by Russell Crowe), and his quest for vengeance. The movie brings a darker and more complex version of Kraven, adding depth to his character as he navigates his moral code and his ambition to become the world's greatest hunter.",
+                    Duration = 120,
+                    Poster = ConvertImageToByteArray("wwwroot", "6. Kraven the Hunter.jpg"),
+                    Trailer = "https://www.youtube.com/watch?v=I8gFw4-2RBM",
+                    StatusID = 1
+                },
+                new Movie
+                {
+                    MovieID = 7,
+                    Title = "Gladiator 2",
+                    ReleaseDate = new DateTime(2024, 11, 22, 0, 0, 0),
+                    Description = "Set 30 years after the original Gladiator, Gladiator 2 follows Lucius Verus, now an adult and the emperor of Rome, who has spent years in isolation after being separated from his mother, Lucilla. The film explores Lucius's return to Rome and his survival through complex political and gladiatorial conflicts. Lucius must navigate the treacherous Roman political landscape, encountering both old allies and new adversaries, including a gladiator rebellion and corrupt emperors.",
+                    Duration = 148,
+                    Poster = ConvertImageToByteArray("wwwroot", "7. Gladiator 2.png"),
+                    Trailer = "https://www.youtube.com/watch?v=Ts0N8swyWFI",
+                    StatusID = 1
+                },
+                new Movie
+                {
+                    MovieID = 8,
+                    Title = "Runt",
+                    ReleaseDate = new DateTime(2024, 9, 12, 0, 0, 0),
+                    Description = " Based on Craig Silvey’s best-selling novel, Runt follows the story of 11-year-old Annie Shearer and her adopted stray dog, Runt, with remarkable abilities. Together, they compete in the Agility Course Championship at the prestigious Krumpets Dog Show in London. Their goal is to save Annie's family's farm from the hardships of drought. Along the way, they face numerous challenges, including villains trying to stop them.",
+                    Duration = 92,
+                    Poster = ConvertImageToByteArray("wwwroot", "8. Runt.png"),
+                    Trailer = "https://www.youtube.com/watch?v=v7i49WaZC40",
+                    StatusID = 1
+                },
+                new Movie
+                {
+                    MovieID = 9,
+                    Title = "Karate Kid: Legends",
+                    ReleaseDate = new DateTime(2025, 5, 30, 0, 0, 0),
+                    Description = "Karate Kid: Legends follows the story of Li Fong, a Chinese teenager who moves to Brooklyn anddiscovers his love for martial arts, blending kung fu and karate. As Li adjusts to his new life, he meetskey figures such as Daniel LaRusso (Ralph Macchio) and Mr. Han (Jackie Chan), who guide him on his martialarts journey. Set after the events of Cobra Kai, the movie will tie together elements from both the KarateKid movies and the popular Cobra Kai series, introducing a new protagonist while celebrating the franchise' legacy.",
+                    Duration = 109,
+                    Poster = ConvertImageToByteArray("wwwroot", "9. Karate Kid Legends.png"),
+                    Trailer = null, // No trailer provided
+                    StatusID = 2
+                },
+                new Movie
+                {
+                    MovieID = 10,
+                    Title = "Now You See Me 3",
+                    ReleaseDate = new DateTime(2025, 11, 15, 0, 0, 0),
+                    Description = "Now You See Me 3 continues the thrilling journey of the Four Horsemen as they return for more magical heists. This time, Mark Ruffalo’s character, Dylan Rhodes, may step into a more prominent leadership role within \"The Eye,\" a secret society of magicians. The core cast returns, including Jesse Eisenberg, Woody Harrelson, and Isla Fisher, while new stars like Rosamund Pike join the ensemble. The movie promises more of the action, suspense, and mind-bending illusions that made the first two films such hits​.",
+                    Duration = 112,
+                    Poster = ConvertImageToByteArray("wwwroot", "10. Now You See Me 3.jpg"),
+                    Trailer = null, // No trailer provided
+                    StatusID = 2
+                },
+                new Movie
+                {
+                    MovieID = 11,
+                    Title = "How to Train Your Dragon",
+                    ReleaseDate = new DateTime(2025, 6, 13, 0, 0, 0),
+                    Description = "This live-action adaptation of the original How to Train Your Dragon film will follow Hiccup, the son of a Viking chief, who forms a unique bond with Toothless, a dragon. In a world where dragons are feared and fought against, Hiccup and Toothless must navigate their friendship and face challenges together. The film promises a mix of emotional depth and stunning visual effects as it brings the beloved characters to life in a new format.",
+                    Duration = 92,
+                    Poster = ConvertImageToByteArray("wwwroot", "11. How to Train Your Dragon.png"),
+                    Trailer = null, // No trailer provided
+                    StatusID = 2
+                },
+                new Movie
+                {
+                    MovieID = 12,
+                    Title = "A Minecraft Movie",
+                    ReleaseDate = new DateTime(2025, 4, 4, 0, 0, 0),
+                    Description = "In this live-action adaptation, a group of adventurers is transported into the blocky world of Minecraft, where they must join forces to stop the destructive Ender Dragon threatening the Overworld. With the help of iconic Minecraft creatures, including Steve, the characters must navigate the dangers of the game world. The film blends action, humor, and a sense of adventure as humans adjust to their new environment​.",
+                    Duration = 98,
+                    Poster = ConvertImageToByteArray("wwwroot", "12. A Minecraft Movie.jpg"),
+                    Trailer = "https://www.youtube.com/watch?v=wJO_vIDZn-I",
+                    StatusID = 2
+                },
+                new Movie
+                {
+                    MovieID = 13,
+                    Title = "Top Gun",
+                    ReleaseDate = new DateTime(1986, 5, 16, 0, 0, 0),
+                    Description = "Pete \"Maverick\" Mitchell, a talented but cocky Navy fighter pilot, enters the prestigious Top Gun training program. As he competes with his peers, including the talented Iceman, Maverick struggles with personal and professional challenges, especially the memory of his father's mysterious death. Maverick's journey of self-discovery and redemption comes to a head when he faces real combat in the skies, ultimately learning the importance of teamwork and humility.",
+                    Duration = 110,
+                    Poster = ConvertImageToByteArray("wwwroot", "13. Top Gun.png"),
+                    Trailer = "https://www.youtube.com/watch?v=ArOMXELHiLw",
+                    StatusID = 3
+                },
+
+                new Movie
+                {
+                    MovieID = 14,
+                    Title = "Jaws",
+                    ReleaseDate = new DateTime(1975, 6, 20, 0, 0, 0),
+                    Description = "Set on the fictional island of Amity, Jaws follows Chief Martin Brody as he investigates a series of mysterious shark attacks that threaten the summer tourist season. With the help of marine biologist Matt Hooper and professional shark hunter Quint, Brody must confront the deadly creature lurking in the waters. As the trio hunts the shark, they face escalating danger, and Brody must confront his own fears to protect the town and his family.",
+                    Duration = 124,
+                    Poster = ConvertImageToByteArray("wwwroot", "14. Jaws.png"),
+                    Trailer = "https://www.youtube.com/watch?v=U1fu_sA7XhE",
+                    StatusID = 3
+                },
+                new Movie
+                {
+                    MovieID = 15,
+                    Title = "Spirited Away",
+                    ReleaseDate = new DateTime(2001, 7, 20, 0, 0, 0),
+                    Description = "Spirited Away follows Chihiro, a young girl who, while on her way to her new home, stumbles upon a mysterious, seemingly abandoned theme park. As her parents are transformed into pigs, Chihiro is forced to work at a bathhouse run by spirits and strange creatures. She befriends Haku, a mysterious boy, and with his help, attempts to find a way to rescue her parents and return home. The film explores themes of personal growth, environmentalism, and the importance of memory.",
+                    Duration = 125,
+                    Poster = ConvertImageToByteArray("wwwroot", "15. Spirited Away.png"),
+                    Trailer = "https://www.youtube.com/watch?v=ByXuk9QqQkk",
+                    StatusID = 3
+                },
+                new Movie
+                {
+                    MovieID = 16,
+                    Title = "Spider-Man",
+                    ReleaseDate = new DateTime(2002, 5, 3, 0, 0, 0),
+                    Description = "The film follows Peter Parker, a high school student who gains spider-like abilities after being bitten by a genetically altered spider. As Peter struggles with his newfound powers, he must balance his life as a student and superhero while facing the villainous Green Goblin, whose true identity is tied to Peter’s best friend Harry's father, Norman Osborn. The movie explores themes of responsibility, love, and loss, with Peter learning that with great power comes great responsibility.",
+                    Duration = 121,
+                    Poster = ConvertImageToByteArray("wwwroot", "16. Spider-Man.jpg"),
+                    Trailer = "https://www.youtube.com/watch?v=t06RUxPbp_c",
+                    StatusID = 3
+                }
+
+            );
 
 
+
+            modelBuilder.Entity<MovieActor>().HasData(
+                   // Moana 2
+                   new MovieActor { MovieActorID = 1, ActorID = 1, MovieID = 1 },  // Auli'i Cravalho
+                   new MovieActor { MovieActorID = 2, ActorID = 2, MovieID = 1 },  // Dwayne Johnson
+               
+                   // Mufasa: The Lion King
+                   new MovieActor { MovieActorID = 3, ActorID = 3, MovieID = 2 },  // Aaron Pierre
+                   new MovieActor { MovieActorID = 4, ActorID = 4, MovieID = 2 },  // Kelvin Harrison Jr.
+                   new MovieActor { MovieActorID = 5, ActorID = 5, MovieID = 2 },  // Beyoncé
+                   new MovieActor { MovieActorID = 6, ActorID = 6, MovieID = 2 },  // Donald Glover
+                   new MovieActor { MovieActorID = 7, ActorID = 7, MovieID = 2 },  // Seth Rogen
+                   new MovieActor { MovieActorID = 8, ActorID = 8, MovieID = 2 },  // Billy Eichner
+                   new MovieActor { MovieActorID = 9, ActorID = 9, MovieID = 2 },  // Anika Noni Rose
+                   new MovieActor { MovieActorID = 10, ActorID = 10, MovieID = 2 }, // Mads Mikkelsen
+               
+                   // Sonic the Hedgehog 3
+                   new MovieActor { MovieActorID = 11, ActorID = 11, MovieID = 3 }, // Keanu Reeves
+                   new MovieActor { MovieActorID = 12, ActorID = 12, MovieID = 3 }, // Jim Carrey
+                   new MovieActor { MovieActorID = 13, ActorID = 13, MovieID = 3 }, // Ben Schwartz
+               
+                   // The Lord of the Rings: The War of the Rohirrim
+                   new MovieActor { MovieActorID = 14, ActorID = 14, MovieID = 4 }, // Brian Cox
+                   new MovieActor { MovieActorID = 15, ActorID = 15, MovieID = 4 }, // Gaia Wise
+                   new MovieActor { MovieActorID = 16, ActorID = 16, MovieID = 4 }, // Luke Pasqualino
+                   new MovieActor { MovieActorID = 17, ActorID = 17, MovieID = 4 }, // Shaun Dooley
+                   new MovieActor { MovieActorID = 18, ActorID = 18, MovieID = 4 }, // Miranda Otto
+               
+                   // Werewolves
+                   new MovieActor { MovieActorID = 19, ActorID = 19, MovieID = 5 }, // Frank Grillo
+                   new MovieActor { MovieActorID = 20, ActorID = 20, MovieID = 5 }, // Katrina Law
+                   new MovieActor { MovieActorID = 21, ActorID = 21, MovieID = 5 }, // Lou Diamond Phillips
+                   new MovieActor { MovieActorID = 22, ActorID = 22, MovieID = 5 }, // Ilfenesh Hadera
+                   new MovieActor { MovieActorID = 23, ActorID = 23, MovieID = 5 }, // Kamdynn Gary
+               
+                   // Kraven the Hunter
+                   new MovieActor { MovieActorID = 24, ActorID = 24, MovieID = 6 }, // Aaron Taylor-Johnson
+                   new MovieActor { MovieActorID = 25, ActorID = 25, MovieID = 6 }, // Ariana DeBose
+                   new MovieActor { MovieActorID = 26, ActorID = 26, MovieID = 6 }, // Fred Hechinger
+                   new MovieActor { MovieActorID = 27, ActorID = 27, MovieID = 6 }, // Christopher Abbott
+                   new MovieActor { MovieActorID = 28, ActorID = 28, MovieID = 6 }, // Alessandro Nivola
+                   new MovieActor { MovieActorID = 29, ActorID = 29, MovieID = 6 }, // Russell Crowe
+               
+                   // Gladiator 2
+                   new MovieActor { MovieActorID = 30, ActorID = 30, MovieID = 7 }, // Paul Mescal
+                   new MovieActor { MovieActorID = 31, ActorID = 31, MovieID = 7 }, // Connie Nielsen
+                   new MovieActor { MovieActorID = 32, ActorID = 32, MovieID = 7 }, // Derek Jacobi
+                   new MovieActor { MovieActorID = 33, ActorID = 33, MovieID = 7 }, // Djimon Hounsou
+                   new MovieActor { MovieActorID = 34, ActorID = 34, MovieID = 7 }, // Joseph Quinn
+                   new MovieActor { MovieActorID = 35, ActorID = 35, MovieID = 7 }, // Denzel Washington
+                   new MovieActor { MovieActorID = 36, ActorID = 36, MovieID = 7 }, // Pedro Pascal
+               
+                   // Continue with other movies...
+               
+                   // Runt
+                   new MovieActor { MovieActorID = 37, ActorID = 37, MovieID = 8 }, // Jai Courtney
+                   new MovieActor { MovieActorID = 38, ActorID = 38, MovieID = 8 }, // Deborah Mailman
+                   new MovieActor { MovieActorID = 39, ActorID = 39, MovieID = 8 }, // Jack Thompson
+                   new MovieActor { MovieActorID = 40, ActorID = 40, MovieID = 8 }, // Matt Day
+                   new MovieActor { MovieActorID = 41, ActorID = 41, MovieID = 8 }, // Geneviève Lemon
+                   new MovieActor { MovieActorID = 42, ActorID = 42, MovieID = 8 }, // Celeste Barber
+                   new MovieActor { MovieActorID = 43, ActorID = 43, MovieID = 8 }, // Lily LeTorre
+               
+                   // Karate Kid: Legends
+                   new MovieActor { MovieActorID = 44, ActorID = 44, MovieID = 9 }, // Ben Wang
+                   new MovieActor { MovieActorID = 45, ActorID = 45, MovieID = 9 }, // Ralph Macchio
+                   new MovieActor { MovieActorID = 46, ActorID = 46, MovieID = 9 }, // Jackie Chan
+                   new MovieActor { MovieActorID = 47, ActorID = 47, MovieID = 9 }, // Joshua Jackson
+                   new MovieActor { MovieActorID = 48, ActorID = 48, MovieID = 9 }, // Ming-Na Wen
+                   new MovieActor { MovieActorID = 49, ActorID = 49, MovieID = 9 }, // Sadie Stanley
+               
+                   // Now You See Me 3
+                   new MovieActor { MovieActorID = 50, ActorID = 50, MovieID = 10 }, // Jesse Eisenberg
+                   new MovieActor { MovieActorID = 51, ActorID = 51, MovieID = 10 }, // Mark Ruffalo
+                   new MovieActor { MovieActorID = 52, ActorID = 52, MovieID = 10 }, // Woody Harrelson
+                   new MovieActor { MovieActorID = 53, ActorID = 53, MovieID = 10 }, // Dave Franco
+                   new MovieActor { MovieActorID = 54, ActorID = 54, MovieID = 10 }, // Isla Fisher
+                   new MovieActor { MovieActorID = 55, ActorID = 55, MovieID = 10 }, // Rosamund Pike
+                   new MovieActor { MovieActorID = 56, ActorID = 56, MovieID = 10 }, // Justice Smith
+                   new MovieActor { MovieActorID = 57, ActorID = 57, MovieID = 10 }, // Ariana Greenblatt
+                   new MovieActor { MovieActorID = 58, ActorID = 58, MovieID = 10 }, // Dominic Sessa
+               
+                   // How to Train Your Dragon
+                   new MovieActor { MovieActorID = 59, ActorID = 59, MovieID = 11 }, // Mason Thames
+                   new MovieActor { MovieActorID = 60, ActorID = 60, MovieID = 11 }, // Nico Parker
+                   new MovieActor { MovieActorID = 61, ActorID = 61, MovieID = 11 }, // Gerard Butler
+                   new MovieActor { MovieActorID = 62, ActorID = 62, MovieID = 11 }, // Nick Frost
+                   new MovieActor { MovieActorID = 63, ActorID = 63, MovieID = 11 }, // Julian Dennison
+                   new MovieActor { MovieActorID = 64, ActorID = 64, MovieID = 11 }, // Gabriel Howell
+                   new MovieActor { MovieActorID = 65, ActorID = 65, MovieID = 11 }, // Bronwyn James
+               
+                   // A Minecraft Movie
+                   new MovieActor { MovieActorID = 66, ActorID = 66, MovieID = 12 }, // Jason Momoa
+                   new MovieActor { MovieActorID = 67, ActorID = 67, MovieID = 12 }, // Jack Black
+                   new MovieActor { MovieActorID = 68, ActorID = 68, MovieID = 12 }, // Danielle Brooks
+                   new MovieActor { MovieActorID = 69, ActorID = 69, MovieID = 12 }, // Emma Myers
+                   new MovieActor { MovieActorID = 70, ActorID = 70, MovieID = 12 }, // Matt Berry
+               
+                   // Top Gun
+                   new MovieActor { MovieActorID = 71, ActorID = 71, MovieID = 13 }, // Tom Cruise
+                   new MovieActor { MovieActorID = 72, ActorID = 72, MovieID = 13 }, // Kelly McGillis
+                   new MovieActor { MovieActorID = 73, ActorID = 73, MovieID = 13 }, // Val Kilmer
+                   new MovieActor { MovieActorID = 74, ActorID = 74, MovieID = 13 }, // Anthony Edwards
+                   new MovieActor { MovieActorID = 75, ActorID = 75, MovieID = 13 }, // Tom Skerritt
+                   new MovieActor { MovieActorID = 76, ActorID = 76, MovieID = 13 }, // Michael Ironside
+                   new MovieActor { MovieActorID = 77, ActorID = 77, MovieID = 13 }, // Meg Ryan
+               
+                   // Jaws
+                   new MovieActor { MovieActorID = 78, ActorID = 78, MovieID = 14 }, // Roy Scheider
+                   new MovieActor { MovieActorID = 79, ActorID = 79, MovieID = 14 }, // Robert Shaw
+                   new MovieActor { MovieActorID = 80, ActorID = 80, MovieID = 14 }, // Richard Dreyfuss
+                   new MovieActor { MovieActorID = 81, ActorID = 81, MovieID = 14 }, // Lorraine Gary
+                   new MovieActor { MovieActorID = 82, ActorID = 82, MovieID = 14 }, // Murray Hamilton
+               
+                   // Spirited Away
+                   new MovieActor { MovieActorID = 83, ActorID = 83, MovieID = 15 }, // Rumi Hiiragi
+                   new MovieActor { MovieActorID = 84, ActorID = 84, MovieID = 15 }, // Miyu Irino
+                   new MovieActor { MovieActorID = 85, ActorID = 85, MovieID = 15 }, // Bunta Sugawara
+                   new MovieActor { MovieActorID = 86, ActorID = 86, MovieID = 15 }, // Mari Natsuki
+                   new MovieActor { MovieActorID = 87, ActorID = 87, MovieID = 15 }, // Takehiko Ono
+               
+                   // Spider-Man
+                   new MovieActor { MovieActorID = 88, ActorID = 88, MovieID = 16 }, // Tobey Maguire
+                   new MovieActor { MovieActorID = 89, ActorID = 89, MovieID = 16 }, // Willem Dafoe
+                   new MovieActor { MovieActorID = 90, ActorID = 90, MovieID = 16 }, // Kirsten Dunst
+                   new MovieActor { MovieActorID = 91, ActorID = 91, MovieID = 16 }, // James Franco
+                   new MovieActor { MovieActorID = 92, ActorID = 92, MovieID = 16 }, // Cliff Robertson
+                   new MovieActor { MovieActorID = 93, ActorID = 93, MovieID = 16 } // Rosemary Harris
+               
+            );
+
+           
+            modelBuilder.Entity<MovieProductionHouse>().HasData(
+               new MovieProductionHouse {MovieProductionHouseID = 1, MovieID = 1, ProductionHouseID = 1 }, // Moana 2: Walt Disney Studios
+               new MovieProductionHouse {MovieProductionHouseID = 2, MovieID = 2, ProductionHouseID = 1 }, // Mufasa: The Lion King: Walt Disney Studios                             
+               new MovieProductionHouse {MovieProductionHouseID = 3, MovieID = 3, ProductionHouseID = 2 }, // Sonic the Hedgehog 3: Paramount Pictures                               
+               new MovieProductionHouse {MovieProductionHouseID = 4, MovieID = 3, ProductionHouseID = 3 }, // Sonic the Hedgehog 3: Blur Studio
+               new MovieProductionHouse {MovieProductionHouseID = 5, MovieID = 3, ProductionHouseID = 4 }, // Sonic the Hedgehog 3: Sega Sammy Holdings                              
+               new MovieProductionHouse {MovieProductionHouseID = 6, MovieID = 3, ProductionHouseID = 5 }, // Sonic the Hedgehog 3: Marza Animation Planet                  
+               new MovieProductionHouse {MovieProductionHouseID = 7, MovieID = 4, ProductionHouseID = 6 }, // The Lord of the Rings: The War of the Rohirrim: New LineCinema         
+               new MovieProductionHouse {MovieProductionHouseID = 8, MovieID = 4, ProductionHouseID = 7 }, // The Lord of the Rings: The War of the Rohirrim: Warner Bros.   
+               new MovieProductionHouse {MovieProductionHouseID = 9, MovieID = 5, ProductionHouseID = 8 }, // Werewolves: Briarcliff Entertainment
+               new MovieProductionHouse {MovieProductionHouseID = 10, MovieID = 6, ProductionHouseID = 9 }, // Kraven the Hunter: Sony Pictures
+               new MovieProductionHouse {MovieProductionHouseID = 11, MovieID = 6, ProductionHouseID = 10 }, // Kraven the Hunter: Marvel Entertainment                       
+               new MovieProductionHouse {MovieProductionHouseID = 12, MovieID = 7, ProductionHouseID = 11 }, // Gladiator 2: Universal Pictures
+               new MovieProductionHouse {MovieProductionHouseID = 13, MovieID = 7, ProductionHouseID = 2 }, // Gladiator 2: Paramount Pictures
+               new MovieProductionHouse {MovieProductionHouseID = 14, MovieID = 8, ProductionHouseID = 12 }, // Runt: StudioCanal
+               new MovieProductionHouse {MovieProductionHouseID = 15, MovieID = 8, ProductionHouseID = 13 }, // Runt: Screen Australia
+               new MovieProductionHouse {MovieProductionHouseID = 16, MovieID = 8, ProductionHouseID = 14 }, // Runt: ScreenWest
+               new MovieProductionHouse {MovieProductionHouseID = 17, MovieID = 8, ProductionHouseID = 15 }, // Runt: Lotterywest
+               new MovieProductionHouse {MovieProductionHouseID = 18, MovieID = 9, ProductionHouseID = 9 }, // Karate Kid: Legends: Sony Pictures
+               new MovieProductionHouse {MovieProductionHouseID = 19, MovieID = 10, ProductionHouseID = 16 }, // Now You See Me 3: Lionsgate
+               new MovieProductionHouse {MovieProductionHouseID = 20, MovieID = 11, ProductionHouseID = 11 }, // How to Train Your Dragon: Universal Pictures                        
+               new MovieProductionHouse {MovieProductionHouseID = 21, MovieID = 12, ProductionHouseID = 7 }, // A Minecraft Movie: Warner Bros.
+               new MovieProductionHouse {MovieProductionHouseID = 22, MovieID = 13, ProductionHouseID = 2 }, // Top Gun: Paramount Pictures
+               new MovieProductionHouse {MovieProductionHouseID = 23, MovieID = 14, ProductionHouseID = 11 }, // Jaws: Universal Pictures
+               new MovieProductionHouse {MovieProductionHouseID = 24, MovieID = 15, ProductionHouseID = 17 }, // Spirited Away: Studio Ghibli
+               new MovieProductionHouse {MovieProductionHouseID = 25, MovieID = 15, ProductionHouseID = 18 }, // Spirited Away: Tokuma Shoten
+               new MovieProductionHouse {MovieProductionHouseID = 26, MovieID = 15, ProductionHouseID = 19 }, // Spirited Away: Nippon Television Network                            
+               new MovieProductionHouse {MovieProductionHouseID = 27, MovieID = 15, ProductionHouseID = 20 }, // Spirited Away: Dentsu
+               new MovieProductionHouse {MovieProductionHouseID = 28, MovieID = 16, ProductionHouseID = 9 }, // Spider-Man: Sony Pictures
+               new MovieProductionHouse {MovieProductionHouseID = 29, MovieID = 16, ProductionHouseID = 21 }, // Spider-Man: Columbia Pictures
+               new MovieProductionHouse {MovieProductionHouseID = 30, MovieID = 16, ProductionHouseID = 10 }  // Spider-Man: Marvel Entertainment
+            );
+
+            modelBuilder.Entity<MovieDirector>().HasData(
+               new MovieDirector {MovieDirectorID = 1, DirectorID = 1, MovieID = 14 }, // Steven Spielberg -> Jaws
+               new MovieDirector {MovieDirectorID = 2, DirectorID = 2, MovieID = 1 },  // David Derrick Jr. -> Moana 2
+               new MovieDirector {MovieDirectorID = 3, DirectorID = 3, MovieID = 1 },  // Jason Hand -> Moana 2
+               new MovieDirector {MovieDirectorID = 4, DirectorID = 4, MovieID = 1 },  // Dana Ledoux Miller -> Moana 2
+               new MovieDirector {MovieDirectorID = 5, DirectorID = 5, MovieID = 2 },  // Barry Jenkins -> Mufasa: The Lion King
+               new MovieDirector {MovieDirectorID = 6, DirectorID = 6, MovieID = 3 },  // Jeff Fowler -> Sonic the Hedgehog 3
+               new MovieDirector {MovieDirectorID = 7, DirectorID = 7, MovieID = 4 },  // Kenji Kamiyama -> The War of the Rohirrim
+               new MovieDirector {MovieDirectorID = 8, DirectorID = 8, MovieID = 5 },  // Steven C. Miller -> Werewolves
+               new MovieDirector {MovieDirectorID = 9, DirectorID = 9, MovieID = 6 },  // J.C. Chandor -> Kraven the Hunter
+               new MovieDirector {MovieDirectorID = 10, DirectorID = 10, MovieID = 7 }, // Ridley Scott -> Gladiator 2
+               new MovieDirector {MovieDirectorID = 11, DirectorID = 11, MovieID = 8 }, // John Sheedy -> Runt
+               new MovieDirector {MovieDirectorID = 12, DirectorID = 12, MovieID = 9 }, // Jonathan Entwistle -> Karate Kid: Legends
+               new MovieDirector {MovieDirectorID = 13, DirectorID = 13, MovieID = 10 }, // Ruben Fleischer -> Now You See Me 3
+               new MovieDirector {MovieDirectorID = 14, DirectorID = 14, MovieID = 11 }, // Dean DeBlois -> How to Train Your Dragon
+               new MovieDirector {MovieDirectorID = 15, DirectorID = 15, MovieID = 12 }, // Jared Hess -> A Minecraft Movie
+               new MovieDirector {MovieDirectorID = 16, DirectorID = 16, MovieID = 13 }, // Tony Scott -> Top Gun
+               new MovieDirector {MovieDirectorID = 17, DirectorID = 17, MovieID = 15 }, // Hayao Miyazaki -> Spirited Away
+               new MovieDirector {MovieDirectorID = 18, DirectorID = 18, MovieID = 16 }  // Sam Raimi -> Spider-Man
+            );
 
         }
 

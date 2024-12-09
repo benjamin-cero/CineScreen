@@ -40,6 +40,9 @@ namespace FIT_Api_Example.Data
         public DbSet<Review> Review { get; set; }
         public DbSet<Ticket> Ticket { get; set; }
         public DbSet<MovieGenre> MovieGenre { get; set; }
+        public DbSet<MovieProductionHouse> MovieProductionHouse { get; set; }
+        public DbSet<MovieDirector> MovieDirector { get; set; }
+        public DbSet<Status> Status { get; set; }
 
 
 
