@@ -228,7 +228,7 @@ namespace FIT_Api_Example.Data
                 new Menu { MenuID = 7, Name = "Hot dog", Price = 5, Image = ConvertImageToByteArray("wwwroot", "7. Hot dog.png")},
                 new Menu { MenuID = 8, Name = "French fries", Price = 4, Image = ConvertImageToByteArray("wwwroot", "8. French fries.png")},
                 new Menu { MenuID = 9, Name = "Nachos + Soda", Price = 7, Image = ConvertImageToByteArray("wwwroot", "9. Nachos + Soda.png")},
-                new Menu { MenuID = 10, Name = "Popcorn L + Soda", Price = 9, Image = ConvertImageToByteArray("wwwroot", "10 .Popcorn L + Soda.png")},
+                new Menu { MenuID = 10, Name = "Popcorn L + Soda", Price = 9, Image = ConvertImageToByteArray("wwwroot", "10. Popcorn L + Soda.png")},
                 new Menu { MenuID = 11, Name = "Chips + Soda", Price = 6, Image = ConvertImageToByteArray("wwwroot", "11. Chips + Soda.png")},
                 new Menu { MenuID = 12, Name = "French fries + Soda", Price = 7, Image = ConvertImageToByteArray("wwwroot", "12. French fries + Soda.png")},
                 new Menu { MenuID = 13, Name = "Hot dog + Soda", Price = 7, Image = ConvertImageToByteArray("wwwroot", "13. Hot dog + Soda.png")},
