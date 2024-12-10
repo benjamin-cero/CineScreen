@@ -43,6 +43,7 @@ namespace FIT_Api_Example.Data
         public DbSet<MovieProductionHouse> MovieProductionHouse { get; set; }
         public DbSet<MovieDirector> MovieDirector { get; set; }
         public DbSet<Status> Status { get; set; }
+        public DbSet<MenuManufacturer> MenuManufacturer { get; set; }
 
 
 
