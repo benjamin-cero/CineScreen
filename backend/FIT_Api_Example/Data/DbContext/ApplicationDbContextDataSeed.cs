@@ -326,34 +326,14 @@ namespace FIT_Api_Example.Data
            );
             modelBuilder.Entity<Movie>().HasData(
                 new Movie { MovieID = 1, Title = "Moana 2",ReleaseDate = new DateTime(2024,11,27,0,0,0), Description = "Moana, Maui, Pua, and Heihei are back in a Disney sequel that takes the gang to uncharted waters. After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania for an adventure unlike anything she’s ever faced.",Duration = 100,Poster = ConvertImageToByteArray("wwwroot", "1. Moana 2.jpg"), Trailer = "https://www.youtube.com/watch?v=hDZ7y8RP5HE&t=1s",StatusID = 1 },
-                new Movie { MovieID = 2, Title = "Mufasa: The Lion King", ReleaseDate = new DateTime(2024,12,20,0,0,0), Description = "Mufasa: The Lion King is a prequel to the original Lion King film, focusing on the rise of Mufasa, exploring his origins as an orphaned cub and his bond with his brother Taka, who eventually becomes the villain Scar. The story is told through the eyes of Timon, Pumbaa, and Rafiki, with the legend being shared with Kiara, Simba and Nala's daughter. The film portrays Mufasa's journey from a humble orphan to a king, with a focus on friendships and destiny​.", Duration = 118,Poster = ConvertImageToByteArray("wwwroot", "2. Mufasa The Lion King.jpg"), Trailer = "https://www.youtube.com/watch?v=o17MF9vnabg", StatusID = 1 },
+               
 
-                new Movie { MovieID = 3, Title = "Sonic the Hedgehog 3", ReleaseDate = new DateTime(2024, 12, 20, 0, 0, 0), Description = "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.", Duration = 109, Poster = ConvertImageToByteArray("wwwroot", "3. Sonic 3.png"), Trailer = "https://www.youtube.com/watch?v=qSu6i2iFMO0", StatusID = 1 },
+                new Movie { MovieID = 2, Title = "Sonic the Hedgehog 3", ReleaseDate = new DateTime(2024, 12, 20, 0, 0, 0), Description = "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.", Duration = 109, Poster = ConvertImageToByteArray("wwwroot", "3. Sonic 3.png"), Trailer = "https://www.youtube.com/watch?v=qSu6i2iFMO0", StatusID = 1 },
+                
+               
                 new Movie
                 {
-                    MovieID = 4,
-                    Title = "The Lord of the Rings: The War of the Rohirrim",
-                    ReleaseDate = new DateTime(2024, 12, 13, 0, 0, 0),
-                    Description = "Set in the legendary world of Middle-earth, this animated prequel explores the story of Helm Hammerhand, the legendary King of Rohan, and the creation of Helm’s Deep. The film delves into the complex history of Rohan and the war that led to the formation of the iconic stronghold. Helm battles against the forces of the villainous Wulf, with the fate of Rohan hanging in the balance.",
-                    Duration = 150,
-                    Poster = ConvertImageToByteArray("wwwroot", "4. The Lord of the Rings The War of the Rohirrim.png"),
-                    Trailer = "https://www.youtube.com/watch?v=gCUg6Td5fgQ",
-                    StatusID = 1
-                },
-                new Movie
-                {
-                    MovieID = 5,
-                    Title = "Werewolves",
-                    ReleaseDate = new DateTime(2024, 12, 06, 0, 0, 0),
-                    Description = "The film is set during a Supermoon event, where a latent gene is triggered in humans,  transforming them into werewolves for the night. The story follows the chaos caused by this phenomenon, with  nearly a billion people dying, and focuses on the protagonists who must confront the danger of the next Supermoon. The movie blends horror and action, with some campy elements, and showcases a fight for survival.",
-                    Duration = 94,
-                    Poster = ConvertImageToByteArray("wwwroot", "5. Werewolves.png"),
-                    Trailer = "https://www.youtube.com/watch?v=iAAUDfGSdqs",
-                    StatusID = 1
-                },
-                new Movie
-                {
-                    MovieID = 6,
+                    MovieID = 3,
                     Title = "Kraven the Hunter",
                     ReleaseDate = new DateTime(2024, 12, 13, 0, 0, 0),
                     Description = "The film follows Sergei Kravinoff (Kraven), a skilled big-game hunter, portrayed as an antihero rather than a villain. The story explores his traumatic childhood, his relationship with his father (played by Russell Crowe), and his quest for vengeance. The movie brings a darker and more complex version of Kraven, adding depth to his character as he navigates his moral code and his ambition to become the world's greatest hunter.",
@@ -362,31 +342,11 @@ namespace FIT_Api_Example.Data
                     Trailer = "https://www.youtube.com/watch?v=I8gFw4-2RBM",
                     StatusID = 1
                 },
+               
+            
                 new Movie
                 {
-                    MovieID = 7,
-                    Title = "Gladiator 2",
-                    ReleaseDate = new DateTime(2024, 11, 22, 0, 0, 0),
-                    Description = "Set 30 years after the original Gladiator, Gladiator 2 follows Lucius Verus, now an adult and the emperor of Rome, who has spent years in isolation after being separated from his mother, Lucilla. The film explores Lucius's return to Rome and his survival through complex political and gladiatorial conflicts. Lucius must navigate the treacherous Roman political landscape, encountering both old allies and new adversaries, including a gladiator rebellion and corrupt emperors.",
-                    Duration = 148,
-                    Poster = ConvertImageToByteArray("wwwroot", "7. Gladiator 2.png"),
-                    Trailer = "https://www.youtube.com/watch?v=Ts0N8swyWFI",
-                    StatusID = 1
-                },
-                new Movie
-                {
-                    MovieID = 8,
-                    Title = "Runt",
-                    ReleaseDate = new DateTime(2024, 9, 12, 0, 0, 0),
-                    Description = " Based on Craig Silvey’s best-selling novel, Runt follows the story of 11-year-old Annie Shearer and her adopted stray dog, Runt, with remarkable abilities. Together, they compete in the Agility Course Championship at the prestigious Krumpets Dog Show in London. Their goal is to save Annie's family's farm from the hardships of drought. Along the way, they face numerous challenges, including villains trying to stop them.",
-                    Duration = 92,
-                    Poster = ConvertImageToByteArray("wwwroot", "8. Runt.png"),
-                    Trailer = "https://www.youtube.com/watch?v=v7i49WaZC40",
-                    StatusID = 1
-                },
-                new Movie
-                {
-                    MovieID = 9,
+                    MovieID = 4,
                     Title = "Karate Kid: Legends",
                     ReleaseDate = new DateTime(2025, 5, 30, 0, 0, 0),
                     Description = "Karate Kid: Legends follows the story of Li Fong, a Chinese teenager who moves to Brooklyn anddiscovers his love for martial arts, blending kung fu and karate. As Li adjusts to his new life, he meetskey figures such as Daniel LaRusso (Ralph Macchio) and Mr. Han (Jackie Chan), who guide him on his martialarts journey. Set after the events of Cobra Kai, the movie will tie together elements from both the KarateKid movies and the popular Cobra Kai series, introducing a new protagonist while celebrating the franchise' legacy.",
@@ -395,20 +355,10 @@ namespace FIT_Api_Example.Data
                     Trailer = null, // No trailer provided
                     StatusID = 2
                 },
+               
                 new Movie
                 {
-                    MovieID = 10,
-                    Title = "Now You See Me 3",
-                    ReleaseDate = new DateTime(2025, 11, 15, 0, 0, 0),
-                    Description = "Now You See Me 3 continues the thrilling journey of the Four Horsemen as they return for more magical heists. This time, Mark Ruffalo’s character, Dylan Rhodes, may step into a more prominent leadership role within \"The Eye,\" a secret society of magicians. The core cast returns, including Jesse Eisenberg, Woody Harrelson, and Isla Fisher, while new stars like Rosamund Pike join the ensemble. The movie promises more of the action, suspense, and mind-bending illusions that made the first two films such hits​.",
-                    Duration = 112,
-                    Poster = ConvertImageToByteArray("wwwroot", "10. Now You See Me 3.jpg"),
-                    Trailer = null, // No trailer provided
-                    StatusID = 2
-                },
-                new Movie
-                {
-                    MovieID = 11,
+                    MovieID = 5,
                     Title = "How to Train Your Dragon",
                     ReleaseDate = new DateTime(2025, 6, 13, 0, 0, 0),
                     Description = "This live-action adaptation of the original How to Train Your Dragon film will follow Hiccup, the son of a Viking chief, who forms a unique bond with Toothless, a dragon. In a world where dragons are feared and fought against, Hiccup and Toothless must navigate their friendship and face challenges together. The film promises a mix of emotional depth and stunning visual effects as it brings the beloved characters to life in a new format.",
@@ -419,7 +369,7 @@ namespace FIT_Api_Example.Data
                 },
                 new Movie
                 {
-                    MovieID = 12,
+                    MovieID = 6,
                     Title = "A Minecraft Movie",
                     ReleaseDate = new DateTime(2025, 4, 4, 0, 0, 0),
                     Description = "In this live-action adaptation, a group of adventurers is transported into the blocky world of Minecraft, where they must join forces to stop the destructive Ender Dragon threatening the Overworld. With the help of iconic Minecraft creatures, including Steve, the characters must navigate the dangers of the game world. The film blends action, humor, and a sense of adventure as humans adjust to their new environment​.",
@@ -428,21 +378,11 @@ namespace FIT_Api_Example.Data
                     Trailer = "https://www.youtube.com/watch?v=wJO_vIDZn-I",
                     StatusID = 2
                 },
-                new Movie
-                {
-                    MovieID = 13,
-                    Title = "Top Gun",
-                    ReleaseDate = new DateTime(1986, 5, 16, 0, 0, 0),
-                    Description = "Pete \"Maverick\" Mitchell, a talented but cocky Navy fighter pilot, enters the prestigious Top Gun training program. As he competes with his peers, including the talented Iceman, Maverick struggles with personal and professional challenges, especially the memory of his father's mysterious death. Maverick's journey of self-discovery and redemption comes to a head when he faces real combat in the skies, ultimately learning the importance of teamwork and humility.",
-                    Duration = 110,
-                    Poster = ConvertImageToByteArray("wwwroot", "13. Top Gun.png"),
-                    Trailer = "https://www.youtube.com/watch?v=ArOMXELHiLw",
-                    StatusID = 3
-                },
+              
 
                 new Movie
                 {
-                    MovieID = 14,
+                    MovieID = 7,
                     Title = "Jaws",
                     ReleaseDate = new DateTime(1975, 6, 20, 0, 0, 0),
                     Description = "Set on the fictional island of Amity, Jaws follows Chief Martin Brody as he investigates a series of mysterious shark attacks that threaten the summer tourist season. With the help of marine biologist Matt Hooper and professional shark hunter Quint, Brody must confront the deadly creature lurking in the waters. As the trio hunts the shark, they face escalating danger, and Brody must confront his own fears to protect the town and his family.",
@@ -453,7 +393,7 @@ namespace FIT_Api_Example.Data
                 },
                 new Movie
                 {
-                    MovieID = 15,
+                    MovieID = 8,
                     Title = "Spirited Away",
                     ReleaseDate = new DateTime(2001, 7, 20, 0, 0, 0),
                     Description = "Spirited Away follows Chihiro, a young girl who, while on her way to her new home, stumbles upon a mysterious, seemingly abandoned theme park. As her parents are transformed into pigs, Chihiro is forced to work at a bathhouse run by spirits and strange creatures. She befriends Haku, a mysterious boy, and with his help, attempts to find a way to rescue her parents and return home. The film explores themes of personal growth, environmentalism, and the importance of memory.",
@@ -464,7 +404,7 @@ namespace FIT_Api_Example.Data
                 },
                 new Movie
                 {
-                    MovieID = 16,
+                    MovieID = 9,
                     Title = "Spider-Man",
                     ReleaseDate = new DateTime(2002, 5, 3, 0, 0, 0),
                     Description = "The film follows Peter Parker, a high school student who gains spider-like abilities after being bitten by a genetically altered spider. As Peter struggles with his newfound powers, he must balance his life as a student and superhero while facing the villainous Green Goblin, whose true identity is tied to Peter’s best friend Harry's father, Norman Osborn. The movie explores themes of responsibility, love, and loss, with Peter learning that with great power comes great responsibility.",
@@ -479,189 +419,105 @@ namespace FIT_Api_Example.Data
 
 
             modelBuilder.Entity<MovieActor>().HasData(
-                   // Moana 2
-                   new MovieActor { MovieActorID = 1, ActorID = 1, MovieID = 1 },  // Auli'i Cravalho
-                   new MovieActor { MovieActorID = 2, ActorID = 2, MovieID = 1 },  // Dwayne Johnson
-               
-                   // Mufasa: The Lion King
-                   new MovieActor { MovieActorID = 3, ActorID = 3, MovieID = 2 },  // Aaron Pierre
-                   new MovieActor { MovieActorID = 4, ActorID = 4, MovieID = 2 },  // Kelvin Harrison Jr.
-                   new MovieActor { MovieActorID = 5, ActorID = 5, MovieID = 2 },  // Beyoncé
-                   new MovieActor { MovieActorID = 6, ActorID = 6, MovieID = 2 },  // Donald Glover
-                   new MovieActor { MovieActorID = 7, ActorID = 7, MovieID = 2 },  // Seth Rogen
-                   new MovieActor { MovieActorID = 8, ActorID = 8, MovieID = 2 },  // Billy Eichner
-                   new MovieActor { MovieActorID = 9, ActorID = 9, MovieID = 2 },  // Anika Noni Rose
-                   new MovieActor { MovieActorID = 10, ActorID = 10, MovieID = 2 }, // Mads Mikkelsen
-               
-                   // Sonic the Hedgehog 3
-                   new MovieActor { MovieActorID = 11, ActorID = 11, MovieID = 3 }, // Keanu Reeves
-                   new MovieActor { MovieActorID = 12, ActorID = 12, MovieID = 3 }, // Jim Carrey
-                   new MovieActor { MovieActorID = 13, ActorID = 13, MovieID = 3 }, // Ben Schwartz
-               
-                   // The Lord of the Rings: The War of the Rohirrim
-                   new MovieActor { MovieActorID = 14, ActorID = 14, MovieID = 4 }, // Brian Cox
-                   new MovieActor { MovieActorID = 15, ActorID = 15, MovieID = 4 }, // Gaia Wise
-                   new MovieActor { MovieActorID = 16, ActorID = 16, MovieID = 4 }, // Luke Pasqualino
-                   new MovieActor { MovieActorID = 17, ActorID = 17, MovieID = 4 }, // Shaun Dooley
-                   new MovieActor { MovieActorID = 18, ActorID = 18, MovieID = 4 }, // Miranda Otto
-               
-                   // Werewolves
-                   new MovieActor { MovieActorID = 19, ActorID = 19, MovieID = 5 }, // Frank Grillo
-                   new MovieActor { MovieActorID = 20, ActorID = 20, MovieID = 5 }, // Katrina Law
-                   new MovieActor { MovieActorID = 21, ActorID = 21, MovieID = 5 }, // Lou Diamond Phillips
-                   new MovieActor { MovieActorID = 22, ActorID = 22, MovieID = 5 }, // Ilfenesh Hadera
-                   new MovieActor { MovieActorID = 23, ActorID = 23, MovieID = 5 }, // Kamdynn Gary
-               
-                   // Kraven the Hunter
-                   new MovieActor { MovieActorID = 24, ActorID = 24, MovieID = 6 }, // Aaron Taylor-Johnson
-                   new MovieActor { MovieActorID = 25, ActorID = 25, MovieID = 6 }, // Ariana DeBose
-                   new MovieActor { MovieActorID = 26, ActorID = 26, MovieID = 6 }, // Fred Hechinger
-                   new MovieActor { MovieActorID = 27, ActorID = 27, MovieID = 6 }, // Christopher Abbott
-                   new MovieActor { MovieActorID = 28, ActorID = 28, MovieID = 6 }, // Alessandro Nivola
-                   new MovieActor { MovieActorID = 29, ActorID = 29, MovieID = 6 }, // Russell Crowe
-               
-                   // Gladiator 2
-                   new MovieActor { MovieActorID = 30, ActorID = 30, MovieID = 7 }, // Paul Mescal
-                   new MovieActor { MovieActorID = 31, ActorID = 31, MovieID = 7 }, // Connie Nielsen
-                   new MovieActor { MovieActorID = 32, ActorID = 32, MovieID = 7 }, // Derek Jacobi
-                   new MovieActor { MovieActorID = 33, ActorID = 33, MovieID = 7 }, // Djimon Hounsou
-                   new MovieActor { MovieActorID = 34, ActorID = 34, MovieID = 7 }, // Joseph Quinn
-                   new MovieActor { MovieActorID = 35, ActorID = 35, MovieID = 7 }, // Denzel Washington
-                   new MovieActor { MovieActorID = 36, ActorID = 36, MovieID = 7 }, // Pedro Pascal
-               
-                   // Continue with other movies...
-               
-                   // Runt
-                   new MovieActor { MovieActorID = 37, ActorID = 37, MovieID = 8 }, // Jai Courtney
-                   new MovieActor { MovieActorID = 38, ActorID = 38, MovieID = 8 }, // Deborah Mailman
-                   new MovieActor { MovieActorID = 39, ActorID = 39, MovieID = 8 }, // Jack Thompson
-                   new MovieActor { MovieActorID = 40, ActorID = 40, MovieID = 8 }, // Matt Day
-                   new MovieActor { MovieActorID = 41, ActorID = 41, MovieID = 8 }, // Geneviève Lemon
-                   new MovieActor { MovieActorID = 42, ActorID = 42, MovieID = 8 }, // Celeste Barber
-                   new MovieActor { MovieActorID = 43, ActorID = 43, MovieID = 8 }, // Lily LeTorre
-               
-                   // Karate Kid: Legends
-                   new MovieActor { MovieActorID = 44, ActorID = 44, MovieID = 9 }, // Ben Wang
-                   new MovieActor { MovieActorID = 45, ActorID = 45, MovieID = 9 }, // Ralph Macchio
-                   new MovieActor { MovieActorID = 46, ActorID = 46, MovieID = 9 }, // Jackie Chan
-                   new MovieActor { MovieActorID = 47, ActorID = 47, MovieID = 9 }, // Joshua Jackson
-                   new MovieActor { MovieActorID = 48, ActorID = 48, MovieID = 9 }, // Ming-Na Wen
-                   new MovieActor { MovieActorID = 49, ActorID = 49, MovieID = 9 }, // Sadie Stanley
-               
-                   // Now You See Me 3
-                   new MovieActor { MovieActorID = 50, ActorID = 50, MovieID = 10 }, // Jesse Eisenberg
-                   new MovieActor { MovieActorID = 51, ActorID = 51, MovieID = 10 }, // Mark Ruffalo
-                   new MovieActor { MovieActorID = 52, ActorID = 52, MovieID = 10 }, // Woody Harrelson
-                   new MovieActor { MovieActorID = 53, ActorID = 53, MovieID = 10 }, // Dave Franco
-                   new MovieActor { MovieActorID = 54, ActorID = 54, MovieID = 10 }, // Isla Fisher
-                   new MovieActor { MovieActorID = 55, ActorID = 55, MovieID = 10 }, // Rosamund Pike
-                   new MovieActor { MovieActorID = 56, ActorID = 56, MovieID = 10 }, // Justice Smith
-                   new MovieActor { MovieActorID = 57, ActorID = 57, MovieID = 10 }, // Ariana Greenblatt
-                   new MovieActor { MovieActorID = 58, ActorID = 58, MovieID = 10 }, // Dominic Sessa
-               
-                   // How to Train Your Dragon
-                   new MovieActor { MovieActorID = 59, ActorID = 59, MovieID = 11 }, // Mason Thames
-                   new MovieActor { MovieActorID = 60, ActorID = 60, MovieID = 11 }, // Nico Parker
-                   new MovieActor { MovieActorID = 61, ActorID = 61, MovieID = 11 }, // Gerard Butler
-                   new MovieActor { MovieActorID = 62, ActorID = 62, MovieID = 11 }, // Nick Frost
-                   new MovieActor { MovieActorID = 63, ActorID = 63, MovieID = 11 }, // Julian Dennison
-                   new MovieActor { MovieActorID = 64, ActorID = 64, MovieID = 11 }, // Gabriel Howell
-                   new MovieActor { MovieActorID = 65, ActorID = 65, MovieID = 11 }, // Bronwyn James
-               
-                   // A Minecraft Movie
-                   new MovieActor { MovieActorID = 66, ActorID = 66, MovieID = 12 }, // Jason Momoa
-                   new MovieActor { MovieActorID = 67, ActorID = 67, MovieID = 12 }, // Jack Black
-                   new MovieActor { MovieActorID = 68, ActorID = 68, MovieID = 12 }, // Danielle Brooks
-                   new MovieActor { MovieActorID = 69, ActorID = 69, MovieID = 12 }, // Emma Myers
-                   new MovieActor { MovieActorID = 70, ActorID = 70, MovieID = 12 }, // Matt Berry
-               
-                   // Top Gun
-                   new MovieActor { MovieActorID = 71, ActorID = 71, MovieID = 13 }, // Tom Cruise
-                   new MovieActor { MovieActorID = 72, ActorID = 72, MovieID = 13 }, // Kelly McGillis
-                   new MovieActor { MovieActorID = 73, ActorID = 73, MovieID = 13 }, // Val Kilmer
-                   new MovieActor { MovieActorID = 74, ActorID = 74, MovieID = 13 }, // Anthony Edwards
-                   new MovieActor { MovieActorID = 75, ActorID = 75, MovieID = 13 }, // Tom Skerritt
-                   new MovieActor { MovieActorID = 76, ActorID = 76, MovieID = 13 }, // Michael Ironside
-                   new MovieActor { MovieActorID = 77, ActorID = 77, MovieID = 13 }, // Meg Ryan
-               
-                   // Jaws
-                   new MovieActor { MovieActorID = 78, ActorID = 78, MovieID = 14 }, // Roy Scheider
-                   new MovieActor { MovieActorID = 79, ActorID = 79, MovieID = 14 }, // Robert Shaw
-                   new MovieActor { MovieActorID = 80, ActorID = 80, MovieID = 14 }, // Richard Dreyfuss
-                   new MovieActor { MovieActorID = 81, ActorID = 81, MovieID = 14 }, // Lorraine Gary
-                   new MovieActor { MovieActorID = 82, ActorID = 82, MovieID = 14 }, // Murray Hamilton
-               
-                   // Spirited Away
-                   new MovieActor { MovieActorID = 83, ActorID = 83, MovieID = 15 }, // Rumi Hiiragi
-                   new MovieActor { MovieActorID = 84, ActorID = 84, MovieID = 15 }, // Miyu Irino
-                   new MovieActor { MovieActorID = 85, ActorID = 85, MovieID = 15 }, // Bunta Sugawara
-                   new MovieActor { MovieActorID = 86, ActorID = 86, MovieID = 15 }, // Mari Natsuki
-                   new MovieActor { MovieActorID = 87, ActorID = 87, MovieID = 15 }, // Takehiko Ono
-               
-                   // Spider-Man
-                   new MovieActor { MovieActorID = 88, ActorID = 88, MovieID = 16 }, // Tobey Maguire
-                   new MovieActor { MovieActorID = 89, ActorID = 89, MovieID = 16 }, // Willem Dafoe
-                   new MovieActor { MovieActorID = 90, ActorID = 90, MovieID = 16 }, // Kirsten Dunst
-                   new MovieActor { MovieActorID = 91, ActorID = 91, MovieID = 16 }, // James Franco
-                   new MovieActor { MovieActorID = 92, ActorID = 92, MovieID = 16 }, // Cliff Robertson
-                   new MovieActor { MovieActorID = 93, ActorID = 93, MovieID = 16 } // Rosemary Harris
-               
-            );
+            // Moana 2
+            new MovieActor { MovieActorID = 1, ActorID = 1, MovieID = 1 },  // Auli'i Cravalho
+            new MovieActor { MovieActorID = 2, ActorID = 2, MovieID = 1 },  // Dwayne Johnson
 
-           
+            // Sonic the Hedgehog 3
+            new MovieActor { MovieActorID = 3, ActorID = 11, MovieID = 2 }, // Keanu Reeves
+            new MovieActor { MovieActorID = 4, ActorID = 12, MovieID = 2 }, // Jim Carrey
+            new MovieActor { MovieActorID = 5, ActorID = 13, MovieID = 2 }, // Ben Schwartz
+
+            // Kraven the Hunter
+            new MovieActor { MovieActorID = 6, ActorID = 24, MovieID = 3 }, // Aaron Taylor-Johnson
+            new MovieActor { MovieActorID = 7, ActorID = 25, MovieID = 3 }, // Ariana DeBose
+            new MovieActor { MovieActorID = 8, ActorID = 26, MovieID = 3 }, // Fred Hechinger
+            new MovieActor { MovieActorID = 9, ActorID = 27, MovieID = 3 }, // Christopher Abbott
+            new MovieActor { MovieActorID = 10, ActorID = 28, MovieID = 3 }, // Alessandro Nivola
+            new MovieActor { MovieActorID = 11, ActorID = 29, MovieID = 3 }, // Russell Crowe
+
+            // Karate Kid: Legends
+            new MovieActor { MovieActorID = 12, ActorID = 44, MovieID = 4 }, // Ben Wang
+            new MovieActor { MovieActorID = 13, ActorID = 45, MovieID = 4 }, // Ralph Macchio
+            new MovieActor { MovieActorID = 14, ActorID = 46, MovieID = 4 }, // Jackie Chan
+            new MovieActor { MovieActorID = 15, ActorID = 47, MovieID = 4 }, // Joshua Jackson
+            new MovieActor { MovieActorID = 16, ActorID = 48, MovieID = 4 }, // Ming-Na Wen
+            new MovieActor { MovieActorID = 17, ActorID = 49, MovieID = 4 }, // Sadie Stanley
+
+            // How to Train Your Dragon
+            new MovieActor { MovieActorID = 18, ActorID = 59, MovieID = 5 }, // Mason Thames
+            new MovieActor { MovieActorID = 19, ActorID = 60, MovieID = 5 }, // Nico Parker
+            new MovieActor { MovieActorID = 20, ActorID = 61, MovieID = 5 }, // Gerard Butler
+            new MovieActor { MovieActorID = 21, ActorID = 62, MovieID = 5 }, // Nick Frost
+            new MovieActor { MovieActorID = 22, ActorID = 63, MovieID = 5 }, // Julian Dennison
+            new MovieActor { MovieActorID = 23, ActorID = 64, MovieID = 5 }, // Gabriel Howell
+            new MovieActor { MovieActorID = 24, ActorID = 65, MovieID = 5 }, // Bronwyn James
+
+            // A Minecraft Movie
+            new MovieActor { MovieActorID = 25, ActorID = 66, MovieID = 6 }, // Jason Momoa
+            new MovieActor { MovieActorID = 26, ActorID = 67, MovieID = 6 }, // Jack Black
+            new MovieActor { MovieActorID = 27, ActorID = 68, MovieID = 6 }, // Danielle Brooks
+            new MovieActor { MovieActorID = 28, ActorID = 69, MovieID = 6 }, // Emma Myers
+            new MovieActor { MovieActorID = 29, ActorID = 70, MovieID = 6 }, // Matt Berry
+
+            // Jaws
+            new MovieActor { MovieActorID = 30, ActorID = 78, MovieID = 7 }, // Roy Scheider
+            new MovieActor { MovieActorID = 31, ActorID = 79, MovieID = 7 }, // Robert Shaw
+            new MovieActor { MovieActorID = 32, ActorID = 80, MovieID = 7 }, // Richard Dreyfuss
+            new MovieActor { MovieActorID = 33, ActorID = 81, MovieID = 7 }, // Lorraine Gary
+            new MovieActor { MovieActorID = 34, ActorID = 82, MovieID = 7 }, // Murray Hamilton
+
+            // Spirited Away
+            new MovieActor { MovieActorID = 35, ActorID = 83, MovieID = 8 }, // Rumi Hiiragi
+            new MovieActor { MovieActorID = 36, ActorID = 84, MovieID = 8 }, // Miyu Irino
+            new MovieActor { MovieActorID = 37, ActorID = 85, MovieID = 8 }, // Bunta Sugawara
+            new MovieActor { MovieActorID = 38, ActorID = 86, MovieID = 8 }, // Mari Natsuki
+            new MovieActor { MovieActorID = 39, ActorID = 87, MovieID = 8 }, // Takehiko Ono
+
+            // Spider-Man
+            new MovieActor { MovieActorID = 40, ActorID = 88, MovieID = 9 }, // Tobey Maguire
+            new MovieActor { MovieActorID = 41, ActorID = 89, MovieID = 9 }, // Willem Dafoe
+            new MovieActor { MovieActorID = 42, ActorID = 90, MovieID = 9 }, // Kirsten Dunst
+            new MovieActor { MovieActorID = 43, ActorID = 91, MovieID = 9 }, // James Franco
+            new MovieActor { MovieActorID = 44, ActorID = 92, MovieID = 9 }, // Cliff Robertson
+            new MovieActor { MovieActorID = 45, ActorID = 93, MovieID = 9 }  // Rosemary Harris
+        );
+
+
             modelBuilder.Entity<MovieProductionHouse>().HasData(
-               new MovieProductionHouse {MovieProductionHouseID = 1, MovieID = 1, ProductionHouseID = 1 }, // Moana 2: Walt Disney Studios
-               new MovieProductionHouse {MovieProductionHouseID = 2, MovieID = 2, ProductionHouseID = 1 }, // Mufasa: The Lion King: Walt Disney Studios                             
-               new MovieProductionHouse {MovieProductionHouseID = 3, MovieID = 3, ProductionHouseID = 2 }, // Sonic the Hedgehog 3: Paramount Pictures                               
-               new MovieProductionHouse {MovieProductionHouseID = 4, MovieID = 3, ProductionHouseID = 3 }, // Sonic the Hedgehog 3: Blur Studio
-               new MovieProductionHouse {MovieProductionHouseID = 5, MovieID = 3, ProductionHouseID = 4 }, // Sonic the Hedgehog 3: Sega Sammy Holdings                              
-               new MovieProductionHouse {MovieProductionHouseID = 6, MovieID = 3, ProductionHouseID = 5 }, // Sonic the Hedgehog 3: Marza Animation Planet                  
-               new MovieProductionHouse {MovieProductionHouseID = 7, MovieID = 4, ProductionHouseID = 6 }, // The Lord of the Rings: The War of the Rohirrim: New LineCinema         
-               new MovieProductionHouse {MovieProductionHouseID = 8, MovieID = 4, ProductionHouseID = 7 }, // The Lord of the Rings: The War of the Rohirrim: Warner Bros.   
-               new MovieProductionHouse {MovieProductionHouseID = 9, MovieID = 5, ProductionHouseID = 8 }, // Werewolves: Briarcliff Entertainment
-               new MovieProductionHouse {MovieProductionHouseID = 10, MovieID = 6, ProductionHouseID = 9 }, // Kraven the Hunter: Sony Pictures
-               new MovieProductionHouse {MovieProductionHouseID = 11, MovieID = 6, ProductionHouseID = 10 }, // Kraven the Hunter: Marvel Entertainment                       
-               new MovieProductionHouse {MovieProductionHouseID = 12, MovieID = 7, ProductionHouseID = 11 }, // Gladiator 2: Universal Pictures
-               new MovieProductionHouse {MovieProductionHouseID = 13, MovieID = 7, ProductionHouseID = 2 }, // Gladiator 2: Paramount Pictures
-               new MovieProductionHouse {MovieProductionHouseID = 14, MovieID = 8, ProductionHouseID = 12 }, // Runt: StudioCanal
-               new MovieProductionHouse {MovieProductionHouseID = 15, MovieID = 8, ProductionHouseID = 13 }, // Runt: Screen Australia
-               new MovieProductionHouse {MovieProductionHouseID = 16, MovieID = 8, ProductionHouseID = 14 }, // Runt: ScreenWest
-               new MovieProductionHouse {MovieProductionHouseID = 17, MovieID = 8, ProductionHouseID = 15 }, // Runt: Lotterywest
-               new MovieProductionHouse {MovieProductionHouseID = 18, MovieID = 9, ProductionHouseID = 9 }, // Karate Kid: Legends: Sony Pictures
-               new MovieProductionHouse {MovieProductionHouseID = 19, MovieID = 10, ProductionHouseID = 16 }, // Now You See Me 3: Lionsgate
-               new MovieProductionHouse {MovieProductionHouseID = 20, MovieID = 11, ProductionHouseID = 11 }, // How to Train Your Dragon: Universal Pictures                        
-               new MovieProductionHouse {MovieProductionHouseID = 21, MovieID = 12, ProductionHouseID = 7 }, // A Minecraft Movie: Warner Bros.
-               new MovieProductionHouse {MovieProductionHouseID = 22, MovieID = 13, ProductionHouseID = 2 }, // Top Gun: Paramount Pictures
-               new MovieProductionHouse {MovieProductionHouseID = 23, MovieID = 14, ProductionHouseID = 11 }, // Jaws: Universal Pictures
-               new MovieProductionHouse {MovieProductionHouseID = 24, MovieID = 15, ProductionHouseID = 17 }, // Spirited Away: Studio Ghibli
-               new MovieProductionHouse {MovieProductionHouseID = 25, MovieID = 15, ProductionHouseID = 18 }, // Spirited Away: Tokuma Shoten
-               new MovieProductionHouse {MovieProductionHouseID = 26, MovieID = 15, ProductionHouseID = 19 }, // Spirited Away: Nippon Television Network                            
-               new MovieProductionHouse {MovieProductionHouseID = 27, MovieID = 15, ProductionHouseID = 20 }, // Spirited Away: Dentsu
-               new MovieProductionHouse {MovieProductionHouseID = 28, MovieID = 16, ProductionHouseID = 9 }, // Spider-Man: Sony Pictures
-               new MovieProductionHouse {MovieProductionHouseID = 29, MovieID = 16, ProductionHouseID = 21 }, // Spider-Man: Columbia Pictures
-               new MovieProductionHouse {MovieProductionHouseID = 30, MovieID = 16, ProductionHouseID = 10 }  // Spider-Man: Marvel Entertainment
-            );
+           new MovieProductionHouse { MovieProductionHouseID = 1, MovieID = 1, ProductionHouseID = 1 },  // Moana 2: Walt Disney Studios
+           new MovieProductionHouse { MovieProductionHouseID = 2, MovieID = 2, ProductionHouseID = 2 },  // Sonic the Hedgehog 3: Paramount Pictures
+           new MovieProductionHouse { MovieProductionHouseID = 3, MovieID = 2, ProductionHouseID = 3 },  // Sonic the Hedgehog 3: Blur Studio
+           new MovieProductionHouse { MovieProductionHouseID = 4, MovieID = 2, ProductionHouseID = 4 },  // Sonic the Hedgehog 3: Sega Sammy Holdings
+           new MovieProductionHouse { MovieProductionHouseID = 5, MovieID = 2, ProductionHouseID = 5 },  // Sonic the Hedgehog 3: Marza Animation Planet
+           new MovieProductionHouse { MovieProductionHouseID = 6, MovieID = 3, ProductionHouseID = 9 },  // Kraven the Hunter: Sony Pictures
+           new MovieProductionHouse { MovieProductionHouseID = 7, MovieID = 3, ProductionHouseID = 10 }, // Kraven the Hunter: Marvel Entertainment
+           new MovieProductionHouse { MovieProductionHouseID = 8, MovieID = 4, ProductionHouseID = 9 },  // Karate Kid: Legends: Sony Pictures
+           new MovieProductionHouse { MovieProductionHouseID = 9, MovieID = 5, ProductionHouseID = 11 }, // How to Train Your Dragon: Universal Pictures
+           new MovieProductionHouse { MovieProductionHouseID = 10, MovieID = 6, ProductionHouseID = 7 }, // A Minecraft Movie: Warner Bros.
+           new MovieProductionHouse { MovieProductionHouseID = 11, MovieID = 7, ProductionHouseID = 11 }, // Jaws: Universal Pictures
+           new MovieProductionHouse { MovieProductionHouseID = 12, MovieID = 8, ProductionHouseID = 17 }, // Spirited Away: Studio Ghibli
+           new MovieProductionHouse { MovieProductionHouseID = 13, MovieID = 8, ProductionHouseID = 18 }, // Spirited Away: Tokuma Shoten
+           new MovieProductionHouse { MovieProductionHouseID = 14, MovieID = 8, ProductionHouseID = 19 }, // Spirited Away: Nippon Television Network
+           new MovieProductionHouse { MovieProductionHouseID = 15, MovieID = 8, ProductionHouseID = 20 }, // Spirited Away: Dentsu
+           new MovieProductionHouse { MovieProductionHouseID = 16, MovieID = 9, ProductionHouseID = 9 },  // Spider-Man: Sony Pictures
+           new MovieProductionHouse { MovieProductionHouseID = 17, MovieID = 9, ProductionHouseID = 21 }, // Spider-Man: Columbia Pictures
+           new MovieProductionHouse { MovieProductionHouseID = 18, MovieID = 9, ProductionHouseID = 10 }  // Spider-Man: Marvel Entertainment
+       );
 
             modelBuilder.Entity<MovieDirector>().HasData(
-               new MovieDirector {MovieDirectorID = 1, DirectorID = 1, MovieID = 14 }, // Steven Spielberg -> Jaws
-               new MovieDirector {MovieDirectorID = 2, DirectorID = 2, MovieID = 1 },  // David Derrick Jr. -> Moana 2
-               new MovieDirector {MovieDirectorID = 3, DirectorID = 3, MovieID = 1 },  // Jason Hand -> Moana 2
-               new MovieDirector {MovieDirectorID = 4, DirectorID = 4, MovieID = 1 },  // Dana Ledoux Miller -> Moana 2
-               new MovieDirector {MovieDirectorID = 5, DirectorID = 5, MovieID = 2 },  // Barry Jenkins -> Mufasa: The Lion King
-               new MovieDirector {MovieDirectorID = 6, DirectorID = 6, MovieID = 3 },  // Jeff Fowler -> Sonic the Hedgehog 3
-               new MovieDirector {MovieDirectorID = 7, DirectorID = 7, MovieID = 4 },  // Kenji Kamiyama -> The War of the Rohirrim
-               new MovieDirector {MovieDirectorID = 8, DirectorID = 8, MovieID = 5 },  // Steven C. Miller -> Werewolves
-               new MovieDirector {MovieDirectorID = 9, DirectorID = 9, MovieID = 6 },  // J.C. Chandor -> Kraven the Hunter
-               new MovieDirector {MovieDirectorID = 10, DirectorID = 10, MovieID = 7 }, // Ridley Scott -> Gladiator 2
-               new MovieDirector {MovieDirectorID = 11, DirectorID = 11, MovieID = 8 }, // John Sheedy -> Runt
-               new MovieDirector {MovieDirectorID = 12, DirectorID = 12, MovieID = 9 }, // Jonathan Entwistle -> Karate Kid: Legends
-               new MovieDirector {MovieDirectorID = 13, DirectorID = 13, MovieID = 10 }, // Ruben Fleischer -> Now You See Me 3
-               new MovieDirector {MovieDirectorID = 14, DirectorID = 14, MovieID = 11 }, // Dean DeBlois -> How to Train Your Dragon
-               new MovieDirector {MovieDirectorID = 15, DirectorID = 15, MovieID = 12 }, // Jared Hess -> A Minecraft Movie
-               new MovieDirector {MovieDirectorID = 16, DirectorID = 16, MovieID = 13 }, // Tony Scott -> Top Gun
-               new MovieDirector {MovieDirectorID = 17, DirectorID = 17, MovieID = 15 }, // Hayao Miyazaki -> Spirited Away
-               new MovieDirector {MovieDirectorID = 18, DirectorID = 18, MovieID = 16 }  // Sam Raimi -> Spider-Man
-            );
+      new MovieDirector { MovieDirectorID = 1, DirectorID = 1, MovieID = 7 },  // Steven Spielberg -> Jaws
+      new MovieDirector { MovieDirectorID = 2, DirectorID = 2, MovieID = 1 },  // David Derrick Jr. -> Moana 2
+      new MovieDirector { MovieDirectorID = 3, DirectorID = 3, MovieID = 1 },  // Jason Hand -> Moana 2
+      new MovieDirector { MovieDirectorID = 4, DirectorID = 4, MovieID = 1 },  // Dana Ledoux Miller -> Moana 2
+      new MovieDirector { MovieDirectorID = 5, DirectorID = 6, MovieID = 2 },  // Jeff Fowler -> Sonic the Hedgehog 3
+      new MovieDirector { MovieDirectorID = 6, DirectorID = 9, MovieID = 3 },  // J.C. Chandor -> Kraven the Hunter
+      new MovieDirector { MovieDirectorID = 7, DirectorID = 12, MovieID = 4 }, // Jonathan Entwistle -> Karate Kid
+      new MovieDirector { MovieDirectorID = 8, DirectorID = 14, MovieID = 5 }, // Dean DeBlois -> How to Train Your Dragon
+      new MovieDirector { MovieDirectorID = 9, DirectorID = 15, MovieID = 6 }, // Jared Hess -> A Minecraft Movie
+      new MovieDirector { MovieDirectorID = 10, DirectorID = 17, MovieID = 8 }, // Hayao Miyazaki -> Spirited Away
+      new MovieDirector { MovieDirectorID = 11, DirectorID = 18, MovieID = 9 }  // Sam Raimi -> Spider-Man
+  );
 
         }
 
