@@ -8,7 +8,8 @@ namespace FIT_Api_Example.Data.Models
         [Key]
         public int ProjectionID { get; set; }
         public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+
+        public double Price { get; set; }
         public int MovieID { get; set; }
         [ForeignKey(nameof(MovieID))]
         public Movie Movie { get; set; }

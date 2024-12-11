@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FIT_Api_Example.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]/[action]")]
     public class ProductionHouseController : ControllerBase
     {
         private readonly ApplicationDbContext _dbContext;

@@ -18,6 +18,7 @@ namespace FIT_Api_Example.Data.Models
         [ForeignKey(nameof(ProjectionID))]
         public Projection Projection { get; set; }
         public DateTime OrderDate { get; set; }
+        public bool Paid { get; set; }
 
 
     }

@@ -15,6 +15,6 @@ namespace FIT_Api_Example.Data.Models
         public Menu Menu { get; set; }
         public int Quantity { get; set; }
         public DateTime OrderDate { get; set; }
-        public string Status { get; set; }
+        public bool Paid { get; set; }
     }
 }

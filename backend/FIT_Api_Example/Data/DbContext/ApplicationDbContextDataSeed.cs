@@ -485,39 +485,467 @@ namespace FIT_Api_Example.Data
 
 
             modelBuilder.Entity<MovieProductionHouse>().HasData(
-           new MovieProductionHouse { MovieProductionHouseID = 1, MovieID = 1, ProductionHouseID = 1 },  // Moana 2: Walt Disney Studios
-           new MovieProductionHouse { MovieProductionHouseID = 2, MovieID = 2, ProductionHouseID = 2 },  // Sonic the Hedgehog 3: Paramount Pictures
-           new MovieProductionHouse { MovieProductionHouseID = 3, MovieID = 2, ProductionHouseID = 3 },  // Sonic the Hedgehog 3: Blur Studio
-           new MovieProductionHouse { MovieProductionHouseID = 4, MovieID = 2, ProductionHouseID = 4 },  // Sonic the Hedgehog 3: Sega Sammy Holdings
-           new MovieProductionHouse { MovieProductionHouseID = 5, MovieID = 2, ProductionHouseID = 5 },  // Sonic the Hedgehog 3: Marza Animation Planet
-           new MovieProductionHouse { MovieProductionHouseID = 6, MovieID = 3, ProductionHouseID = 9 },  // Kraven the Hunter: Sony Pictures
-           new MovieProductionHouse { MovieProductionHouseID = 7, MovieID = 3, ProductionHouseID = 10 }, // Kraven the Hunter: Marvel Entertainment
-           new MovieProductionHouse { MovieProductionHouseID = 8, MovieID = 4, ProductionHouseID = 9 },  // Karate Kid: Legends: Sony Pictures
-           new MovieProductionHouse { MovieProductionHouseID = 9, MovieID = 5, ProductionHouseID = 11 }, // How to Train Your Dragon: Universal Pictures
-           new MovieProductionHouse { MovieProductionHouseID = 10, MovieID = 6, ProductionHouseID = 7 }, // A Minecraft Movie: Warner Bros.
-           new MovieProductionHouse { MovieProductionHouseID = 11, MovieID = 7, ProductionHouseID = 11 }, // Jaws: Universal Pictures
-           new MovieProductionHouse { MovieProductionHouseID = 12, MovieID = 8, ProductionHouseID = 17 }, // Spirited Away: Studio Ghibli
-           new MovieProductionHouse { MovieProductionHouseID = 13, MovieID = 8, ProductionHouseID = 18 }, // Spirited Away: Tokuma Shoten
-           new MovieProductionHouse { MovieProductionHouseID = 14, MovieID = 8, ProductionHouseID = 19 }, // Spirited Away: Nippon Television Network
-           new MovieProductionHouse { MovieProductionHouseID = 15, MovieID = 8, ProductionHouseID = 20 }, // Spirited Away: Dentsu
-           new MovieProductionHouse { MovieProductionHouseID = 16, MovieID = 9, ProductionHouseID = 9 },  // Spider-Man: Sony Pictures
-           new MovieProductionHouse { MovieProductionHouseID = 17, MovieID = 9, ProductionHouseID = 21 }, // Spider-Man: Columbia Pictures
-           new MovieProductionHouse { MovieProductionHouseID = 18, MovieID = 9, ProductionHouseID = 10 }  // Spider-Man: Marvel Entertainment
-       );
+              new MovieProductionHouse { MovieProductionHouseID = 1, MovieID = 1, ProductionHouseID = 1 },  // Moana 2: Walt Disney Studios
+              new MovieProductionHouse { MovieProductionHouseID = 2, MovieID = 2, ProductionHouseID = 2 },  // Sonic the Hedgehog 3: Paramount Pictures
+              new MovieProductionHouse { MovieProductionHouseID = 3, MovieID = 2, ProductionHouseID = 3 },  // Sonic the Hedgehog 3: Blur Studio
+              new MovieProductionHouse { MovieProductionHouseID = 4, MovieID = 2, ProductionHouseID = 4 },  // Sonic the Hedgehog 3: Sega Sammy Holdings
+              new MovieProductionHouse { MovieProductionHouseID = 5, MovieID = 2, ProductionHouseID = 5 },  // Sonic the Hedgehog 3: Marza Animation Planet
+              new MovieProductionHouse { MovieProductionHouseID = 6, MovieID = 3, ProductionHouseID = 9 },  // Kraven the Hunter: Sony Pictures
+              new MovieProductionHouse { MovieProductionHouseID = 7, MovieID = 3, ProductionHouseID = 10 }, // Kraven the Hunter: Marvel Entertainment
+              new MovieProductionHouse { MovieProductionHouseID = 8, MovieID = 4, ProductionHouseID = 9 },  // Karate Kid: Legends: Sony Pictures
+              new MovieProductionHouse { MovieProductionHouseID = 9, MovieID = 5, ProductionHouseID = 11 }, // How to Train Your Dragon: Universal Pictures
+              new MovieProductionHouse { MovieProductionHouseID = 10, MovieID = 6, ProductionHouseID = 7 }, // A Minecraft Movie: Warner Bros.
+              new MovieProductionHouse { MovieProductionHouseID = 11, MovieID = 7, ProductionHouseID = 11 }, // Jaws: Universal Pictures
+              new MovieProductionHouse { MovieProductionHouseID = 12, MovieID = 8, ProductionHouseID = 17 }, // Spirited Away: Studio Ghibli
+              new MovieProductionHouse { MovieProductionHouseID = 13, MovieID = 8, ProductionHouseID = 18 }, // Spirited Away: Tokuma Shoten
+              new MovieProductionHouse { MovieProductionHouseID = 14, MovieID = 8, ProductionHouseID = 19 }, // Spirited Away: Nippon Television Network
+              new MovieProductionHouse { MovieProductionHouseID = 15, MovieID = 8, ProductionHouseID = 20 }, // Spirited Away: Dentsu
+              new MovieProductionHouse { MovieProductionHouseID = 16, MovieID = 9, ProductionHouseID = 9 },  // Spider-Man: Sony Pictures
+              new MovieProductionHouse { MovieProductionHouseID = 17, MovieID = 9, ProductionHouseID = 21 }, // Spider-Man: Columbia Pictures
+              new MovieProductionHouse { MovieProductionHouseID = 18, MovieID = 9, ProductionHouseID = 10 }  // Spider-Man: Marvel Entertainment
+            );
 
             modelBuilder.Entity<MovieDirector>().HasData(
-      new MovieDirector { MovieDirectorID = 1, DirectorID = 1, MovieID = 7 },  // Steven Spielberg -> Jaws
-      new MovieDirector { MovieDirectorID = 2, DirectorID = 2, MovieID = 1 },  // David Derrick Jr. -> Moana 2
-      new MovieDirector { MovieDirectorID = 3, DirectorID = 3, MovieID = 1 },  // Jason Hand -> Moana 2
-      new MovieDirector { MovieDirectorID = 4, DirectorID = 4, MovieID = 1 },  // Dana Ledoux Miller -> Moana 2
-      new MovieDirector { MovieDirectorID = 5, DirectorID = 6, MovieID = 2 },  // Jeff Fowler -> Sonic the Hedgehog 3
-      new MovieDirector { MovieDirectorID = 6, DirectorID = 9, MovieID = 3 },  // J.C. Chandor -> Kraven the Hunter
-      new MovieDirector { MovieDirectorID = 7, DirectorID = 12, MovieID = 4 }, // Jonathan Entwistle -> Karate Kid
-      new MovieDirector { MovieDirectorID = 8, DirectorID = 14, MovieID = 5 }, // Dean DeBlois -> How to Train Your Dragon
-      new MovieDirector { MovieDirectorID = 9, DirectorID = 15, MovieID = 6 }, // Jared Hess -> A Minecraft Movie
-      new MovieDirector { MovieDirectorID = 10, DirectorID = 17, MovieID = 8 }, // Hayao Miyazaki -> Spirited Away
-      new MovieDirector { MovieDirectorID = 11, DirectorID = 18, MovieID = 9 }  // Sam Raimi -> Spider-Man
-  );
+              new MovieDirector { MovieDirectorID = 1, DirectorID = 1, MovieID = 7 },  // Steven Spielberg -> Jaws
+              new MovieDirector { MovieDirectorID = 2, DirectorID = 2, MovieID = 1 },  // David Derrick Jr. -> Moana 2
+              new MovieDirector { MovieDirectorID = 3, DirectorID = 3, MovieID = 1 },  // Jason Hand -> Moana 2
+              new MovieDirector { MovieDirectorID = 4, DirectorID = 4, MovieID = 1 },  // Dana Ledoux Miller -> Moana 2
+              new MovieDirector { MovieDirectorID = 5, DirectorID = 6, MovieID = 2 },  // Jeff Fowler -> Sonic the Hedgehog 3
+              new MovieDirector { MovieDirectorID = 6, DirectorID = 9, MovieID = 3 },  // J.C. Chandor -> Kraven the Hunter
+              new MovieDirector { MovieDirectorID = 7, DirectorID = 12, MovieID = 4 }, // Jonathan Entwistle -> Karate Kid
+              new MovieDirector { MovieDirectorID = 8, DirectorID = 14, MovieID = 5 }, // Dean DeBlois -> How to Train Your Dragon
+              new MovieDirector { MovieDirectorID = 9, DirectorID = 15, MovieID = 6 }, // Jared Hess -> A Minecraft Movie
+              new MovieDirector { MovieDirectorID = 10, DirectorID = 17, MovieID = 8 }, // Hayao Miyazaki -> Spirited Away
+              new MovieDirector { MovieDirectorID = 11, DirectorID = 18, MovieID = 9 }  // Sam Raimi -> Spider-Mand
+            );
+
+            modelBuilder.Entity<SeatType>().HasData(
+                new SeatType { SeatTypeID = 1, Name = "Regular" },
+                new SeatType { SeatTypeID = 2, Name = "Love" },
+                new SeatType { SeatTypeID = 3, Name = "Wheelchair" }
+            );
+
+            modelBuilder.Entity<CinemaHall>().HasData(
+                new CinemaHall { CinemaHallID = 1,Capacity = 60, Name = "Hall 1" },
+                new CinemaHall { CinemaHallID = 2,Capacity = 60, Name = "Hall 2" },
+                new CinemaHall { CinemaHallID = 3,Capacity = 60, Name = "Hall 3" }
+            );
+            modelBuilder.Entity<Seat>().HasData(
+                new Seat { SeatID = 1, CinemaHallID = 1, SeatNumber = "A1", SeatTypeID = 1 },
+                new Seat { SeatID = 2, CinemaHallID = 1, SeatNumber = "A2", SeatTypeID = 1 },
+                new Seat { SeatID = 3, CinemaHallID = 1, SeatNumber = "A3", SeatTypeID = 1 },
+                new Seat { SeatID = 4, CinemaHallID = 1, SeatNumber = "A4", SeatTypeID = 1 },
+                new Seat { SeatID = 5, CinemaHallID = 1, SeatNumber = "A5", SeatTypeID = 1 },
+                new Seat { SeatID = 6, CinemaHallID = 1, SeatNumber = "A6", SeatTypeID = 1 },
+                new Seat { SeatID = 7, CinemaHallID = 1, SeatNumber = "A7", SeatTypeID = 1 },
+                new Seat { SeatID = 8, CinemaHallID = 1, SeatNumber = "A8", SeatTypeID = 1 },
+                new Seat { SeatID = 9, CinemaHallID = 1, SeatNumber = "A9", SeatTypeID = 1 },
+                new Seat { SeatID = 10,CinemaHallID = 1, SeatNumber = "A10", SeatTypeID = 1 },
+
+                new Seat { SeatID = 11,CinemaHallID = 1, SeatNumber = "W1", SeatTypeID = 3 },
+                new Seat { SeatID = 12,CinemaHallID = 1, SeatNumber = "W2", SeatTypeID = 3 },
+                new Seat { SeatID = 13,CinemaHallID = 1, SeatNumber = "B3", SeatTypeID = 1 },
+                new Seat { SeatID = 14,CinemaHallID = 1, SeatNumber = "B4", SeatTypeID = 1 },
+                new Seat { SeatID = 15,CinemaHallID = 1, SeatNumber = "B5", SeatTypeID = 1 },
+                new Seat { SeatID = 16,CinemaHallID = 1, SeatNumber = "B6", SeatTypeID = 1 },
+                new Seat { SeatID = 17,CinemaHallID = 1, SeatNumber = "B7", SeatTypeID = 1 },
+                new Seat { SeatID = 18,CinemaHallID = 1, SeatNumber = "B8", SeatTypeID = 1 },
+                new Seat { SeatID = 19,CinemaHallID = 1, SeatNumber = "B9", SeatTypeID = 1 },
+                new Seat { SeatID = 20,CinemaHallID = 1, SeatNumber = "B10", SeatTypeID = 1 },
+
+                new Seat { SeatID = 21,CinemaHallID = 1, SeatNumber = "C1", SeatTypeID = 1 },
+                new Seat { SeatID = 22,CinemaHallID = 1, SeatNumber = "C2", SeatTypeID = 1 },
+                new Seat { SeatID = 23,CinemaHallID = 1, SeatNumber = "C3", SeatTypeID = 1 },
+                new Seat { SeatID = 24,CinemaHallID = 1, SeatNumber = "L1", SeatTypeID = 2 },
+                new Seat { SeatID = 25,CinemaHallID = 1, SeatNumber = "L2", SeatTypeID = 2 },
+                new Seat { SeatID = 26,CinemaHallID = 1, SeatNumber = "C6", SeatTypeID = 2 },
+                new Seat { SeatID = 27,CinemaHallID = 1, SeatNumber = "C7", SeatTypeID = 2 },
+                new Seat { SeatID = 28,CinemaHallID = 1, SeatNumber = "C8", SeatTypeID = 2 },
+                new Seat { SeatID = 29,CinemaHallID = 1, SeatNumber = "C9", SeatTypeID = 2 },
+                new Seat { SeatID = 30,CinemaHallID = 1, SeatNumber = "C10", SeatTypeID = 2 },
+
+
+                new Seat { SeatID = 31,CinemaHallID = 1, SeatNumber = "D1", SeatTypeID = 1 },
+                new Seat { SeatID = 32,CinemaHallID = 1, SeatNumber = "D2", SeatTypeID = 1 },
+                new Seat { SeatID = 33,CinemaHallID = 1, SeatNumber = "D3", SeatTypeID = 1 },
+                new Seat { SeatID = 34,CinemaHallID = 1, SeatNumber = "D4", SeatTypeID = 1 },
+                new Seat { SeatID = 35,CinemaHallID = 1, SeatNumber = "D5", SeatTypeID = 1 },
+                new Seat { SeatID = 36,CinemaHallID = 1, SeatNumber = "L3", SeatTypeID = 2 },
+                new Seat { SeatID = 37,CinemaHallID = 1, SeatNumber = "L4", SeatTypeID = 2 },
+                new Seat { SeatID = 38,CinemaHallID = 1, SeatNumber = "D8", SeatTypeID = 1 },
+                new Seat { SeatID = 39,CinemaHallID = 1, SeatNumber = "D9", SeatTypeID = 1 },
+                new Seat { SeatID = 40,CinemaHallID = 1, SeatNumber = "D10", SeatTypeID = 1 },
+
+                new Seat { SeatID = 41,CinemaHallID = 1, SeatNumber = "E1", SeatTypeID = 1 },
+                new Seat { SeatID = 42,CinemaHallID = 1, SeatNumber = "E2", SeatTypeID = 1 },
+                new Seat { SeatID = 43,CinemaHallID = 1, SeatNumber = "E3", SeatTypeID = 1 },
+                new Seat { SeatID = 44,CinemaHallID = 1, SeatNumber = "E4", SeatTypeID = 1 },
+                new Seat { SeatID = 45,CinemaHallID = 1, SeatNumber = "E5", SeatTypeID = 1 },
+                new Seat { SeatID = 46,CinemaHallID = 1, SeatNumber = "E6", SeatTypeID = 1 },
+                new Seat { SeatID = 47,CinemaHallID = 1, SeatNumber = "E7", SeatTypeID = 1 },
+                new Seat { SeatID = 48,CinemaHallID = 1, SeatNumber = "E8", SeatTypeID = 1 },
+                new Seat { SeatID = 49,CinemaHallID = 1, SeatNumber = "E9", SeatTypeID = 1 },
+                new Seat { SeatID = 50,CinemaHallID = 1, SeatNumber = "E10", SeatTypeID = 1 },
+
+                new Seat { SeatID = 51,CinemaHallID = 1, SeatNumber = "F1", SeatTypeID = 1 },
+                new Seat { SeatID = 52,CinemaHallID = 1, SeatNumber = "F2", SeatTypeID = 1 },
+                new Seat { SeatID = 53,CinemaHallID = 1, SeatNumber = "F3", SeatTypeID = 1 },
+                new Seat { SeatID = 54,CinemaHallID = 1, SeatNumber = "L5", SeatTypeID = 2 },
+                new Seat { SeatID = 55,CinemaHallID = 1, SeatNumber = "L6", SeatTypeID = 2 },
+                new Seat { SeatID = 56,CinemaHallID = 1, SeatNumber = "L7", SeatTypeID = 2 },
+                new Seat { SeatID = 57,CinemaHallID = 1, SeatNumber = "L8", SeatTypeID = 2 },
+                new Seat { SeatID = 58,CinemaHallID = 1, SeatNumber = "F8", SeatTypeID = 1 },
+                new Seat { SeatID = 59,CinemaHallID = 1, SeatNumber = "F9", SeatTypeID = 1 },
+                new Seat { SeatID = 60,CinemaHallID = 1, SeatNumber = "F10", SeatTypeID = 1 },
+
+
+                new Seat { SeatID = 61, CinemaHallID = 2, SeatNumber = "A1", SeatTypeID = 1 },
+                new Seat { SeatID = 62, CinemaHallID = 2, SeatNumber = "A2", SeatTypeID = 1 },
+                new Seat { SeatID = 63, CinemaHallID = 2, SeatNumber = "A3", SeatTypeID = 1 },
+                new Seat { SeatID = 64, CinemaHallID = 2, SeatNumber = "A4", SeatTypeID = 1 },
+                new Seat { SeatID = 65, CinemaHallID = 2, SeatNumber = "A5", SeatTypeID = 1 },
+                new Seat { SeatID = 66, CinemaHallID = 2, SeatNumber = "A6", SeatTypeID = 1 },
+                new Seat { SeatID = 67, CinemaHallID = 2, SeatNumber = "A7", SeatTypeID = 1 },
+                new Seat { SeatID = 68, CinemaHallID = 2, SeatNumber = "A8", SeatTypeID = 1 },
+                new Seat { SeatID = 69, CinemaHallID = 2, SeatNumber = "A9", SeatTypeID = 1 },
+                new Seat { SeatID = 70, CinemaHallID = 2, SeatNumber = "A10", SeatTypeID = 1 },
+                                                       
+                new Seat { SeatID = 71, CinemaHallID = 2, SeatNumber = "W1", SeatTypeID = 3 },
+                new Seat { SeatID = 72, CinemaHallID = 2, SeatNumber = "W2", SeatTypeID = 3 },
+                new Seat { SeatID = 73, CinemaHallID = 2, SeatNumber = "B3", SeatTypeID = 1 },
+                new Seat { SeatID = 74, CinemaHallID = 2, SeatNumber = "B4", SeatTypeID = 1 },
+                new Seat { SeatID = 75, CinemaHallID = 2, SeatNumber = "B5", SeatTypeID = 1 },
+                new Seat { SeatID = 76, CinemaHallID = 2, SeatNumber = "B6", SeatTypeID = 1 },
+                new Seat { SeatID = 77, CinemaHallID = 2, SeatNumber = "B7", SeatTypeID = 1 },
+                new Seat { SeatID = 78, CinemaHallID = 2, SeatNumber = "B8", SeatTypeID = 1 },
+                new Seat { SeatID = 79, CinemaHallID = 2, SeatNumber = "B9", SeatTypeID = 1 },
+                new Seat { SeatID = 80, CinemaHallID = 2, SeatNumber = "B10", SeatTypeID = 1 },
+                                                       
+                new Seat { SeatID = 81, CinemaHallID = 2, SeatNumber = "C1", SeatTypeID = 1 },
+                new Seat { SeatID = 82, CinemaHallID = 2, SeatNumber = "C2", SeatTypeID = 1 },
+                new Seat { SeatID = 83, CinemaHallID = 2, SeatNumber = "C3", SeatTypeID = 1 },
+                new Seat { SeatID = 84, CinemaHallID = 2, SeatNumber = "L1", SeatTypeID = 2 },
+                new Seat { SeatID = 85, CinemaHallID = 2, SeatNumber = "L2", SeatTypeID = 2 },
+                new Seat { SeatID = 86, CinemaHallID = 2, SeatNumber = "C6", SeatTypeID = 2 },
+                new Seat { SeatID = 87, CinemaHallID = 2, SeatNumber = "C7", SeatTypeID = 2 },
+                new Seat { SeatID = 88, CinemaHallID = 2, SeatNumber = "C8", SeatTypeID = 2 },
+                new Seat { SeatID = 89, CinemaHallID = 2, SeatNumber = "C9", SeatTypeID = 2 },
+                new Seat { SeatID = 90, CinemaHallID = 2, SeatNumber = "C10", SeatTypeID = 2 },
+                                                       
+                                                       
+                new Seat { SeatID = 91, CinemaHallID = 2, SeatNumber = "D1", SeatTypeID = 1 },
+                new Seat { SeatID = 92, CinemaHallID = 2, SeatNumber = "D2", SeatTypeID = 1 },
+                new Seat { SeatID = 93, CinemaHallID = 2, SeatNumber = "D3", SeatTypeID = 1 },
+                new Seat { SeatID = 94, CinemaHallID = 2, SeatNumber = "D4", SeatTypeID = 1 },
+                new Seat { SeatID = 95, CinemaHallID = 2, SeatNumber = "D5", SeatTypeID = 1 },
+                new Seat { SeatID = 96, CinemaHallID = 2, SeatNumber = "L3", SeatTypeID = 2 },
+                new Seat { SeatID = 97, CinemaHallID = 2, SeatNumber = "L4", SeatTypeID = 2 },
+                new Seat { SeatID = 98, CinemaHallID = 2, SeatNumber = "D8", SeatTypeID = 1 },
+                new Seat { SeatID = 99, CinemaHallID = 2, SeatNumber = "D9", SeatTypeID = 1 },
+                new Seat { SeatID = 100, CinemaHallID = 2, SeatNumber = "D10", SeatTypeID = 1 },
+                                                       
+                new Seat { SeatID = 101, CinemaHallID = 2, SeatNumber = "E1", SeatTypeID = 1 },
+                new Seat { SeatID = 102, CinemaHallID = 2, SeatNumber = "E2", SeatTypeID = 1 },
+                new Seat { SeatID = 103, CinemaHallID = 2, SeatNumber = "E3", SeatTypeID = 1 },
+                new Seat { SeatID = 104, CinemaHallID = 2, SeatNumber = "E4", SeatTypeID = 1 },
+                new Seat { SeatID = 105, CinemaHallID = 2, SeatNumber = "E5", SeatTypeID = 1 },
+                new Seat { SeatID = 106, CinemaHallID = 2, SeatNumber = "E6", SeatTypeID = 1 },
+                new Seat { SeatID = 107, CinemaHallID = 2, SeatNumber = "E7", SeatTypeID = 1 },
+                new Seat { SeatID = 108, CinemaHallID = 2, SeatNumber = "E8", SeatTypeID = 1 },
+                new Seat { SeatID = 109, CinemaHallID = 2, SeatNumber = "E9", SeatTypeID = 1 },
+                new Seat { SeatID = 110, CinemaHallID = 2, SeatNumber = "E10", SeatTypeID = 1 },
+                                                       
+                new Seat { SeatID = 111, CinemaHallID = 2, SeatNumber = "F1", SeatTypeID = 1 },
+                new Seat { SeatID = 112, CinemaHallID = 2, SeatNumber = "F2", SeatTypeID = 1 },
+                new Seat { SeatID = 113, CinemaHallID = 2, SeatNumber = "F3", SeatTypeID = 1 },
+                new Seat { SeatID = 114, CinemaHallID = 2, SeatNumber = "L5", SeatTypeID = 2 },
+                new Seat { SeatID = 115, CinemaHallID = 2, SeatNumber = "L6", SeatTypeID = 2 },
+                new Seat { SeatID = 116, CinemaHallID = 2, SeatNumber = "L7", SeatTypeID = 2 },
+                new Seat { SeatID = 117, CinemaHallID = 2, SeatNumber = "L8", SeatTypeID = 2 },
+                new Seat { SeatID = 118, CinemaHallID = 2, SeatNumber = "F8", SeatTypeID = 1 },
+                new Seat { SeatID = 119, CinemaHallID = 2, SeatNumber = "F9", SeatTypeID = 1 },
+                new Seat { SeatID = 120, CinemaHallID = 2, SeatNumber = "F10", SeatTypeID = 1 },
+
+
+                new Seat { SeatID = 121, CinemaHallID = 3, SeatNumber = "A1", SeatTypeID = 1 },
+                new Seat { SeatID = 122, CinemaHallID = 3, SeatNumber = "A2", SeatTypeID = 1 },
+                new Seat { SeatID = 123, CinemaHallID = 3, SeatNumber = "A3", SeatTypeID = 1 },
+                new Seat { SeatID = 124, CinemaHallID = 3, SeatNumber = "A4", SeatTypeID = 1 },
+                new Seat { SeatID = 125, CinemaHallID = 3, SeatNumber = "A5", SeatTypeID = 1 },
+                new Seat { SeatID = 126, CinemaHallID = 3, SeatNumber = "A6", SeatTypeID = 1 },
+                new Seat { SeatID = 127, CinemaHallID = 3, SeatNumber = "A7", SeatTypeID = 1 },
+                new Seat { SeatID = 128, CinemaHallID = 3, SeatNumber = "A8", SeatTypeID = 1 },
+                new Seat { SeatID = 129, CinemaHallID = 3, SeatNumber = "A9", SeatTypeID = 1 },
+                new Seat { SeatID = 130, CinemaHallID = 3, SeatNumber = "A10", SeatTypeID = 1 },
+                                                        
+                new Seat { SeatID = 131, CinemaHallID = 3, SeatNumber = "W1", SeatTypeID = 3 },
+                new Seat { SeatID = 132, CinemaHallID = 3, SeatNumber = "W2", SeatTypeID = 3 },
+                new Seat { SeatID = 133, CinemaHallID = 3, SeatNumber = "B3", SeatTypeID = 1 },
+                new Seat { SeatID = 134, CinemaHallID = 3, SeatNumber = "B4", SeatTypeID = 1 },
+                new Seat { SeatID = 135, CinemaHallID = 3, SeatNumber = "B5", SeatTypeID = 1 },
+                new Seat { SeatID = 136, CinemaHallID = 3, SeatNumber = "B6", SeatTypeID = 1 },
+                new Seat { SeatID = 137, CinemaHallID = 3, SeatNumber = "B7", SeatTypeID = 1 },
+                new Seat { SeatID = 138, CinemaHallID = 3, SeatNumber = "B8", SeatTypeID = 1 },
+                new Seat { SeatID = 139, CinemaHallID = 3, SeatNumber = "B9", SeatTypeID = 1 },
+                new Seat { SeatID = 140, CinemaHallID = 3, SeatNumber = "B10", SeatTypeID = 1 },
+                                                        
+                new Seat { SeatID = 141, CinemaHallID = 3, SeatNumber = "C1", SeatTypeID = 1 },
+                new Seat { SeatID = 142, CinemaHallID = 3, SeatNumber = "C2", SeatTypeID = 1 },
+                new Seat { SeatID = 143, CinemaHallID = 3, SeatNumber = "C3", SeatTypeID = 1 },
+                new Seat { SeatID = 144, CinemaHallID = 3, SeatNumber = "L1", SeatTypeID = 2 },
+                new Seat { SeatID = 145, CinemaHallID = 3, SeatNumber = "L2", SeatTypeID = 2 },
+                new Seat { SeatID = 146, CinemaHallID = 3, SeatNumber = "C6", SeatTypeID = 2 },
+                new Seat { SeatID = 147, CinemaHallID = 3, SeatNumber = "C7", SeatTypeID = 2 },
+                new Seat { SeatID = 148, CinemaHallID = 3, SeatNumber = "C8", SeatTypeID = 2 },
+                new Seat { SeatID = 149, CinemaHallID = 3, SeatNumber = "C9", SeatTypeID = 2 },
+                new Seat { SeatID = 150, CinemaHallID = 3, SeatNumber = "C10", SeatTypeID = 2 },
+                                                        
+                                                        
+                new Seat { SeatID = 151, CinemaHallID = 3, SeatNumber = "D1", SeatTypeID = 1 },
+                new Seat { SeatID = 152, CinemaHallID = 3, SeatNumber = "D2", SeatTypeID = 1 },
+                new Seat { SeatID = 153, CinemaHallID = 3, SeatNumber = "D3", SeatTypeID = 1 },
+                new Seat { SeatID = 154, CinemaHallID = 3, SeatNumber = "D4", SeatTypeID = 1 },
+                new Seat { SeatID = 155, CinemaHallID = 3, SeatNumber = "D5", SeatTypeID = 1 },
+                new Seat { SeatID = 156, CinemaHallID = 3, SeatNumber = "L3", SeatTypeID = 2 },
+                new Seat { SeatID = 157, CinemaHallID = 3, SeatNumber = "L4", SeatTypeID = 2 },
+                new Seat { SeatID = 158, CinemaHallID = 3, SeatNumber = "D8", SeatTypeID = 1 },
+                new Seat { SeatID = 159, CinemaHallID = 3, SeatNumber = "D9", SeatTypeID = 1 },
+                new Seat { SeatID = 160, CinemaHallID = 3, SeatNumber = "D10", SeatTypeID = 1 },
+                                                        
+                new Seat { SeatID = 161, CinemaHallID = 3, SeatNumber = "E1", SeatTypeID = 1 },
+                new Seat { SeatID = 162, CinemaHallID = 3, SeatNumber = "E2", SeatTypeID = 1 },
+                new Seat { SeatID = 163, CinemaHallID = 3, SeatNumber = "E3", SeatTypeID = 1 },
+                new Seat { SeatID = 164, CinemaHallID = 3, SeatNumber = "E4", SeatTypeID = 1 },
+                new Seat { SeatID = 165, CinemaHallID = 3, SeatNumber = "E5", SeatTypeID = 1 },
+                new Seat { SeatID = 166, CinemaHallID = 3, SeatNumber = "E6", SeatTypeID = 1 },
+                new Seat { SeatID = 167, CinemaHallID = 3, SeatNumber = "E7", SeatTypeID = 1 },
+                new Seat { SeatID = 168, CinemaHallID = 3, SeatNumber = "E8", SeatTypeID = 1 },
+                new Seat { SeatID = 169, CinemaHallID = 3, SeatNumber = "E9", SeatTypeID = 1 },
+                new Seat { SeatID = 170, CinemaHallID = 3, SeatNumber = "E10", SeatTypeID = 1 },
+                                                        
+                new Seat { SeatID = 171, CinemaHallID = 3, SeatNumber = "F1", SeatTypeID = 1 },
+                new Seat { SeatID = 172, CinemaHallID = 3, SeatNumber = "F2", SeatTypeID = 1 },
+                new Seat { SeatID = 173, CinemaHallID = 3, SeatNumber = "F3", SeatTypeID = 1 },
+                new Seat { SeatID = 174, CinemaHallID = 3, SeatNumber = "L5", SeatTypeID = 2 },
+                new Seat { SeatID = 175, CinemaHallID = 3, SeatNumber = "L6", SeatTypeID = 2 },
+                new Seat { SeatID = 176, CinemaHallID = 3, SeatNumber = "L7", SeatTypeID = 2 },
+                new Seat { SeatID = 177, CinemaHallID = 3, SeatNumber = "L8", SeatTypeID = 2 },
+                new Seat { SeatID = 178, CinemaHallID = 3, SeatNumber = "F8", SeatTypeID = 1 },
+                new Seat { SeatID = 179, CinemaHallID = 3, SeatNumber = "F9", SeatTypeID = 1 },
+                new Seat { SeatID = 180, CinemaHallID = 3, SeatNumber = "F10", SeatTypeID = 1 }
+
+            );
+
+
+               modelBuilder.Entity<Administrator>().HasData(
+             new Administrator { AccountID = 1, Username = "admin" , Password = "test", FirstName = "Adil", LastName = "Joldić" },
+             new Administrator { AccountID = 2, Username = "host", Password = "test", FirstName = "Jasmin", LastName = "Jamaković" }
+               ); 
+            
+                 modelBuilder.Entity<User>().HasData(
+                   new User {AccountID = 3, 
+                       Username = "user", 
+                       Password = "test", 
+                       Email = "benjamin.cero@edu.fit.ba", 
+                       Phone = "+387/62-126-822",
+                       CityID = 13,
+                       Points = 15,
+                       GenderID = 1,
+                       FirstName = "Benjamin",
+                       LastName = "Cero"
+                   },
+                   new User
+                   {
+                       AccountID = 4,
+                       Username = "denis",
+                       Password = "test",
+                       Email = "denis.music@edu.fit.ba",
+                       Phone = "+387/60-000-000",
+                       CityID = 18,
+                       Points = 0,
+                       GenderID = 1,
+                       FirstName = "Denis",
+                       LastName = "Mušić"
+                   }
+
+                  );
+
+            // 1. Moana 2
+            // 2. Sonic 3
+            // 3. Kraven
+            // 7. Jaws 
+            // 8. Spirited
+            // 9. Spider-man
+
+            // 1. 2D
+            // 2. 3D
+
+            // 16 : 00 
+            // 19 : 15
+            // 22 : 00
+
+
+            modelBuilder.Entity<Projection>().HasData(
+
+                // SVE NA DAN 1 FEB 2025
+
+             new Projection {ProjectionID = 1, // Moana 2 - 17 00 - 3D - SALA 
+                 CinemaHallID = 1,
+                 MovieID = 1 ,
+                 MovieTypeID = 3 ,
+                 StartTime = new DateTime(2025,2,1,16,0,0),
+                 Price = 7
+
+             },
+             new Projection
+                 {
+                     ProjectionID = 2, // Sonic - 17 00 - 3D - SALA 2
+                     CinemaHallID = 2,
+                     MovieID = 2,
+                     MovieTypeID = 2,
+                     StartTime = new DateTime(2025, 2, 1, 16, 0, 0),
+                     Price = 7
+
+                 },
+                 new Projection
+                 {
+                     ProjectionID = 3, // Kraven - 17 00 - 2D - SALA 3
+                     CinemaHallID = 3,
+                     MovieID = 3,
+                     MovieTypeID = 1,
+                     StartTime = new DateTime(2025, 2, 1, 16, 0, 0),
+                     Price = 5
+
+
+                 },
+                     new Projection
+                     {
+                         ProjectionID = 4, // Kraven - 21 30 - 2D - SALA 1
+                         CinemaHallID = 1,
+                         MovieID = 3,
+                         MovieTypeID = 1,
+                         StartTime = new DateTime(2025, 2, 1, 22, 0, 0),
+                         Price = 5
+
+
+                     },
+                      new Projection
+                      {
+                          ProjectionID = 5, // Jaws - 21 30 - 2D - SALA 2
+                          CinemaHallID = 2,
+                          MovieID = 7,
+                          MovieTypeID = 1,
+                          StartTime = new DateTime(2025, 2, 1, 22, 0, 0),
+                          Price = 5
+
+                      },
+                       new Projection
+                       {
+                           ProjectionID = 6, // Spiderman - 21 30 - 2D - SALA 3
+                           CinemaHallID = 3,
+                           MovieID = 9,
+                           MovieTypeID = 1,
+                           StartTime = new DateTime(2025, 2, 1, 22, 0, 0),
+                           Price = 5
+
+                       },
+                          new Projection
+                          {
+                              ProjectionID = 7, // Spirited - 19 : 15 - 2D - SALA 1
+                              CinemaHallID = 1,
+                              MovieID = 8,
+                              MovieTypeID = 1,
+                              StartTime = new DateTime(2025, 2, 1, 19, 15, 0),
+                              Price = 5
+
+
+                          },
+                               new Projection
+                               {
+                                   ProjectionID = 8, // Spirited - 19 : 15 - 2D - SALA 1
+                                   CinemaHallID = 1,
+                                   MovieID = 8,
+                                   MovieTypeID = 1,
+                                   StartTime = new DateTime(2025, 2, 1, 19, 15, 0),
+                                   Price = 5
+
+
+                               },
+                                       new Projection
+                                       {
+                                           ProjectionID = 9, // Moana - 19 : 15 - 2D - SALA 2
+                                           CinemaHallID = 2,
+                                           MovieID = 1,
+                                           MovieTypeID = 1,
+                                           StartTime = new DateTime(2025, 2, 1, 19, 15, 0),
+                                           Price= 5
+
+                                       },
+
+                                         // DRUGI DAN 2 FEB 2025
+
+                                         new Projection
+                                         {
+                                             ProjectionID = 10, // Moana SALA 1 3D 16 00
+                                             CinemaHallID = 1,
+                                             MovieID = 1,
+                                             MovieTypeID = 2,
+                                             StartTime = new DateTime(2025, 2, 2, 16, 0, 0),
+                                             Price = 7
+
+                                         },
+                                          new Projection
+                                          {
+                                              ProjectionID = 11, // Sonic SALA 2 3D 16 00
+                                              CinemaHallID = 2,
+                                              MovieID = 2,
+                                              MovieTypeID = 2,
+                                              StartTime = new DateTime(2025, 2, 2, 16, 0, 0),
+                                              Price = 7
+
+                                          },
+
+                                            new Projection
+                                            {
+                                                ProjectionID = 12, // Kraven SALA 3 2D 16 00
+                                                CinemaHallID = 3,
+                                                MovieID = 3,
+                                                MovieTypeID = 1,
+                                                StartTime = new DateTime(2025, 2, 2, 16, 0, 0),
+                                                Price = 5
+
+                                            },
+                                                  new Projection
+                                                  {
+                                                      ProjectionID = 13, // Moana SALA 3 2D 19 15
+                                                      CinemaHallID = 3,
+                                                      MovieID = 1,
+                                                      MovieTypeID = 1,
+                                                      StartTime = new DateTime(2025, 2, 2, 19, 15, 0),
+                                                      Price = 5
+
+                                                  }
+
+
+
+
+               );
+
+            // Benjamin -> Moana 2 -> Sjediste A1 u Sali 1 
+
+            modelBuilder.Entity<Ticket>().HasData(
+          new Ticket { TicketID = 1,OrderDate = new DateTime(2025,1,1,16,0,0), ProjectionID = 1, SeatID = 1, UserID = 3, Paid = true }
+            );
+
+
+            modelBuilder.Entity<Review>().HasData(
+          new Review { ReviewID = 1, MovieID = 1, ReviewDate =  new DateTime(2025, 2, 2, 20, 0, 0) , Score = 4, Comment = "I really liked the movie but the main villain was a bit disappointing", UserID = 3 }
+            );
+
+
+            modelBuilder.Entity<Order>().HasData(
+          new Order { OrderID = 1, OrderDate = new DateTime(2025, 2, 1, 15, 47, 0), MenuID = 3, Quantity = 1,Paid = true, UserID = 3}
+            );
 
         }
 
