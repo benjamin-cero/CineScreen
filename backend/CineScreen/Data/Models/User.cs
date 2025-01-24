@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using CineScreen.Data.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FIT_Api_Example.Data.Models
 {

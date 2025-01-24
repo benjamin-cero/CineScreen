@@ -1,4 +1,6 @@
-﻿using FIT_Api_Example.Data.Models;
+﻿using CineScreen.Data.Auth;
+using CineScreen.Data.Models;
+using FIT_Api_Example.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,7 +12,7 @@ using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
 
-namespace FIT_Api_Example.Data
+namespace CineScreen.Data
 {
     partial class ApplicationDbContext
     {
@@ -946,6 +948,17 @@ namespace FIT_Api_Example.Data
             modelBuilder.Entity<Order>().HasData(
           new Order { OrderID = 1, OrderDate = new DateTime(2025, 2, 1, 15, 47, 0), MenuID = 3, Quantity = 1,Paid = true, UserID = 3}
             );
+
+            modelBuilder.Entity<MyAppUser>().HasData(
+        new MyAppUser { ID = 1, FirstName = "Benjamin", LastName = "Cero", Username = "cero", Password = "test" , IsAdmin = false , IsUser = true },
+
+        new MyAppUser { ID = 2, FirstName = "Jasmin", LastName = "Jamaković", Username = "jasmin", Password = "test", IsAdmin = true, IsUser = false },
+
+         new MyAppUser { ID = 3, FirstName = "Denis", LastName = "Mušić", Username = "denis", Password = "test", IsAdmin = false, IsUser = true },
+
+          new MyAppUser { ID = 4, FirstName = "Adil", LastName = "Joldić", Username = "adil", Password = "test", IsAdmin = true, IsUser = false }
+
+          );
 
         }
 

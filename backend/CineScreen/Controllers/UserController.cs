@@ -1,24 +1,16 @@
-﻿using FIT_Api_Example.Data.Models;
-using FIT_Api_Example.Data;
+﻿using CineScreen.Data;
+using FIT_Api_Example.Data.Models;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace FIT_Api_Example.Controllers
+namespace CineScreen.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
-    public class UserController : ControllerBase
+    public class UserController(ApplicationDbContext _DbContext) : ControllerBase
     {
-        private readonly ApplicationDbContext _DbContext;
-
-
-        public UserController(ApplicationDbContext _DbContext)
-        {
-
-            this._DbContext = _DbContext;
-        }
 
         [HttpGet]
 

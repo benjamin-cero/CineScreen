@@ -1,26 +1,15 @@
-﻿using FIT_Api_Example.Data.Models;
-using FIT_Api_Example.Data;
+﻿using CineScreen.Data;
+using FIT_Api_Example.Data.Models;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FIT_Api_Example.Controllers
+namespace CineScreen.Controllers
 {
 
     [ApiController]
     [Route("[controller]/[action]")]
-    public class MenuManufacturerController:ControllerBase
+    public class MenuManufacturerController(ApplicationDbContext _DbContext) : ControllerBase
     {
-        private readonly ApplicationDbContext _DbContext;
-
-
-        public MenuManufacturerController(ApplicationDbContext _DbContext)
-        {
-
-            this._DbContext = _DbContext;
-        }
-
-
-
         [HttpGet]
 
         public ActionResult<List<MenuManufacturer>> Get()

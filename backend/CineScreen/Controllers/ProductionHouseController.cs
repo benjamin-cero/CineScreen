@@ -1,4 +1,4 @@
-﻿using FIT_Api_Example.Data;
+﻿using CineScreen.Data;
 using FIT_Api_Example.Data.Models;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
@@ -9,14 +9,8 @@ namespace FIT_Api_Example.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
-    public class ProductionHouseController : ControllerBase
+    public class ProductionHouseController(ApplicationDbContext _dbContext) : ControllerBase
     {
-        private readonly ApplicationDbContext _dbContext;
-
-        public ProductionHouseController(ApplicationDbContext dbContext)
-        {
-            this._dbContext = dbContext;
-        }
 
         [HttpGet]
 

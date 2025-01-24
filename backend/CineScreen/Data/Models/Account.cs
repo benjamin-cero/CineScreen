@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FIT_Api_Example.Data.Models;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace FIT_Api_Example.Data.Models
+namespace CineScreen.Data.Models
 {
     public class Account
     {

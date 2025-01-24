@@ -1,28 +1,19 @@
-﻿using Azure.Core;
-using FIT_Api_Example.Data;
+﻿using CineScreen.Data;
 using FIT_Api_Example.Data.Models;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using RS1_2024_25.API.Services;
 
 namespace FIT_Api_Example.Controllers
 {
-
     [ApiController]
     [Route("[controller]/[action]")]
-    public class GenreController : ControllerBase
+    public class GenreController(ApplicationDbContext dbContext) : ControllerBase
     {
-
-        private readonly ApplicationDbContext _dbContext;
-
-        public GenreController(ApplicationDbContext dbContext)
-        {
-            this._dbContext = dbContext;
-        }
-
         [HttpGet]
         public ActionResult<List<Genre>> Get()
         {
-            var genres = _dbContext.Genre.ToList();
+            var genres = dbContext.Genre.ToList();
 
             if (genres == null)
             {
@@ -34,7 +25,7 @@ namespace FIT_Api_Example.Controllers
         [HttpGet("GenreID")]
         public ActionResult<Genre> GetById(int GenreID)
         {
-            var Genre = _dbContext.Genre.Find(GenreID);
+            var Genre = dbContext.Genre.Find(GenreID);
             if (Genre == null)
             {
                 return NotFound();
@@ -45,15 +36,15 @@ namespace FIT_Api_Example.Controllers
 
         [HttpDelete("GenreID")]
         public ActionResult<Genre> Delete(int GenreID) {
-            var Genre = _dbContext.Genre.Find(GenreID);
+            var Genre = dbContext.Genre.Find(GenreID);
 
 
             if (Genre == null)
             {
                 return NotFound();
             }
-            _dbContext.Genre.Remove(Genre);
-            _dbContext.SaveChanges();
+            dbContext.Genre.Remove(Genre);
+            dbContext.SaveChanges();
             return Genre;
         }
         [HttpPost]
@@ -63,21 +54,21 @@ namespace FIT_Api_Example.Controllers
             {
                 Name = x.Name
             };
-            _dbContext.Genre.Add(NewGenre);
-            _dbContext.SaveChanges();
+            dbContext.Genre.Add(NewGenre);
+            dbContext.SaveChanges();
             return NewGenre;
         }
 
         [HttpPut("GenreID")]
         public ActionResult<Genre> Update(int GenreID, GenreUpsertVM x)
         {
-            var UpdateGenre = _dbContext.Genre.Find(GenreID);
+            var UpdateGenre = dbContext.Genre.Find(GenreID);
             if(UpdateGenre == null)
             {
                 return NotFound();
             }
             UpdateGenre.Name = x.Name;
-            _dbContext.SaveChanges();
+            dbContext.SaveChanges();
             return UpdateGenre;
         }
 

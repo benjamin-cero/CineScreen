@@ -1,20 +1,14 @@
-﻿using FIT_Api_Example.Data;
+﻿using CineScreen.Data;
 using FIT_Api_Example.Data.Models;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FIT_Api_Example.Controllers
+namespace CineScreen.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
-    public class AdministratorController: ControllerBase
+    public class AdministratorController(ApplicationDbContext _DbContext) : ControllerBase
     {
-        private readonly ApplicationDbContext _DbContext;
-
-        public AdministratorController(ApplicationDbContext _DbContext)
-        {
-            this._DbContext = _DbContext;
-        }
 
         [HttpGet]
 

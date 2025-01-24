@@ -1,6 +1,6 @@
 ﻿
-using FIT_Api_Example.Data;
-using FIT_Api_Example.Data.Models;
+using CineScreen.Data;
+using CineScreen.Data.Models;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,14 +9,8 @@ namespace CineScreen.Controllers
     //[Authorize]
     [ApiController]
     [Route("[controller]/[action]")]
-    public class CityController : ControllerBase
+    public class CityController(ApplicationDbContext dbContext) : ControllerBase
     {
-        private readonly ApplicationDbContext _dbContext;
-
-        public CityController(ApplicationDbContext dbContext)
-        {
-            this._dbContext = dbContext;
-        }
 
         // POST      PATCH   GET   GET       DELETE 
         // Insert , Update , Get , GetById , Delete 
@@ -26,7 +20,7 @@ namespace CineScreen.Controllers
         public ActionResult <List<City>> Get()
         {
 
-            var cities = _dbContext.City.ToList();
+            var cities = dbContext.City.ToList();
 
             if (cities == null)
             {
@@ -40,7 +34,7 @@ namespace CineScreen.Controllers
         public ActionResult<City> GetById(int CityID)
         {
 
-            var city = _dbContext.City.Find(CityID);
+            var city = dbContext.City.Find(CityID);
 
             if (city == null)
             {
@@ -54,15 +48,15 @@ namespace CineScreen.Controllers
         public ActionResult<City> Delete(int CityID)
         {
 
-            var city = _dbContext.City.Find(CityID);
+            var city = dbContext.City.Find(CityID);
 
             if (city == null)
             {
                 return BadRequest();
             }
 
-            _dbContext.City.Remove(city);
-            _dbContext.SaveChanges();
+            dbContext.City.Remove(city);
+            dbContext.SaveChanges();
 
             return city;
 
@@ -81,8 +75,8 @@ namespace CineScreen.Controllers
                 Name = x.Name
             };
 
-            _dbContext.City.Add(newCity);
-            _dbContext.SaveChanges();
+            dbContext.City.Add(newCity);
+            dbContext.SaveChanges();
 
             return newCity;
 
@@ -94,11 +88,11 @@ namespace CineScreen.Controllers
         public ActionResult<City> Update(int CityID, CityUpsertVM x)
         {
 
-            var updatedCity = _dbContext.City.Find(CityID);
+            var updatedCity = dbContext.City.Find(CityID);
 
             updatedCity.Name = x.Name;
 
-            _dbContext.SaveChanges();
+            dbContext.SaveChanges();
 
             return updatedCity;
         }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FIT_Api_Example.Data.Models
+namespace CineScreen.Data.Models
 {
     public class City
     {

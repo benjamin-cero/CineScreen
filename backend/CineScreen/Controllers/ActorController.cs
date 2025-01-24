@@ -1,25 +1,15 @@
-﻿using FIT_Api_Example.Data;
+﻿using CineScreen.Data;
 using FIT_Api_Example.Data.Models;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FIT_Api_Example.Controllers
+namespace CineScreen.Controllers
 {
 
     [ApiController]
     [Route("[controller]/[action]")]
-    public class ActorController : ControllerBase
+    public class ActorController(ApplicationDbContext _DbContext) : ControllerBase
     {
-
-        private readonly ApplicationDbContext _DbContext;
-
-
-        public ActorController(ApplicationDbContext _DbContext)
-        {
-
-            this._DbContext = _DbContext;
-        }
-
 
 
         [HttpGet]
@@ -49,9 +39,10 @@ namespace FIT_Api_Example.Controllers
 
         [HttpDelete("ActorID")]
 
-        public ActionResult<Actor> Delete(int ActorID) {
+        public ActionResult<Actor> Delete(int ActorID)
+        {
             var actor = _DbContext.Actor.Find(ActorID);
-            if(actor == null)
+            if (actor == null)
             {
                 return NotFound();
             }
@@ -62,7 +53,8 @@ namespace FIT_Api_Example.Controllers
 
         [HttpPost]
 
-        public ActionResult<Actor> Insert([FromBody] ActorUpsertVM x) {
+        public ActionResult<Actor> Insert([FromBody] ActorUpsertVM x)
+        {
             var NewActor = new Actor()
             {
                 FirstName = x.FirstName,
@@ -78,7 +70,7 @@ namespace FIT_Api_Example.Controllers
         public ActionResult<Actor> Update(int ActorID, ActorUpsertVM x)
         {
             var UpdateActor = _DbContext.Actor.Find(ActorID);
-            if(UpdateActor == null)
+            if (UpdateActor == null)
             {
                 return NotFound();
             }
