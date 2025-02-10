@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-putovanja4-non-standalone-modules": {
+    "RS1_2024_25_angular_template": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-putovanja4-non-standalone-modules",
+            "outputPath": "dist/RS1_2024_25_angular_template",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-putovanja4-non-standalone-modules:build:production"
+              "buildTarget": "RS1_2024_25_angular_template:build:production"
             },
             "development": {
-              "buildTarget": "angular-putovanja4-non-standalone-modules:build:development"
+              "buildTarget": "RS1_2024_25_angular_template:build:development"
             }
           },
           "defaultConfiguration": "development"
