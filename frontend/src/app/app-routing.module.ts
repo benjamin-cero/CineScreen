@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./modules/public/public.module').then(m => m.PublicModule)  // Lazy load  modula
   },
   {
-    // Update kada trebalo dodati guard na komponentama korisnika --> Pair testing
+    // Update kada trebalo dodati guard na komponentama korisnika --> Yolo testing
     path: 'client',
     // canActivate: [AuthGuard],
     // data: {isUser: true}, // Guard na klijentu
