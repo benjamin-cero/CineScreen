@@ -17,6 +17,8 @@ const routes: Routes = [
   },
   {
     path: 'client',
+    // canActivate: [AuthGuard],
+    // data: {isUser: true}, // Guard na klijentu
     loadChildren: () => import('./modules/client/client.module').then(m => m.ClientModule)  // Lazy load  modula
   },
   {
