@@ -15,13 +15,13 @@ public class CityGetByIdEndpoint(ApplicationDbContext db) : MyEndpointBaseAsync
     public override async Task<CityGetByIdResponse> HandleAsync(int id, CancellationToken cancellationToken = default)
     {
         var city = await db.City
-                            .Where(c => c.CityID == id)
+                            .Where(c => c.ID == id)
                             .Select(c => new CityGetByIdResponse
                             {
-                                CityID = c.CityID,
+                                ID = c.ID,
                                 Name = c.Name,
                             })
-                            .FirstOrDefaultAsync(x => x.CityID == id, cancellationToken);
+                            .FirstOrDefaultAsync(x => x.ID == id, cancellationToken);
 
         if (city == null)
             throw new KeyNotFoundException("City not found");
@@ -31,7 +31,7 @@ public class CityGetByIdEndpoint(ApplicationDbContext db) : MyEndpointBaseAsync
 
     public class CityGetByIdResponse
     {
-        public required int CityID { get; set; }
+        public required int ID { get; set; }
         public required string Name { get; set; }
     }
 }

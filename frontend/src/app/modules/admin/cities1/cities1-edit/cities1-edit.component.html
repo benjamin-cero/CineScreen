@@ -1,0 +1,15 @@
+<p>cities-edit works!</p>
+
+<h2 *ngIf="cityId!=0">Edit City</h2>
+<h2 *ngIf="cityId==0">Add new City</h2>
+
+<div>
+  <div>
+    <label for="name">City Name:</label>
+    <input [(ngModel)]="city.name" id="name" required/>
+  </div>
+
+
+  <button (click)="updateCity()">Save Changes</button>
+  <button routerLink="/admin/cities" type="button">Cancel</button>
+</div>

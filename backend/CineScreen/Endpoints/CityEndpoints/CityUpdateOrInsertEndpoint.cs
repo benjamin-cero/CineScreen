@@ -22,7 +22,7 @@ namespace RS1_2024_25.API.Endpoints.CityEndpoints
                 return Unauthorized();
             }
             // Check if we're performing an insert or update based on the ID value
-            bool isInsert = (request.CityID == null || request.CityID == 0);
+            bool isInsert = (request.ID == null || request.ID == 0);
             City? city;
 
             if (isInsert)
@@ -34,7 +34,7 @@ namespace RS1_2024_25.API.Endpoints.CityEndpoints
             else
             {
                 // Update operation: retrieve the existing city
-                city = await db.City.FindAsync(new object[] { request.CityID }, cancellationToken);
+                city = await db.City.FindAsync(new object[] { request.ID }, cancellationToken);
 
                 if (city == null)
                 {
@@ -50,20 +50,20 @@ namespace RS1_2024_25.API.Endpoints.CityEndpoints
 
             return new CityUpdateOrInsertResponse
             {
-                CityID = city.CityID,
+                ID = city.ID,
                 Name = city.Name,
             };
         }
 
         public class CityUpdateOrInsertRequest
         {
-            public int? CityID { get; set; } // Nullable to allow null for insert operations
+            public int? ID { get; set; } // Nullable to allow null for insert operations
             public required string Name { get; set; }
         }
 
         public class CityUpdateOrInsertResponse
         {
-            public required int CityID { get; set; }
+            public required int ID { get; set; }
             public required string Name { get; set; }
         }
     }

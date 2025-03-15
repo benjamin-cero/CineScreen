@@ -30,11 +30,11 @@ namespace CineScreen.Controllers
             return cities;
         }
 
-        [HttpGet("{CityID}")]
-        public ActionResult<City> GetById(int CityID)
+        [HttpGet("{ID}")]
+        public ActionResult<City> GetById(int ID)
         {
 
-            var city = dbContext.City.Find(CityID);
+            var city = dbContext.City.Find(ID);
 
             if (city == null)
             {
@@ -44,11 +44,11 @@ namespace CineScreen.Controllers
             return city;
         }
 
-        [HttpDelete("{CityID}")]
-        public ActionResult<City> Delete(int CityID)
+        [HttpDelete("{ID}")]
+        public ActionResult<City> Delete(int ID)
         {
 
-            var city = dbContext.City.Find(CityID);
+            var city = dbContext.City.Find(ID);
 
             if (city == null)
             {
@@ -83,12 +83,12 @@ namespace CineScreen.Controllers
 
         }
 
-        [HttpPut("{CityID}")]
+        [HttpPut("{ID}")]
 
-        public ActionResult<City> Update(int CityID, CityUpsertVM x)
+        public ActionResult<City> Update(int ID, CityUpsertVM x)
         {
 
-            var updatedCity = dbContext.City.Find(CityID);
+            var updatedCity = dbContext.City.Find(ID);
 
             updatedCity.Name = x.Name;
 

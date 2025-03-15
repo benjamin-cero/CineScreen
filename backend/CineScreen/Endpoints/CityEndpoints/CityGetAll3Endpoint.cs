@@ -31,7 +31,7 @@ public class CityGetAll3Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
         // Projektovanje u rezultatni tip
         var projectedQuery = query.Select(c => new CityGetAll3Response
         {
-            CityID = c.CityID,
+            ID = c.ID,
             Name = c.Name,
         });
 
@@ -48,7 +48,7 @@ public class CityGetAll3Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
 
     public class CityGetAll3Response
     {
-        public required int CityID { get; set; }
+        public required int ID { get; set; }
         public required string Name { get; set; }
     }
 }
