@@ -7,14 +7,12 @@
   <thead>
   <tr>
     <th>Name</th>
-    <th>Country Name</th>
     <th>Actions</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let city of cities">
     <td>{{ city.name }}</td>
-    <td>{{ city.countryName }}</td>
     <td>
       <button (click)="editCity(city.id)">Edit</button>
       <button (click)="openMyConfirmDialog(city.id)" color="primary" mat-raised-button>Delete</button>

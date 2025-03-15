@@ -6,7 +6,6 @@ import {MyBaseEndpointAsync} from '../../helper/my-base-endpoint-async.interface
 export interface CityGetAll1Response {
   id: number;
   name: string;
-  countryName: string;
 }
 
 @Injectable({

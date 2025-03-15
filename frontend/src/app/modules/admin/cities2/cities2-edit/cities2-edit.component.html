@@ -12,17 +12,6 @@
     </div>
   </div>
 
-  <div>
-    <label for="countryId">Country:</label>
-    <select formControlName="countryId" id="countryId" required>
-      <option *ngFor="let country of countries" [value]="country.id">
-        {{ country.name }}
-      </option>
-    </select>
-    <div *ngIf="cityForm.get('countryId')?.invalid && cityForm.get('countryId')?.touched">
-      Country is required.
-    </div>
-  </div>
 
   <button [disabled]="cityForm.invalid" type="submit">Save Changes</button>
   <button routerLink="/admin/cities" type="button">Cancel</button>

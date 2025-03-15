@@ -19,7 +19,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class Cities2EditComponent implements OnInit {
   cityForm: FormGroup;
   cityId: number;
-  countries: CountryGetAllResponse[] = []; // Niz za pohranu svih zemalja
 
   constructor(
     private fb: FormBuilder,
@@ -27,13 +26,11 @@ export class Cities2EditComponent implements OnInit {
     public router: Router,
     private cityGetByIdService: CityGetByIdEndpointService,
     private cityUpdateService: CityUpdateOrInsertEndpointService,
-    private countryGetAllService: CountryGetAllEndpointService
   ) {
     this.cityId = 0;
 
     this.cityForm = this.fb.group({
       name: ['', [Validators.required]],
-      countryId: [null, [Validators.required]],
     });
   }
 
@@ -42,7 +39,6 @@ export class Cities2EditComponent implements OnInit {
     if (this.cityId) {
       this.loadCityData();
     }
-    this.loadCountries(); // Učitavanje svih zemalja za combobox
   }
 
   loadCityData(): void {
@@ -50,19 +46,13 @@ export class Cities2EditComponent implements OnInit {
       next: (city) => {
         this.cityForm.patchValue({
           name: city.name,
-          countryId: city.countryId,
         });
       },
       error: (error) => console.error('Error loading city data', error)
     });
   }
 
-  loadCountries(): void {
-    this.countryGetAllService.handleAsync().subscribe({
-      next: (countries) => this.countries = countries,
-      error: (error) => console.error('Error loading countries', error)
-    });
-  }
+
 
   updateCity(): void {
     if (this.cityForm.invalid) return;

@@ -9,14 +9,6 @@
     <input [(ngModel)]="city.name" id="name" required/>
   </div>
 
-  <div>
-    <label for="countryId">Country:</label>
-    <select [(ngModel)]="city.countryId" id="countryId" required>
-      <option *ngFor="let country of countries" [value]="country.id">
-        {{ country.name }}
-      </option>
-    </select>
-  </div>
 
   <button (click)="updateCity()">Save Changes</button>
   <button routerLink="/admin/cities" type="button">Cancel</button>

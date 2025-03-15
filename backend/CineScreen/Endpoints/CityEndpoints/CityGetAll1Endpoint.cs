@@ -20,7 +20,7 @@ public class CityGetAll1Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
         var result = await db.City
                         .Select(c => new CityGetAll1Response
                         {
-                            CityID = c.CityID,
+                            ID = c.ID,
                             Name = c.Name,
                            
                         })
@@ -31,7 +31,7 @@ public class CityGetAll1Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
 
     public class CityGetAll1Response
     {
-        public required int CityID { get; set; }
+        public required int ID { get; set; }
         public required string Name { get; set; }
     }
 }

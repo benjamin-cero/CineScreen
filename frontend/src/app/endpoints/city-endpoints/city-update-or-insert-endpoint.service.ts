@@ -6,13 +6,11 @@ import {MyBaseEndpointAsync} from '../../helper/my-base-endpoint-async.interface
 export interface CityUpdateOrInsertRequest {
   id?: number;  // Optional or 0 for new city insertion
   name: string;
-  countryId: number;
 }
 
 export interface CityUpdateOrInsertResponse {
   id: number;
   name: string;
-  countryId: number;
 }
 
 @Injectable({

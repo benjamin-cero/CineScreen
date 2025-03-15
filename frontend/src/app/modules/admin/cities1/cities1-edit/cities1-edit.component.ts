@@ -7,10 +7,6 @@ import {
   CityGetByIdEndpointService,
   CityGetByIdResponse
 } from '../../../../endpoints/city-endpoints/city-get-by-id-endpoint.service';
-import {
-  CountryGetAllEndpointService,
-  CountryGetAllResponse
-} from '../../../../endpoints/country-endpoints/country-get-all-endpoint.service';
 import {MySnackbarHelperService} from '../../../shared/snackbars/my-snackbar-helper.service';
 
 @Component({
@@ -23,16 +19,14 @@ export class Cities1EditComponent implements OnInit {
   cityId: number;
   city: CityGetByIdResponse = {
     name: '',
-    countryId: 0
   };
-  countries: CountryGetAllResponse[] = []; // Niz za pohranu svih zemalja
+
 
   constructor(
     private route: ActivatedRoute,
     public router: Router,
     private cityGetByIdService: CityGetByIdEndpointService,
     private cityUpdateService: CityUpdateOrInsertEndpointService,
-    private countryGetAllService: CountryGetAllEndpointService,
     private snackbarHelper: MySnackbarHelperService
   ) {
     this.cityId = 0;
@@ -43,7 +37,6 @@ export class Cities1EditComponent implements OnInit {
     if (this.cityId) {
       this.loadCityData();
     }
-    this.loadCountries(); // Učitavanje svih zemalja za combobox
   }
 
   loadCityData(): void {
@@ -53,27 +46,11 @@ export class Cities1EditComponent implements OnInit {
     });
   }
 
-  loadCountries(): void {
-    this.countryGetAllService.handleAsync().subscribe({
-      next: (countries) => {
-        console.log("podaci su preuzeti")
-        this.countries = countries;
-        this.countries.push({
-          id: 0,
-          name: '--odabirite city--'
-        })
-      },
-
-      error: (error) => console.error('Error loading countries', error)
-    });
-  }
 
   updateCity(): void {
 
     let errors: string[] = [];
-    if (this.city.countryId == 0) {
-      errors.push("countryId is required");
-    }
+
 
     if (this.city.name.length == 0) {
       errors.push("name is required");

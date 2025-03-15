@@ -19,7 +19,7 @@ public class CityGetAll2Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
         var query = db.City
                         .Select(c => new CityGetAll1Response
                         {
-                            CityID = c.CityID,
+                            ID = c.ID,
                             Name = c.Name,
                         });
 
@@ -30,8 +30,7 @@ public class CityGetAll2Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
 
     public class CityGetAll2Response
     {
-        public required int CityID { get; set; }
+        public required int ID { get; set; }
         public required string Name { get; set; }
-        public required string CountryName { get; set; }
     }
 }
