@@ -7,5 +7,5 @@ import {Component} from '@angular/core';
   standalone: false
 })
 export class AppComponent {
-  title = 'RS1 - 2024-25 - template 1 ';
+  title = 'Cinescreen';
 }
