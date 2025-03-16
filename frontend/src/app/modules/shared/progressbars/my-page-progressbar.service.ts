@@ -9,7 +9,7 @@ export class MyPageProgressbarService {
   private isLoadingSubject = new BehaviorSubject<boolean>(false);
   isLoading$ = this.isLoadingSubject.asObservable();
 
-  private minDuration = 2000; // Minimalno trajanje progress bara u milisekundama
+  private minDuration = 1000; // Minimalno trajanje progress bara u milisekundama
   private showStartTime: number | null = null;
 
   show(): void {
