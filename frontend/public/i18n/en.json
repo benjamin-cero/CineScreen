@@ -5,8 +5,8 @@
   },
   "LOGIN": {
     "TITLE": "Login",
-    "USERNAME_LABEL": "Username:",
-    "USERNAME_PLACEHOLDER": "Enter username",
+    "USERNAME_LABEL": "Email:",
+    "USERNAME_PLACEHOLDER": "Enter email",
     "PASSWORD_LABEL": "Password:",
     "PASSWORD_PLACEHOLDER": "Enter password",
     "SAVE_LOGIN": "Save login",
