@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CineScreen.Helper;
+using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace CineScreen.Data.Auth;
@@ -9,11 +11,15 @@ public class MyAppUser
     public int ID { get; set; }
     public string Username { get; set; }
     [JsonIgnore]
-    public string Password { get; set; }
+    public string PasswordSalt { get; set; }
+
+    [JsonIgnore]
+    public string PasswordHash { get; set; }
 
     // Additional properties
     public string FirstName { get; set; }
     public string LastName { get; set; }
+    public string Email { get; set; }
 
 
     //----------------
@@ -21,18 +27,67 @@ public class MyAppUser
     public bool IsUser { get; set; }
 
     /*
-     
-     Ako sistem nije zamišljen da podržava česte promjene rola i 
-     ako se dodavanje novih rola svodi na manje promjene u kodu, 
-    tada može biti dovoljno koristiti boolean polja kao što su IsAdmin, IsManager itd. 
-    
-    Ovaj pristup je jednostavan i efektivan u situacijama gdje su role stabilne i unaprijed definirane.
 
-    Međutim, glavna prednost korištenja role entiteta dolazi do izražaja kada aplikacija potencijalno raste i 
-    zahtjeva kompleksnije role i ovlaštenja. U scenarijima gdje se očekuje veći broj različitih rola ili kompleksniji 
-    sistem ovlaštenja, dodavanje nove bool varijable može postati nepraktično i otežati održavanje.
+   Ako sistem nije zamišljen da podržava česte promjene rola i 
+   ako se dodavanje novih rola svodi na manje promjene u kodu, 
+  tada može biti dovoljno koristiti boolean polja kao što su IsAdmin, IsManager itd. 
 
-    Dakle, za stabilne sisteme s manjim brojem fiksnih rola, boolean polja su sasvim razumno rješenje.
-     */
+  Ovaj pristup je jednostavan i efektivan u situacijama gdje su role stabilne i unaprijed definirane.
+
+  Međutim, glavna prednost korištenja role entiteta dolazi do izražaja kada aplikacija potencijalno raste i 
+  zahtjeva kompleksnije role i ovlaštenja. U scenarijima gdje se očekuje veći broj različitih rola ili kompleksniji 
+  sistem ovlaštenja, dodavanje nove bool varijable može postati nepraktično i otežati održavanje.
+
+  Dakle, za stabilne sisteme s manjim brojem fiksnih rola, boolean polja su sasvim razumno rješenje.
+   */
+
+    // Number of failed login attempts
+    public int FailedLoginAttempts { get; set; } = 0;
+
+    // Timestamp for when the account might be locked (optional)
+    public DateTime? LockoutUntil { get; set; }
+
+    // Helper method for password hashing
+    public void SetPassword(string password)
+    {
+        var hasher = new PasswordHasher<MyAppUser>();
+        PasswordHash = hasher.HashPassword(this, password);
+    }
+
+    // Helper method for password verification
+    public bool VerifyPassword(string password)
+    {
+        // Regenerate the hash using the stored salt and the provided password
+        string computedHash = PasswordGenerator.GenerateHash(PasswordSalt, password);
+
+        // Compare the computed hash with the stored hash
+        bool isPasswordCorrect = computedHash == PasswordHash;
+
+        if (isPasswordCorrect)
+        {
+            // Reset failed login attempts on successful login
+            FailedLoginAttempts = 0;
+            LockoutUntil = null; // Reset lockout if it was set
+            return true;
+        }
+        else
+        {
+            // Increment failed login attempts on unsuccessful login
+            FailedLoginAttempts++;
+            return false;
+        }
+    }
+
+    // Check if account is locked
+    public bool IsLocked()
+    {
+        return LockoutUntil.HasValue && LockoutUntil.Value > DateTime.UtcNow;
+    }
+
+    // Lock account for a specific duration
+    public void LockAccount(int minutes)
+    {
+        LockoutUntil = DateTime.UtcNow.AddMinutes(minutes);
+    }
 
 }
