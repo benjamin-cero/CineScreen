@@ -1,5 +1,5 @@
 ﻿using CineScreen.Data;
-using FIT_Api_Example.Data.Models;
+using CineScreen.Data.Models.TenantSpecificTables.Basic;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
@@ -55,7 +55,7 @@ namespace FIT_Api_Example.Controllers
         {
             var NewReview = new Review()
             {
-               UserID = x.UserID,
+               MyAppUserID = x.MyAppUserID,
                MovieID = x.MovieID,
                Score = x.Score,
                Comment = x.Comment,

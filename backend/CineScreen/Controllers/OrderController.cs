@@ -1,5 +1,5 @@
 ﻿using CineScreen.Data;
-using FIT_Api_Example.Data.Models;
+using CineScreen.Data.Models.TenantSpecificTables.Basic;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
@@ -56,7 +56,7 @@ namespace FIT_Api_Example.Controllers
         {
             var NewOrder = new Order()
             {
-                UserID = x.UserID,
+                MyAppUserID = x.MyAppUserID,
                 MenuID = x.MenuID,
                 Quantity = x.Quantity,
                 OrderDate = DateTime.Now,

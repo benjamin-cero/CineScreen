@@ -1,9 +1,9 @@
 ﻿using Azure.Core;
 using CineScreen.Data;
+using CineScreen.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RS1_2024_25.API.Helper.Api;
-using RS1_2024_25.API.Services;
 using System.Threading;
 using System.Threading.Tasks;
 using static RS1_2024_25.API.Endpoints.AuthEndpoints.AuthLogoutEndpoint;

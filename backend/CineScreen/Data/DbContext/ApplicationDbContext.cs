@@ -1,5 +1,8 @@
-﻿using CineScreen.Data.Auth;
-using CineScreen.Data.Models;
+﻿using CineScreen.Data.Models;
+using CineScreen.Data.Models.SharedEnums;
+using CineScreen.Data.Models.SharedTables;
+using CineScreen.Data.Models.TenantSpecificTables.Auth;
+using CineScreen.Data.Models.TenantSpecificTables.Basic;
 using FIT_Api_Example.Data.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +27,6 @@ public partial class ApplicationDbContext : DbContext
     public DbSet<CinemaHall> CinemaHall { get; set; }
     public DbSet<City> City { get; set; }
     public DbSet<Director> Director { get; set; }
-    public DbSet<Gender> Gender { get; set; }
     public DbSet<Genre> Genre { get; set; }
     public DbSet<Manufacturer> Manufacturer { get; set; }
     public DbSet<Movie> Movie { get; set; }
@@ -34,18 +36,14 @@ public partial class ApplicationDbContext : DbContext
     public DbSet<ProductionHouse> ProductionHouse { get; set; }
     public DbSet<Projection> Projection { get; set; }
     public DbSet<Seat> Seat { get; set; }
-    public DbSet<Account> Account { get; set; }
-    public DbSet<User> User { get; set; }
-    public DbSet<Administrator> Administrator { get; set; }
     public DbSet<Order> Order { get; set; }
     public DbSet<Review> Review { get; set; }
     public DbSet<Ticket> Ticket { get; set; }
     public DbSet<MovieGenre> MovieGenre { get; set; }
     public DbSet<MovieProductionHouse> MovieProductionHouse { get; set; }
     public DbSet<MovieDirector> MovieDirector { get; set; }
-    public DbSet<Status> Status { get; set; }
     public DbSet<MenuManufacturer> MenuManufacturer { get; set; }
-    public DbSet<SeatType> SeatType { get; set; }
+    public DbSet<Tenant> Tenant { get; set; }
 
 
 
