@@ -1,4 +1,5 @@
-﻿using FIT_Api_Example.Data.Models;
+﻿using CineScreen.Data.Models.SharedEnums;
+using FIT_Api_Example.Data.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FIT_Api_Example.ViewModel
@@ -7,7 +8,7 @@ namespace FIT_Api_Example.ViewModel
     {
         public string SeatNumber { get; set; }
         public int CinemaHallID { get; set; }
-        public int SeatTypeID { get; set; }
+        public SeatType SeatType { get; set; }
         
     }
 }

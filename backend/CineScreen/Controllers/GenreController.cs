@@ -1,5 +1,5 @@
 ﻿using CineScreen.Data;
-using FIT_Api_Example.Data.Models;
+using CineScreen.Data.Models.SharedTables;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using RS1_2024_25.API.Services;

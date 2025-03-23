@@ -1,12 +1,12 @@
 ﻿using Azure;
+using CineScreen.Services;
 using Microsoft.AspNetCore.Mvc;
 using RS1_2024_25.API.Helper.Api;
-using RS1_2024_25.API.Services;
 using System.Threading;
 using System.Threading.Tasks;
-using static CineScreen.Endpoints.AuthEndpoints.AuthGetEndpoint;
+using static RS1_2024_25.API.Endpoints.AuthEndpoints.AuthGetEndpoint;
 
-namespace CineScreen.Endpoints.AuthEndpoints
+namespace RS1_2024_25.API.Endpoints.AuthEndpoints
 {
     [Route("auth")]
     public class AuthGetEndpoint(MyAuthService authService) : MyEndpointBaseAsync

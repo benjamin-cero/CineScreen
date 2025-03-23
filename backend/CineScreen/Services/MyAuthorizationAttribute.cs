@@ -1,5 +1,6 @@
 ﻿namespace RS1_2024_25.API.Services;
 
+using CineScreen.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;

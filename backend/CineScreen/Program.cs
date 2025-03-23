@@ -7,8 +7,8 @@ using Microsoft.Identity.Web;
 using Microsoft.Extensions.Configuration;
 using CineScreen.Data;
 using RS1_2024_25.API.Helper.Auth;
-using RS1_2024_25.API.Services;
 using RS1_2024_25.API.Helper;
+using CineScreen.Services;
 
 
 var config = new ConfigurationBuilder()

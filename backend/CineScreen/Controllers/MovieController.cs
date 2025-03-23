@@ -1,6 +1,6 @@
 ﻿using CineScreen.Data;
-using FIT_Api_Example.Data.Models;
-using FIT_Api_Example.ViewModel;
+using CineScreen.Data.Models.SharedTables;
+using CineScreen.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FIT_Api_Example.Controllers
@@ -60,7 +60,7 @@ namespace FIT_Api_Example.Controllers
                 Duration = x.Duration,
                 Poster = x.Poster,
                 ReleaseDate = x.ReleaseDate,
-                StatusID = x.StatusID,
+                Status = x.Status,
                 Title = x.Title,
                 Trailer = x.Trailer
             };
@@ -83,7 +83,7 @@ namespace FIT_Api_Example.Controllers
             UpdateMovie.Duration = x.Duration;
             UpdateMovie.Poster = x.Poster;
             UpdateMovie.ReleaseDate = x.ReleaseDate;
-            UpdateMovie.StatusID = x.StatusID;
+            UpdateMovie.Status = x.Status;
             UpdateMovie.Title = x.Title;
             UpdateMovie.Trailer = x.Trailer;
             _DbContext.SaveChanges();

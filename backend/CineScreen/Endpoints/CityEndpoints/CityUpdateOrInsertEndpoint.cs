@@ -1,8 +1,8 @@
 ﻿using CineScreen.Data;
-using CineScreen.Data.Models;
+using CineScreen.Data.Models.SharedTables;
+using CineScreen.Services;
 using Microsoft.AspNetCore.Mvc;
 using RS1_2024_25.API.Helper.Api;
-using RS1_2024_25.API.Services;
 using static RS1_2024_25.API.Endpoints.CityEndpoints.CityUpdateOrInsertEndpoint;
 
 namespace RS1_2024_25.API.Endpoints.CityEndpoints

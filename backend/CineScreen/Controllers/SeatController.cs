@@ -1,5 +1,5 @@
 ﻿using CineScreen.Data;
-using FIT_Api_Example.Data.Models;
+using CineScreen.Data.Models.TenantSpecificTables.Basic;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
@@ -59,7 +59,7 @@ namespace FIT_Api_Example.Controllers
             {
                 CinemaHallID = x.CinemaHallID,
                 SeatNumber = x.SeatNumber,
-                SeatTypeID = x.SeatTypeID,
+                SeatType = x.SeatType,
             };
             _DbContext.Seat.Add(NewSeat);
             _DbContext.SaveChanges();
@@ -77,7 +77,7 @@ namespace FIT_Api_Example.Controllers
             }
             UpdateSeat.CinemaHallID = x.CinemaHallID;
             UpdateSeat.SeatNumber = x.SeatNumber;
-            UpdateSeat.SeatTypeID = x.SeatTypeID;
+            UpdateSeat.SeatType = x.SeatType;
             _DbContext.SaveChanges();
             return UpdateSeat;
 

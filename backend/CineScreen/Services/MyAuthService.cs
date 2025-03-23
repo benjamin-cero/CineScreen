@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using CineScreen.Data;
-using CineScreen.Data.Auth;
+using CineScreen.Data.Models.SharedTables;
+using CineScreen.Data.Models.TenantSpecificTables.Auth;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using RS1_2024_25.API.Helper;
 
-namespace RS1_2024_25.API.Services
+namespace CineScreen.Services
 {
     public class MyAuthService(ApplicationDbContext applicationDbContext, IHttpContextAccessor httpContextAccessor, MyTokenGenerator myTokenGenerator)
     {
@@ -22,7 +24,8 @@ namespace RS1_2024_25.API.Services
                 IpAddress = httpContextAccessor.HttpContext?.Connection.RemoteIpAddress?.ToString() ?? string.Empty,
                 Value = randomToken,
                 MyAppUser = user,
-                RecordedAt = DateTime.Now
+                RecordedAt = DateTime.Now,
+                TenantId = user.TenantId,
             };
 
             applicationDbContext.MyAuthenticationTokens.Add(authToken);
@@ -56,7 +59,7 @@ namespace RS1_2024_25.API.Services
             }
 
             var myAuthToken = applicationDbContext.MyAuthenticationTokens
-                .Include(x => x.MyAppUser)
+                .Include(x => x.MyAppUser!.Tenant)
                 .SingleOrDefault(x => x.Value == authToken);
 
             return GetAuthInfo(myAuthToken);
@@ -77,12 +80,14 @@ namespace RS1_2024_25.API.Services
             return new MyAuthInfo
             {
                 UserId = myAuthToken.MyAppUserId,
-                Username = myAuthToken.MyAppUser!.Username,
+                Email = myAuthToken.MyAppUser!.Email,
                 FirstName = myAuthToken.MyAppUser.FirstName,
                 LastName = myAuthToken.MyAppUser.LastName,
                 IsAdmin = myAuthToken.MyAppUser.IsAdmin,
                 IsUser = myAuthToken.MyAppUser.IsUser,
-                IsLoggedIn = true
+                IsLoggedIn = true,
+                Tenant = myAuthToken.MyAppUser.Tenant,
+                TenantId = myAuthToken.MyAppUser.TenantId,
             };
         }
     }
@@ -90,8 +95,11 @@ namespace RS1_2024_25.API.Services
     // DTO to hold authentication information
     public class MyAuthInfo
     {
+        public int TenantId { get; set; }
+        [JsonIgnore]
+        public Tenant? Tenant { get; set; }
         public int UserId { get; set; }
-        public string Username { get; set; }
+        public string Email { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public bool IsAdmin { get; set; }

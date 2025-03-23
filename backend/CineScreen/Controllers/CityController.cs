@@ -1,6 +1,6 @@
 ﻿
 using CineScreen.Data;
-using CineScreen.Data.Models;
+using CineScreen.Data.Models.SharedTables;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 

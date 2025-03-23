@@ -1,7 +1,8 @@
-﻿using FIT_Api_Example.Data.Models;
+﻿using CineScreen.Data.Models.SharedEnums;
+using FIT_Api_Example.Data.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FIT_Api_Example.ViewModel
+namespace CineScreen.ViewModel
 {
     public class MovieUpsertVM
     {
@@ -11,7 +12,7 @@ namespace FIT_Api_Example.ViewModel
         public int Duration { get; set; }
         public string? Trailer { get; set; }
         public byte[]? Poster { get; set; }
-        public int StatusID { get; set; }
-        
+        public Status Status { get; set; }
+
     }
 }

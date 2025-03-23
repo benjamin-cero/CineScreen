@@ -1,5 +1,5 @@
 ﻿using CineScreen.Data;
-using FIT_Api_Example.Data.Models;
+using CineScreen.Data.Models.SharedTables;
 using FIT_Api_Example.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -26,14 +26,14 @@ namespace FIT_Api_Example.Controllers
             return movieProductionHouse;
         }
 
-        [HttpGet("MovieProductionHouseID")]
+        [HttpGet("ID")]
 
-        public ActionResult<MovieProductionHouse> GetById(int MovieProductionHouseId)
+        public ActionResult<MovieProductionHouse> GetById(int ID)
         {
             var movieProductionHouse = _DbContext.MovieProductionHouse
                 .Include(x => x.Movie) // Include the related Movie entity
                 .Include(x => x.ProductionHouse) // Include the related ProductionHouse entity
-                .FirstOrDefault(x => x.MovieProductionHouseID == MovieProductionHouseId);
+                .FirstOrDefault(x => x.ID == ID);
             if (movieProductionHouse == null)
             {
                 return NotFound();

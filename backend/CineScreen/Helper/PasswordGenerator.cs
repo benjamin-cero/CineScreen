@@ -7,22 +7,24 @@ namespace CineScreen.Helper
     {
         public static string GenerateSalt()
         {
-            var byteArray = RandomNumberGenerator.GetBytes(16);
-            return Convert.ToBase64String(byteArray);
+            byte[] salt = RandomNumberGenerator.GetBytes(32); // Increase salt size to 32 bytes
+            return Convert.ToBase64String(salt);
         }
 
         public static string GenerateHash(string salt, string password)
         {
-            byte[] src = Convert.FromBase64String(salt);
-            byte[] bytes = Encoding.Unicode.GetBytes(password);
-            byte[] dst = new byte[src.Length + bytes.Length];
+            byte[] saltBytes = Convert.FromBase64String(salt);
+            byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
 
-            Buffer.BlockCopy(src, 0, dst, 0, src.Length);
-            Buffer.BlockCopy(bytes, 0, dst, src.Length, bytes.Length);
+            using (var sha256 = SHA256.Create()) // Use SHA256
+            {
+                byte[] combined = new byte[saltBytes.Length + passwordBytes.Length];
+                Buffer.BlockCopy(saltBytes, 0, combined, 0, saltBytes.Length);
+                Buffer.BlockCopy(passwordBytes, 0, combined, saltBytes.Length, passwordBytes.Length);
 
-            HashAlgorithm algorithm = HashAlgorithm.Create("SHA1");
-            byte[] inArray = algorithm.ComputeHash(dst);
-            return Convert.ToBase64String(inArray);
+                byte[] hashBytes = sha256.ComputeHash(combined);
+                return Convert.ToBase64String(hashBytes);
+            }
         }
     }
 }
