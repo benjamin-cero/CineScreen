@@ -1,7 +1,7 @@
 ﻿using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace RS1_2024_25.API.Helper.Auth
+namespace CineScreen.Helper.Auth
 {
     public class MyAuthorizationSwaggerHeader : IOperationFilter
     {

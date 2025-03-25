@@ -17,7 +17,7 @@ public class CityGetAll3Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
     public override async Task<MyPagedList<CityGetAll3Response>> HandleAsync([FromQuery] CityGetAll3Request request, CancellationToken cancellationToken = default)
     {
         // Kreiranje osnovnog query-a
-        var query = db.City
+        var query = db.Cities
             .AsQueryable();
 
         // Primjena filtera na osnovu naziva grada
@@ -50,5 +50,6 @@ public class CityGetAll3Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
     {
         public required int ID { get; set; }
         public required string Name { get; set; }
+
     }
 }

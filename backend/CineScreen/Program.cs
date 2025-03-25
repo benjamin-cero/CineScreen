@@ -6,9 +6,9 @@ using Microsoft.Identity.Web;
 
 using Microsoft.Extensions.Configuration;
 using CineScreen.Data;
-using RS1_2024_25.API.Helper.Auth;
 using RS1_2024_25.API.Helper;
 using CineScreen.Services;
+using CineScreen.Helper.Auth;
 
 
 var config = new ConfigurationBuilder()
@@ -31,6 +31,8 @@ builder.Services.AddHttpContextAccessor();
 //dodajte vaše servise
 builder.Services.AddTransient<MyAuthService>();
 builder.Services.AddTransient<MyTokenGenerator>();
+builder.Services.AddSignalR();
+
 
 var app = builder.Build();
 
@@ -50,6 +52,7 @@ app.UseCors(
 app.UseAuthorization();
 
 app.MapControllers();
+//app.MapHub<MySignalrHub>("/mysginalr-hub-path");
 
 app.Run();
 
