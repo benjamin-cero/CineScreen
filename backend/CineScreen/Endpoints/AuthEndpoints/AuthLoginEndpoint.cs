@@ -1,15 +1,17 @@
-﻿using CineScreen.Data;
+﻿using CineScreen.Data.Models.TenantSpecificTables.Auth;
+using CineScreen.Data;
 using CineScreen.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RS1_2024_25.API.Helper;
 using RS1_2024_25.API.Helper.Api;
+using CineScreen.Services;
 using System.Threading;
 using System.Threading.Tasks;
-using static RS1_2024_25.API.Endpoints.AuthEndpoints.AuthLoginEndpoint;
+using static CineScreen.Endpoints.AuthEndpoints.AuthLoginEndpoint;
 
-namespace RS1_2024_25.API.Endpoints.AuthEndpoints
+namespace CineScreen.Endpoints.AuthEndpoints
 {
     [Route("auth")]
     public class AuthLoginEndpoint(ApplicationDbContext db, MyAuthService authService) : MyEndpointBaseAsync
@@ -20,7 +22,7 @@ namespace RS1_2024_25.API.Endpoints.AuthEndpoints
         public override async Task<ActionResult<LoginResponse>> HandleAsync(LoginRequest request, CancellationToken cancellationToken = default)
         {
             // Provjera da li korisnik postoji u bazi
-            var loggedInUser = await db.MyAppUsers
+            var loggedInUser = await db.MyAppUsersAll
                 .FirstOrDefaultAsync(u => u.Email == request.Email, cancellationToken);
 
             if (loggedInUser == null || !loggedInUser.VerifyPassword(request.Password))
@@ -28,14 +30,16 @@ namespace RS1_2024_25.API.Endpoints.AuthEndpoints
                 // Sačuvaj promjene samo ako je korisnik postojao i ako su povećani neuspješni pokušaji
                 if (loggedInUser != null)
                 {
+                    db.CurrentTenantId = loggedInUser.TenantId;  //rucno postavljanje CurrentTenantId u dbContext zbog db inserta AuthToken
                     await db.SaveChangesAsync(cancellationToken);
                 }
                 return Unauthorized(new { Message = "Incorrect username or password" });
             }
 
+            db.CurrentTenantId = loggedInUser.TenantId; //rucno postavljanje CurrentTenantId u dbContext zbog db inserta AuthToken
             // Generisanje novog autentifikacionog tokena
-            var newAuthToken = await authService.GenerateAuthToken(loggedInUser, cancellationToken);
-            var authInfo = authService.GetAuthInfo(newAuthToken);
+            MyAuthenticationToken newAuthToken = await authService.GenerateSaveAuthToken(loggedInUser, cancellationToken);
+            MyAuthInfo authInfo = authService.GetAuthInfoFromTokenModel(newAuthToken);
 
             return new LoginResponse
             {

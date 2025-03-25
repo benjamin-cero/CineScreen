@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RS1_2024_25.API.Helper;
 using RS1_2024_25.API.Helper.Api;
-using static RS1_2024_25.API.Endpoints.CityEndpoints.CityGetAll1Endpoint;
+using static CineScreen.Endpoints.CityEndpoints.CityGetAll1Endpoint;
 
-namespace RS1_2024_25.API.Endpoints.CityEndpoints;
+namespace CineScreen.Endpoints.CityEndpoints;
 
 //sa paging i bez filtera
 [Route("cities")]
@@ -16,11 +16,12 @@ public class CityGetAll2Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
     [HttpGet("paged")]
     public override async Task<MyPagedList<CityGetAll1Response>> HandleAsync([FromQuery] MyPagedRequest request, CancellationToken cancellationToken = default)
     {
-        var query = db.City
+        var query = db.Cities
                         .Select(c => new CityGetAll1Response
                         {
                             ID = c.ID,
                             Name = c.Name,
+
                         });
 
         var result = await MyPagedList<CityGetAll1Response>.CreateAsync(query, request, cancellationToken);

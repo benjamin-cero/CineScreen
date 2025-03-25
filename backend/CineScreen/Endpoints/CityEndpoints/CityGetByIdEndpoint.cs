@@ -14,7 +14,7 @@ public class CityGetByIdEndpoint(ApplicationDbContext db) : MyEndpointBaseAsync
     [HttpGet("{id}")]
     public override async Task<CityGetByIdResponse> HandleAsync(int id, CancellationToken cancellationToken = default)
     {
-        var city = await db.City
+        var city = await db.Cities
                             .Where(c => c.ID == id)
                             .Select(c => new CityGetByIdResponse
                             {
@@ -33,5 +33,6 @@ public class CityGetByIdEndpoint(ApplicationDbContext db) : MyEndpointBaseAsync
     {
         public required int ID { get; set; }
         public required string Name { get; set; }
+
     }
 }

@@ -2,10 +2,11 @@
 using CineScreen.Data.Models.SharedTables;
 using CineScreen.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RS1_2024_25.API.Helper.Api;
-using static RS1_2024_25.API.Endpoints.CityEndpoints.CityUpdateOrInsertEndpoint;
+using static CineScreen.Endpoints.CityEndpoints.CityUpdateOrInsertEndpoint;
 
-namespace RS1_2024_25.API.Endpoints.CityEndpoints
+namespace CineScreen.Endpoints.CityEndpoints
 {
     [Route("cities")]
     public class CityUpdateOrInsertEndpoint(ApplicationDbContext db, MyAuthService myAuthService) : MyEndpointBaseAsync
@@ -16,25 +17,25 @@ namespace RS1_2024_25.API.Endpoints.CityEndpoints
         public override async Task<ActionResult<CityUpdateOrInsertResponse>> HandleAsync([FromBody] CityUpdateOrInsertRequest request, CancellationToken cancellationToken = default)
         {
 
-            MyAuthInfo myAuthInfo = myAuthService.GetAuthInfo();
+            MyAuthInfo myAuthInfo = myAuthService.GetAuthInfoFromRequest();
             if (!myAuthInfo.IsLoggedIn)
             {
                 return Unauthorized();
             }
             // Check if we're performing an insert or update based on the ID value
-            bool isInsert = (request.ID == null || request.ID == 0);
+            bool isInsert = request.ID == null || request.ID == 0;
             City? city;
 
             if (isInsert)
             {
                 // Insert operation: create a new city entity
                 city = new City();
-                db.City.Add(city); // Add the new city to the context
+                db.Cities.Add(city); // Add the new city to the context
             }
             else
             {
                 // Update operation: retrieve the existing city
-                city = await db.City.FindAsync(new object[] { request.ID }, cancellationToken);
+                city = await db.Cities.SingleOrDefaultAsync(x => x.ID == request.ID, cancellationToken);
 
                 if (city == null)
                 {
@@ -42,8 +43,10 @@ namespace RS1_2024_25.API.Endpoints.CityEndpoints
                 }
             }
 
+
             // Set common properties for both insert and update operations
             city.Name = request.Name;
+
 
             // Save changes to the database
             await db.SaveChangesAsync(cancellationToken);
@@ -59,12 +62,14 @@ namespace RS1_2024_25.API.Endpoints.CityEndpoints
         {
             public int? ID { get; set; } // Nullable to allow null for insert operations
             public required string Name { get; set; }
+
         }
 
         public class CityUpdateOrInsertResponse
         {
             public required int ID { get; set; }
             public required string Name { get; set; }
+
         }
     }
 }

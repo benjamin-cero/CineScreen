@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace RS1_2024_25.API.Helper;
+namespace CineScreen.Helper;
 
 public static class MyExtensionMethods
 {
@@ -31,5 +31,14 @@ public static class MyExtensionMethods
     {
         base64string = base64string.Split(',')[1];
         return Convert.FromBase64String(base64string);
+    }
+
+    public static string Pluralize(this string name)
+    {
+        if (name.EndsWith("y"))
+            return name.Substring(0, name.Length - 1) + "ies"; // City → Cities
+        if (name.EndsWith("s") || name.EndsWith("x") || name.EndsWith("z"))
+            return name + "es"; // Class → Classes
+        return name + "s"; // Default: add 's' at the end
     }
 }

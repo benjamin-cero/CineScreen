@@ -2,9 +2,9 @@
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
-using CineScreen.Data;
 using CineScreen.Data.Models.SharedTables;
 using CineScreen.Data.Models.TenantSpecificTables.Auth;
+using CineScreen.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using RS1_2024_25.API.Helper;
@@ -15,7 +15,7 @@ namespace CineScreen.Services
     {
 
         // Generisanje novog tokena za korisnika
-        public async Task<MyAuthenticationToken> GenerateAuthToken(MyAppUser user, CancellationToken cancellationToken = default)
+        public async Task<MyAuthenticationToken> GenerateSaveAuthToken(MyAppUser user, CancellationToken cancellationToken = default)
         {
             string randomToken = myTokenGenerator.Generate(10);
 
@@ -28,7 +28,7 @@ namespace CineScreen.Services
                 TenantId = user.TenantId,
             };
 
-            applicationDbContext.MyAuthenticationTokens.Add(authToken);
+            applicationDbContext.Add(authToken);
             await applicationDbContext.SaveChangesAsync(cancellationToken);
 
             return authToken;
@@ -43,29 +43,37 @@ namespace CineScreen.Services
             if (authToken == null)
                 return false;
 
-            applicationDbContext.MyAuthenticationTokens.Remove(authToken);
+            applicationDbContext.Remove(authToken);
             await applicationDbContext.SaveChangesAsync(cancellationToken);
 
             return true;
         }
 
         // Dohvatanje informacija o autentifikaciji korisnika
-        public MyAuthInfo GetAuthInfo()
+        public MyAuthInfo GetAuthInfoFromTokenString(string? authToken)
         {
-            string? authToken = httpContextAccessor.HttpContext?.Request.Headers["my-auth-token"];
             if (string.IsNullOrEmpty(authToken))
             {
-                return GetAuthInfo(null);
+                return GetAuthInfoFromTokenModel(null);
             }
 
-            var myAuthToken = applicationDbContext.MyAuthenticationTokens
+            MyAuthenticationToken? myAuthToken = applicationDbContext.MyAuthenticationTokens
+                .IgnoreQueryFilters()
                 .Include(x => x.MyAppUser!.Tenant)
                 .SingleOrDefault(x => x.Value == authToken);
 
-            return GetAuthInfo(myAuthToken);
+            return GetAuthInfoFromTokenModel(myAuthToken);
         }
 
-        public MyAuthInfo GetAuthInfo(MyAuthenticationToken? myAuthToken)
+
+        // Dohvatanje informacija o autentifikaciji korisnika
+        public MyAuthInfo GetAuthInfoFromRequest()
+        {
+            string? authToken = httpContextAccessor.HttpContext?.Request.Headers["my-auth-token"];
+            return GetAuthInfoFromTokenString(authToken);
+        }
+
+        public MyAuthInfo GetAuthInfoFromTokenModel(MyAuthenticationToken? myAuthToken)
         {
             if (myAuthToken == null)
             {
@@ -104,6 +112,7 @@ namespace CineScreen.Services
         public string LastName { get; set; }
         public bool IsAdmin { get; set; }
         public bool IsUser { get; set; }
+
         public bool IsLoggedIn { get; set; }
         public string SlikaPath { get; set; }
     }

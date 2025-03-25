@@ -1,4 +1,4 @@
-﻿namespace RS1_2024_25.API.Services;
+﻿namespace CineScreen.Services;
 
 using CineScreen.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +20,7 @@ public class MyAuthorizationAttribute(bool isAdmin, bool isUser) : Attribute, IA
         }
 
         // Pozovi GetAuthInfo za dobijanje korisničkih informacija na osnovu tokena
-        var authInfo = authService.GetAuthInfo();
+        var authInfo = authService.GetAuthInfoFromRequest();
         if (authInfo == null)
         {
             context.Result = new UnauthorizedResult();
