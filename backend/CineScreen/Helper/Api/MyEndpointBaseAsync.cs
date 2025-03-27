@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace RS1_2024_25.API.Helper.Api;
+namespace CineScreen.Helper.Api;
 
 //https://github.com/ardalis/ApiEndpoints/blob/main/src/Ardalis.ApiEndpoints/FluentGenerics/EndpointBaseAsync.cs
 public static class MyEndpointBaseAsync

@@ -1,7 +1,7 @@
 ﻿using CineScreen.Data;
+using CineScreen.Helper.Api;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using RS1_2024_25.API.Helper.Api;
 using static CineScreen.Endpoints.CityEndpoints.CityGetByIdEndpoint;
 
 namespace CineScreen.Endpoints.CityEndpoints;

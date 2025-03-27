@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace RS1_2024_25.API.Helper;
+namespace CineScreen.Helper;
 
 public class MyPagedList<T>
 {
@@ -26,7 +26,7 @@ public class MyPagedList<T>
     {
         var totalCount = await source.CountAsync();
         var items = await source.Skip((pagingRequest.PageNumber - 1) * pagingRequest.PageSize).Take(pagingRequest.PageSize).ToArrayAsync(cancellationToken);
-        
+
         return new MyPagedList<T>(items, totalCount, pagingRequest.PageNumber, pagingRequest.PageSize);
     }
 }

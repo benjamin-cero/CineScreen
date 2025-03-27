@@ -1,11 +1,11 @@
 ﻿using Azure;
 using CineScreen.Services;
 using Microsoft.AspNetCore.Mvc;
-using RS1_2024_25.API.Helper.Api;
 using CineScreen.Services;
 using System.Threading;
 using System.Threading.Tasks;
 using static CineScreen.Endpoints.AuthEndpoints.AuthGetEndpoint;
+using CineScreen.Helper.Api;
 
 namespace CineScreen.Endpoints.AuthEndpoints
 {
