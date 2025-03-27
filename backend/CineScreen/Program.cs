@@ -6,10 +6,10 @@ using Microsoft.Identity.Web;
 
 using Microsoft.Extensions.Configuration;
 using CineScreen.Data;
-using RS1_2024_25.API.Helper;
 using CineScreen.Services;
 using CineScreen.Helper.Auth;
 using CineScreen.SignalR;
+using CineScreen.Helper;
 
 
 var config = new ConfigurationBuilder()

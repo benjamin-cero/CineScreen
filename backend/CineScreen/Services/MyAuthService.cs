@@ -7,7 +7,7 @@ using CineScreen.Data.Models.TenantSpecificTables.Auth;
 using CineScreen.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using RS1_2024_25.API.Helper;
+using CineScreen.Helper;
 
 namespace CineScreen.Services
 {

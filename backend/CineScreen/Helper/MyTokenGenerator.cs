@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace RS1_2024_25.API.Helper;
+namespace CineScreen.Helper;
 
 //https://gist.github.com/wadeschulz/20822570b27159813db8
 public class MyTokenGenerator

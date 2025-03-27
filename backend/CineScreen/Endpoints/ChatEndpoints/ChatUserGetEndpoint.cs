@@ -1,9 +1,9 @@
 ﻿using CineScreen.Data;
-using RS1_2024_25.API.Helper.Api;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using RS1_2024_25.API.Helper;
+using CineScreen.Helper;
 using static CineScreen.Endpoints.ChatEndpoints.ChatUserGetEndpoint;
+using CineScreen.Helper.Api;
 
 namespace CineScreen.Endpoints.ChatEndpoints;
 

@@ -1,9 +1,9 @@
 ﻿
 using CineScreen.Data;
+using CineScreen.Helper.Api;
 using CineScreen.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using RS1_2024_25.API.Helper.Api;
 
 namespace CineScreen.Endpoints.CityEndpoints;
 
