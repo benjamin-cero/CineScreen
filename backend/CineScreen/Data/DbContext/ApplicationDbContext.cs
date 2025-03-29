@@ -17,7 +17,7 @@ namespace CineScreen.Data;
 public partial class ApplicationDbContext(DbContextOptions options, IServiceProvider serviceProvider) : DbContext(options)
 {
  
-    // Shared tables
+    // Shared tables for all tenants
 
     public DbSet<Actor> Actors { get; set; }
     public DbSet<City> Cities { get; set; }
@@ -34,7 +34,7 @@ public partial class ApplicationDbContext(DbContextOptions options, IServiceProv
     public DbSet<Tenant> Tenants { get; set; }
 
 
-    // Tenant Specific All
+    // Tenant Specific Tables with All Data
     public DbSet<MyAppUser> MyAppUsersAll { get; set; }
     public DbSet<MyAuthenticationToken> MyAuthenticationTokensAll { get; set; }
     public DbSet<CinemaHall> CinemaHallsAll { get; set; }
@@ -46,7 +46,7 @@ public partial class ApplicationDbContext(DbContextOptions options, IServiceProv
     public DbSet<Ticket> TicketsAll { get; set; }
     public DbSet<MenuManufacturer> MenuManufacturersAll { get; set; }
 
-    // Tenant Specific
+    // Tenant Specific Tables with Specific Data
 
     public IQueryable<MyAppUser> MyAppUsers => Set<MyAppUser>().Where(e => e.TenantId == CurrentTenantIdThrowIfFail);
     public IQueryable<MyAuthenticationToken> MyAuthenticationTokens => Set<MyAuthenticationToken>();
