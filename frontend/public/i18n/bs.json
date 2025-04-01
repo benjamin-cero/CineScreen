@@ -5,8 +5,8 @@
   },
   "LOGIN": {
     "TITLE": "Prijava",
-    "USERNAME_LABEL": "Email:",
-    "USERNAME_PLACEHOLDER": "Unesite email",
+    "USERNAME_LABEL": "Korisničko ime:",
+    "USERNAME_PLACEHOLDER": "Unesite korisničko ime",
     "PASSWORD_LABEL": "Šifra:",
     "PASSWORD_PLACEHOLDER": "Unesite šifru",
     "SAVE_LOGIN": "Sačuvaj prijavu",
