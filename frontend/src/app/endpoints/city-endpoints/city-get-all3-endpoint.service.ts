@@ -16,7 +16,6 @@ export interface CityGetAll3Request extends MyPagedRequest {
 export interface CityGetAll3Response {
   id: number;
   name: string;
-  countryName: string;
 }
 
 @Injectable({

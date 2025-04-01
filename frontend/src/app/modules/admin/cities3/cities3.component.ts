@@ -21,7 +21,7 @@ import {debounceTime, distinctUntilChanged, Subject} from 'rxjs';
 })
 export class Cities3Component implements OnInit, AfterViewInit {
   //ovdje je koristeno Angular Reactive forms
-  displayedColumns: string[] = ['name', 'regionName', 'countryName', 'actions'];
+  displayedColumns: string[] = ['name', 'actions'];
   dataSource: MatTableDataSource<CityGetAll3Response> = new MatTableDataSource<CityGetAll3Response>();
   cities: CityGetAll1Response[] = [];
   @ViewChild(MatPaginator) paginator!: MatPaginator;

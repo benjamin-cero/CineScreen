@@ -27,13 +27,11 @@ public class CityGetAll3Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
             );
         }
 
-
-
         // Projektovanje u rezultatni tip
         var projectedQuery = query.Select(c => new CityGetAll3Response
         {
             ID = c.ID,
-            Name = c.Name,
+            Name = c.Name
         });
 
         // Kreiranje paginiranog odgovora sa filterom
@@ -44,7 +42,6 @@ public class CityGetAll3Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
     }
     public class CityGetAll3Request : MyPagedRequest //naslijeđujemo
     {
-        public string FilterCityName { get; set; } = string.Empty;
         public string? Q { get; set; } = string.Empty;
     }
 
@@ -52,7 +49,5 @@ public class CityGetAll3Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
     {
         public required int ID { get; set; }
         public required string Name { get; set; }
-
-
     }
 }
