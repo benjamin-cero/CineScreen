@@ -16,9 +16,7 @@ export interface StudentGetAllResponse {
   id: number;
   firstName: string;
   lastName: string;
-  studentNumber: string;
-  citizenship?: string; // Državljanstvo
-  birthMunicipality?: string; // Općina rođenja
+  email: string;
 }
 
 @Injectable({
