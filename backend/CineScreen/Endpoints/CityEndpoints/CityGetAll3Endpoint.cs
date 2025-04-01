@@ -21,9 +21,10 @@ public class CityGetAll3Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
             .AsQueryable();
 
         // Primjena filtera na osnovu naziva grada
-        if (!string.IsNullOrWhiteSpace(request.FilterCityName))
+        if (!string.IsNullOrWhiteSpace(request.Q))
         {
-            query = query.Where(c => c.Name.Contains(request.FilterCityName));
+            query = query.Where(c => c.Name.Contains(request.Q)
+            );
         }
 
 
@@ -44,12 +45,14 @@ public class CityGetAll3Endpoint(ApplicationDbContext db) : MyEndpointBaseAsync
     public class CityGetAll3Request : MyPagedRequest //naslijeđujemo
     {
         public string FilterCityName { get; set; } = string.Empty;
+        public string? Q { get; set; } = string.Empty;
     }
 
     public class CityGetAll3Response
     {
         public required int ID { get; set; }
         public required string Name { get; set; }
+
 
     }
 }

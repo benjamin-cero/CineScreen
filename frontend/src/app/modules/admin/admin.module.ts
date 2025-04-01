@@ -32,6 +32,14 @@ import {MatOption, MatSelect} from "@angular/material/select";
 import {MatCard} from '@angular/material/card';
 import {Cities3Component} from './cities3/cities3.component';
 import {Cities3EditComponent} from './cities3/cities3-edit/cities3-edit.component';
+import {MatProgressSpinner} from "@angular/material/progress-spinner";
+import {
+  RxjsSubjectMessageExampleComponent
+} from './rxjs-subject-message-example/rxjs-subject-message-example.component';
+import {SenderComponent} from './rxjs-subject-message-example/sender/sender.component';
+import {Receiver2Component} from './rxjs-subject-message-example/receiver2/receiver2.component';
+import { Receiver1Component } from './rxjs-subject-message-example/receiver1/receiver1.component';
+import { Receiver3Component } from './rxjs-subject-message-example/receiver3/receiver3.component';
 
 
 @NgModule({
@@ -47,6 +55,12 @@ import {Cities3EditComponent} from './cities3/cities3-edit/cities3-edit.componen
     Cities1EditComponent,
     Cities2EditComponent,
     Cities3EditComponent,
+    SenderComponent,
+    Receiver2Component,
+    RxjsSubjectMessageExampleComponent,
+    SenderComponent,
+    Receiver1Component,
+    Receiver3Component,
   ],
   imports: [
     CommonModule,
@@ -70,6 +84,7 @@ import {Cities3EditComponent} from './cities3/cities3-edit/cities3-edit.componen
     MatSelect,
     MatOption,
     MatCard,
+    MatProgressSpinner,
     // Omogućava pristup svemu što je eksportovano iz SharedModule
   ],
   providers: []
