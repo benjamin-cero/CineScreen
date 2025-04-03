@@ -2,6 +2,7 @@
 using CineScreen.Data;
 using CineScreen.Helper.Api;
 using CineScreen.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +14,7 @@ public class CityDeleteEndpoint(ApplicationDbContext db) : MyEndpointBaseAsync
     .WithRequest<int>
     .WithoutResult
 {
-
+   
     [HttpDelete("{id}")]
     public override async Task HandleAsync(int id, CancellationToken cancellationToken = default)
     {
