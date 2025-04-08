@@ -14,9 +14,9 @@ using System.Linq.Expressions;
 
 namespace CineScreen.Data;
 
-public partial class ApplicationDbContext(DbContextOptions options, IServiceProvider serviceProvider) : DbContext(options)
+public partial class ApplicationDbContext(DbContextOptions options, IHttpContextAccessor httpContextAccessor) : DbContext(options)
 {
- 
+
     // Shared tables for all tenants
 
     public DbSet<Actor> Actors { get; set; }
@@ -85,8 +85,7 @@ public partial class ApplicationDbContext(DbContextOptions options, IServiceProv
         {
             if (_CurrentTenantId == null)
             {
-                var authService = serviceProvider.GetRequiredService<MyAuthService>();
-                MyAuthInfo myAuthInfo = authService.GetAuthInfoFromRequest();
+                MyAuthInfo myAuthInfo = MyAuthServiceHelper.GetAuthInfoFromRequest(this, httpContextAccessor);
                 _CurrentTenantId = myAuthInfo.TenantId;
             }
             return _CurrentTenantId;
@@ -96,13 +95,6 @@ public partial class ApplicationDbContext(DbContextOptions options, IServiceProv
             _CurrentTenantId = value;
         }
     }
-
-
-
-
-
-
-
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -117,11 +109,16 @@ public partial class ApplicationDbContext(DbContextOptions options, IServiceProv
         // modelBuilder.Entity<NekaBaznaKlasa>().UseTpcMappingStrategy();
 
         // Iteracija kroz sve entitete u modelu
+        // U EF-u defaultno naziv tabele je jednak nazivu dbseta.
+        // S obzirom što smo izmjenili nazive dbsetova zbog tenanata i zbog dodatnih queryable
+        // onda u narednoj petlji postavljamo da nazivi tabela budu nazivi atributa "table"
+        // Ako nema atributa "table" onda se koristi naziv klase.
+
         foreach (var entityType in modelBuilder.Model.GetEntityTypes())
         {
             var clrType = entityType.ClrType;
 
-            // Provjera da li postoji [Table("...")] atribut
+            // Provjera da li postoji [Table("TblNekoIme")] atribut
             var tableAttribute = clrType.GetCustomAttributes(typeof(TableAttribute), inherit: false)
                                         .FirstOrDefault() as TableAttribute;
 
@@ -137,13 +134,10 @@ public partial class ApplicationDbContext(DbContextOptions options, IServiceProv
                 modelBuilder.Entity(clrType).ToTable(tableAttribute.Name);
             }
         }
-
-
         OnModelCreatingPartial(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-
 
     public override int SaveChanges()
     {
