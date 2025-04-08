@@ -9,24 +9,27 @@ namespace CineScreen.Endpoints.CityEndpoints;
 [Route("cities")]
 public class CityGetByIdEndpoint(ApplicationDbContext db) : MyEndpointBaseAsync
     .WithRequest<int>
-    .WithResult<CityGetByIdResponse>
+    .WithActionResult<CityGetByIdResponse>
 {
     [HttpGet("{id}")]
-    public override async Task<CityGetByIdResponse> HandleAsync(int id, CancellationToken cancellationToken = default)
+    public override async Task<ActionResult<CityGetByIdResponse>> HandleAsync(int id, CancellationToken cancellationToken = default)
     {
         var city = await db.Cities
                             .Where(c => c.ID == id)
                             .Select(c => new CityGetByIdResponse
                             {
                                 ID = c.ID,
-                                Name = c.Name,
+                                Name = c.Name
                             })
                             .FirstOrDefaultAsync(x => x.ID == id, cancellationToken);
 
         if (city == null)
-            throw new KeyNotFoundException("City not found");
+        {
+            return NotFound("City not found");
+        }
 
-        return city;
+
+        return Ok(city);
     }
 
     public class CityGetByIdResponse
