@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore;
 using CineScreen.Services;
 using System.Threading;
 using System.Threading.Tasks;
-using static RS1_2024_25.API.Endpoints.AuthEndpoints.AuthLogoutEndpoint;
+using static CineScreen.Endpoints.AuthEndpoints.AuthLogoutEndpoint;
 using CineScreen.Helper.Api;
 
-namespace RS1_2024_25.API.Endpoints.AuthEndpoints;
+namespace CineScreen.Endpoints.AuthEndpoints;
 
 [Route("auth")]
 public class AuthLogoutEndpoint(ApplicationDbContext db, MyAuthService authService) : MyEndpointBaseAsync

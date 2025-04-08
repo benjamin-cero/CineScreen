@@ -1,16 +1,13 @@
-using FIT_Api_Example.Data;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Web;
-
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using RS1_2024_25.API.Endpoints.AuthEndpoints;
 using CineScreen.Data;
-using CineScreen.Services;
+using CineScreen.Endpoints.AuthEndpoints;
 using CineScreen.Helper.Auth;
+using CineScreen.Services;
 using CineScreen.SignalR;
-using CineScreen.Helper;
-
 
 var config = new ConfigurationBuilder()
 .AddJsonFile("appsettings.json", false)
@@ -23,6 +20,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(config.GetConnectionString("db1")));
 
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -30,10 +29,13 @@ builder.Services.AddSwaggerGen(x => x.OperationFilter<MyAuthorizationSwaggerHead
 builder.Services.AddHttpContextAccessor();
 
 //dodajte vaše servise
-builder.Services.AddTransient<MyAuthService>();
-builder.Services.AddTransient<MyTokenGenerator>();
+builder.Services.AddTransient<IMyAuthService, MyAuthService>();
 builder.Services.AddSignalR();
 
+builder.Services.AddFluentValidationAutoValidation();
+
+//pretrazuje sve validatore iz DLL fajla (tj. projekta) koji sadrži AuthGetEndpoint.css
+builder.Services.AddValidatorsFromAssemblyContaining<AuthGetEndpoint>();//moze se navesti bilo koja klasa iz ovog projekta
 
 var app = builder.Build();
 
@@ -56,4 +58,3 @@ app.MapControllers();
 app.MapHub<MySignalrHub>("/mysginalr-hub-path");
 
 app.Run();
-
