@@ -12,7 +12,6 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 
 namespace CineScreen.Data
@@ -24,7 +23,6 @@ namespace CineScreen.Data
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder)
         {
 
-            // Tenants 
 
             modelBuilder.Entity<Tenant>().HasData(
                   new Tenant { ID = 1,
@@ -33,7 +31,6 @@ namespace CineScreen.Data
                       Name = "Cineplexx", DatabaseConnection = "db_conn_cineplexx", ServerAddress = "192.168.1.2" }
             );
 
-            // Cities
 
             modelBuilder.Entity<City>().HasData(
                   new City { ID = 1, Name = "Banja Luka" },
@@ -73,7 +70,6 @@ namespace CineScreen.Data
             );
 
 
-            // Generes
             modelBuilder.Entity<Genre>().HasData(
                 new Genre { ID = 1, Name = "Action" },
                 new Genre { ID = 2, Name = "Adventure" },
@@ -216,12 +212,12 @@ namespace CineScreen.Data
 
 
             modelBuilder.Entity<Manufacturer>().HasData(
-                new Manufacturer { ID = 1, Name = "Sultan" },//kola
-                new Manufacturer { ID = 2, Name = "Orville Redenbacher" },//kokice
-                new Manufacturer { ID = 3, Name = "Nathan's Famous" },//hotdogovi
-                new Manufacturer { ID = 4, Name = "Tostitos" },//nachos
-                new Manufacturer { ID = 5, Name = "Chio" },//cips
-                new Manufacturer { ID = 6, Name = "Kühne" },//pomfrit
+                new Manufacturer { ID = 1, Name = "Sultan" },
+                new Manufacturer { ID = 2, Name = "Orville" },
+                new Manufacturer { ID = 3, Name = "Nathan's Famous" },
+                new Manufacturer { ID = 4, Name = "Tostitos" },
+                new Manufacturer { ID = 5, Name = "Chio" },
+                new Manufacturer { ID = 6, Name = "Kühne" },
                 new Manufacturer { ID = 7, Name = "The Hershey Company" }
 
 
@@ -261,7 +257,7 @@ namespace CineScreen.Data
                 new MenuManufacturer { ID = 1,  TenantId = 1, MenuID = 1 , ManufacturerID = 2},
                 new MenuManufacturer { ID = 2,  TenantId = 1, MenuID = 2 , ManufacturerID = 2},
                 new MenuManufacturer { ID = 3,  TenantId = 1, MenuID = 3 , ManufacturerID = 2},
-                new MenuManufacturer { ID = 4,  TenantId = 1, MenuID = 3 , ManufacturerID = 4},
+                new MenuManufacturer { ID = 4,  TenantId = 1, MenuID = 4 , ManufacturerID = 4},
                 new MenuManufacturer { ID = 5,  TenantId = 1, MenuID = 5 , ManufacturerID = 1},
                 new MenuManufacturer { ID = 6,  TenantId = 1, MenuID = 6 , ManufacturerID = 5},
                 new MenuManufacturer { ID = 7,  TenantId = 1, MenuID = 7 , ManufacturerID = 3},
@@ -539,6 +535,36 @@ namespace CineScreen.Data
               new MovieDirector { ID = 11, DirectorID = 18, MovieID = 9 }  // Sam Raimi -> Spider-Mand
             );
 
+            modelBuilder.Entity<MovieGenre>().HasData(
+                new MovieGenre { ID = 1, MovieID = 1, GenreID = 2 },
+                new MovieGenre { ID = 2, MovieID = 1, GenreID = 19 },
+                new MovieGenre { ID = 3, MovieID = 1, GenreID = 20 },
+                new MovieGenre { ID = 4, MovieID = 2, GenreID = 1 },
+                new MovieGenre { ID = 5, MovieID = 2, GenreID = 2 },
+                new MovieGenre { ID = 6, MovieID = 2, GenreID = 19 },
+                new MovieGenre { ID = 7, MovieID = 3, GenreID = 1 },
+                new MovieGenre { ID = 8, MovieID = 3, GenreID = 11 },
+                new MovieGenre { ID = 9, MovieID = 3, GenreID = 10 },
+                new MovieGenre { ID = 10, MovieID = 4, GenreID = 1 },
+                new MovieGenre { ID = 11, MovieID = 4, GenreID = 3 },
+                new MovieGenre { ID = 12, MovieID = 4, GenreID = 18 },
+                new MovieGenre { ID = 13, MovieID = 5, GenreID = 2 },
+                new MovieGenre { ID = 14, MovieID = 5, GenreID = 19 },
+                new MovieGenre { ID = 15, MovieID = 5, GenreID = 4 },
+                new MovieGenre { ID = 16, MovieID = 6, GenreID = 2 },
+                new MovieGenre { ID = 17, MovieID = 6, GenreID = 19 },
+                new MovieGenre { ID = 18, MovieID = 6, GenreID = 4 },
+                new MovieGenre { ID = 19, MovieID = 7, GenreID = 5 },
+                new MovieGenre { ID = 20, MovieID = 7, GenreID = 10 },
+                new MovieGenre { ID = 21, MovieID = 7, GenreID = 2 },
+                new MovieGenre { ID = 22, MovieID = 8, GenreID = 20 },
+                new MovieGenre { ID = 23, MovieID = 8, GenreID = 2 },
+                new MovieGenre { ID = 24, MovieID = 8, GenreID = 19 },
+                new MovieGenre { ID = 25, MovieID = 9, GenreID = 1 },
+                new MovieGenre { ID = 26, MovieID = 9, GenreID = 2 },
+                new MovieGenre { ID = 27, MovieID = 9, GenreID = 13 }
+            );
+
 
             modelBuilder.Entity<CinemaHall>().HasData(
                 new CinemaHall { ID = 1, TenantId = 1, Capacity = 60, Name = "Hall 1" },
@@ -574,11 +600,11 @@ namespace CineScreen.Data
                 new Seat { ID = 23, TenantId = 1,CinemaHallID = 1, SeatNumber = "C3", SeatType = SeatType.Regular },
                 new Seat { ID = 24, TenantId = 1,CinemaHallID = 1, SeatNumber = "L1", SeatType = SeatType.Love  },
                 new Seat { ID = 25, TenantId = 1,CinemaHallID = 1, SeatNumber = "L2", SeatType = SeatType.Love  },
-                new Seat { ID = 26, TenantId = 1,CinemaHallID = 1, SeatNumber = "C6", SeatType = SeatType.Love  },
-                new Seat { ID = 27, TenantId = 1,CinemaHallID = 1, SeatNumber = "C7", SeatType = SeatType.Love  },
-                new Seat { ID = 28, TenantId = 1,CinemaHallID = 1, SeatNumber = "C8", SeatType = SeatType.Love  },
-                new Seat { ID = 29, TenantId = 1,CinemaHallID = 1, SeatNumber = "C9", SeatType = SeatType.Love  },
-                new Seat { ID = 30, TenantId = 1,CinemaHallID = 1, SeatNumber = "C10", SeatType = SeatType.Love },
+                new Seat { ID = 26, TenantId = 1,CinemaHallID = 1, SeatNumber = "C6", SeatType = SeatType.Regular },
+                new Seat { ID = 27, TenantId = 1,CinemaHallID = 1, SeatNumber = "C7", SeatType = SeatType.Regular },
+                new Seat { ID = 28, TenantId = 1,CinemaHallID = 1, SeatNumber = "C8", SeatType = SeatType.Regular },
+                new Seat { ID = 29, TenantId = 1,CinemaHallID = 1, SeatNumber = "C9", SeatType = SeatType.Regular },
+                new Seat { ID = 30, TenantId = 1,CinemaHallID = 1, SeatNumber = "C10", SeatType = SeatType.Regular },
                                 
                 new Seat { ID = 31, TenantId = 1,CinemaHallID = 1, SeatNumber = "D1", SeatType = SeatType.Regular },
                 new Seat { ID = 32, TenantId = 1,CinemaHallID = 1, SeatNumber = "D2", SeatType = SeatType.Regular },
@@ -640,11 +666,11 @@ namespace CineScreen.Data
                 new Seat { ID = 83, TenantId = 1, CinemaHallID = 2, SeatNumber = "C3", SeatType = SeatType.Regular },
                 new Seat { ID = 84, TenantId = 1, CinemaHallID = 2, SeatNumber = "L1", SeatType = SeatType.Love },
                 new Seat { ID = 85, TenantId = 1, CinemaHallID = 2, SeatNumber = "L2", SeatType = SeatType.Love },
-                new Seat { ID = 86, TenantId = 1, CinemaHallID = 2, SeatNumber = "C6", SeatType = SeatType.Love },
-                new Seat { ID = 87, TenantId = 1, CinemaHallID = 2, SeatNumber = "C7", SeatType = SeatType.Love },
-                new Seat { ID = 88, TenantId = 1, CinemaHallID = 2, SeatNumber = "C8", SeatType = SeatType.Love },
-                new Seat { ID = 89, TenantId = 1, CinemaHallID = 2, SeatNumber = "C9", SeatType = SeatType.Love },
-                new Seat { ID = 90, TenantId = 1, CinemaHallID = 2, SeatNumber = "C10",SeatType = SeatType.Love },
+                new Seat { ID = 86, TenantId = 1, CinemaHallID = 2, SeatNumber = "C6", SeatType = SeatType.Regular },
+                new Seat { ID = 87, TenantId = 1, CinemaHallID = 2, SeatNumber = "C7", SeatType = SeatType.Regular },
+                new Seat { ID = 88, TenantId = 1, CinemaHallID = 2, SeatNumber = "C8", SeatType = SeatType.Regular },
+                new Seat { ID = 89, TenantId = 1, CinemaHallID = 2, SeatNumber = "C9", SeatType = SeatType.Regular },
+                new Seat { ID = 90, TenantId = 1, CinemaHallID = 2, SeatNumber = "C10",SeatType = SeatType.Regular },
                                              
                 new Seat { ID = 91, TenantId = 1, CinemaHallID = 2, SeatNumber = "D1", SeatType = SeatType.Regular },
                 new Seat { ID = 92, TenantId = 1, CinemaHallID = 2, SeatNumber = "D2", SeatType = SeatType.Regular },
@@ -706,11 +732,11 @@ namespace CineScreen.Data
                 new Seat { ID = 143, TenantId = 1 , CinemaHallID = 3, SeatNumber = "C3", SeatType = SeatType.Regular },
                 new Seat { ID = 144, TenantId = 1 , CinemaHallID = 3, SeatNumber = "L1", SeatType = SeatType.Love  },
                 new Seat { ID = 145, TenantId = 1 , CinemaHallID = 3, SeatNumber = "L2", SeatType = SeatType.Love  },
-                new Seat { ID = 146, TenantId = 1 , CinemaHallID = 3, SeatNumber = "C6", SeatType = SeatType.Love  },
-                new Seat { ID = 147, TenantId = 1 , CinemaHallID = 3, SeatNumber = "C7", SeatType = SeatType.Love  },
-                new Seat { ID = 148, TenantId = 1 , CinemaHallID = 3, SeatNumber = "C8", SeatType = SeatType.Love  },
-                new Seat { ID = 149, TenantId = 1 , CinemaHallID = 3, SeatNumber = "C9", SeatType = SeatType.Love  },
-                new Seat { ID = 150, TenantId = 1 , CinemaHallID = 3, SeatNumber = "C10", SeatType = SeatType.Love },
+                new Seat { ID = 146, TenantId = 1 , CinemaHallID = 3, SeatNumber = "C6", SeatType = SeatType.Regular },
+                new Seat { ID = 147, TenantId = 1 , CinemaHallID = 3, SeatNumber = "C7", SeatType = SeatType.Regular },
+                new Seat { ID = 148, TenantId = 1 , CinemaHallID = 3, SeatNumber = "C8", SeatType = SeatType.Regular },
+                new Seat { ID = 149, TenantId = 1 , CinemaHallID = 3, SeatNumber = "C9", SeatType = SeatType.Regular },
+                new Seat { ID = 150, TenantId = 1 , CinemaHallID = 3, SeatNumber = "C10", SeatType = SeatType.Regular },
                                                    
                 new Seat { ID = 151, TenantId = 1 , CinemaHallID = 3, SeatNumber = "D1", SeatType = SeatType.Regular },
                 new Seat { ID = 152, TenantId = 1 , CinemaHallID = 3, SeatNumber = "D2", SeatType = SeatType.Regular },
@@ -750,199 +776,75 @@ namespace CineScreen.Data
 
             
 
-            // 1. Moana 2
-            // 2. Sonic 3
-            // 3. Kraven
-            // 7. Jaws 
-            // 8. Spirited
-            // 9. Spider-man
+            var activeMovies = new[] { 1, 2, 3, 6, 7, 8, 9 };
+            var movieTypes = new[] { 1, 2, 3 };
+            var cinemaHalls = new[] { 1, 2, 3 };
+            var projectionTimes = new[] { 
+                new TimeSpan(16, 0, 0),
+                new TimeSpan(19, 15, 0),
+                new TimeSpan(22, 0, 0)
+            };
 
-            // 1. 2D
-            // 2. 3D
+            var projections = new List<Projection>();
+            var projectionId = 1;
+            var startDate = DateTime.Today.AddDays(1);
 
-            // 16 : 00 
-            // 19 : 15
-            // 22 : 00
+            for (int day = 0; day < 7; day++)
+            {
+                var currentDate = startDate.AddDays(day);
+                
+                for (int timeIndex = 0; timeIndex < projectionTimes.Length; timeIndex++)
+                {
+                    var currentTime = projectionTimes[timeIndex];
+                    var startDateTime = currentDate.Add(currentTime);
+                    
+                    for (int movieIndex = 0; movieIndex < activeMovies.Length; movieIndex++)
+                    {
+                        var movieId = activeMovies[movieIndex];
+                        var cinemaHallId = cinemaHalls[movieIndex % cinemaHalls.Length];
+                        var movieTypeId = movieTypes[movieIndex % movieTypes.Length];
+                        
+                        var price = movieTypeId switch
+                        {
+                            1 => 5.0,
+                            2 => 7.0,
+                            3 => 10.0,
+                            _ => 5.0
+                        };
 
+                        projections.Add(new Projection
+                        {
+                            ID = projectionId++,
+                            TenantId = 1,
+                            CinemaHallID = cinemaHallId,
+                            MovieID = movieId,
+                            MovieTypeID = movieTypeId,
+                            StartTime = startDateTime,
+                            Price = price
+                        });
+                    }
+                }
+            }
 
-            modelBuilder.Entity<Projection>().HasData(
+            modelBuilder.Entity<Projection>().HasData(projections.ToArray());
 
-                // SVE NA DAN 1 FEB 2025
-
-             new Projection {ID = 1, TenantId = 1, // Moana 2 - 17 00 - 3D - SALA 
-                 CinemaHallID = 1,
-                 MovieID = 1 ,
-                 MovieTypeID = 3 ,
-                 StartTime = new DateTime(2025,2,1,16,0,0),
-                 Price = 7
-
-             },
-             new Projection
-                 {
-                 ID = 2,
-                 TenantId = 1, // Sonic - 17 00 - 3D - SALA 2
-                 CinemaHallID = 2,
-                     MovieID = 2,
-                     MovieTypeID = 2,
-                     StartTime = new DateTime(2025, 2, 1, 16, 0, 0),
-                     Price = 7
-
-                 },
-                 new Projection
-                 {
-                     ID = 3,
-                     TenantId = 1, // Kraven - 17 00 - 2D - SALA 3
-                     CinemaHallID = 3,
-                     MovieID = 3,
-                     MovieTypeID = 1,
-                     StartTime = new DateTime(2025, 2, 1, 16, 0, 0),
-                     Price = 5
-
-
-                 },
-                     new Projection
-                     {
-                         ID = 4,
-                         TenantId = 1, // Kraven - 21 30 - 2D - SALA 1
-                         CinemaHallID = 1,
-                         MovieID = 3,
-                         MovieTypeID = 1,
-                         StartTime = new DateTime(2025, 2, 1, 22, 0, 0),
-                         Price = 5
-
-
-                     },
-                      new Projection
-                      {
-                          ID = 5,
-                          TenantId = 1, // Jaws - 21 30 - 2D - SALA 2
-                          CinemaHallID = 2,
-                          MovieID = 7,
-                          MovieTypeID = 1,
-                          StartTime = new DateTime(2025, 2, 1, 22, 0, 0),
-                          Price = 5
-
-                      },
-                       new Projection
-                       {
-                           ID = 6,
-                           TenantId = 1, // Spiderman - 21 30 - 2D - SALA 3
-                           CinemaHallID = 3,
-                           MovieID = 9,
-                           MovieTypeID = 1,
-                           StartTime = new DateTime(2025, 2, 1, 22, 0, 0),
-                           Price = 5
-
-                       },
-                          new Projection
-                          {
-                              ID = 7,
-                              TenantId = 1, // Spirited - 19 : 15 - 2D - SALA 1
-                              CinemaHallID = 1,
-                              MovieID = 8,
-                              MovieTypeID = 1,
-                              StartTime = new DateTime(2025, 2, 1, 19, 15, 0),
-                              Price = 5
-
-
-                          },
-                               new Projection
-                               {
-                                   ID = 8,
-                                   TenantId = 1, // Spirited - 19 : 15 - 2D - SALA 1
-                                   CinemaHallID = 1,
-                                   MovieID = 8,
-                                   MovieTypeID = 1,
-                                   StartTime = new DateTime(2025, 2, 1, 19, 15, 0),
-                                   Price = 5
-
-
-                               },
-                                       new Projection
-                                       {
-                                           ID = 9,
-                                           TenantId = 1, // Moana - 19 : 15 - 2D - SALA 2
-                                           CinemaHallID = 2,
-                                           MovieID = 1,
-                                           MovieTypeID = 1,
-                                           StartTime = new DateTime(2025, 2, 1, 19, 15, 0),
-                                           Price= 5
-
-                                       },
-
-                                         // DRUGI DAN 2 FEB 2025
-
-                                         new Projection
-                                         {
-                                             ID = 10,
-                                             TenantId = 1, // Moana SALA 1 3D 16 00
-                                             CinemaHallID = 1,
-                                             MovieID = 1,
-                                             MovieTypeID = 2,
-                                             StartTime = new DateTime(2025, 2, 2, 16, 0, 0),
-                                             Price = 7
-
-                                         },
-                                          new Projection
-                                          {
-                                              ID = 11,
-                                              TenantId = 1, // Sonic SALA 2 3D 16 00
-                                              CinemaHallID = 2,
-                                              MovieID = 2,
-                                              MovieTypeID = 2,
-                                              StartTime = new DateTime(2025, 2, 2, 16, 0, 0),
-                                              Price = 7
-
-                                          },
-
-                                            new Projection
-                                            {
-                                                ID = 12,
-                                                TenantId = 1, // Kraven SALA 3 2D 16 00
-                                                CinemaHallID = 3,
-                                                MovieID = 3,
-                                                MovieTypeID = 1,
-                                                StartTime = new DateTime(2025, 2, 2, 16, 0, 0),
-                                                Price = 5
-
-                                            },
-                                                  new Projection
-                                                  {
-                                                      ID = 13,
-                                                      TenantId = 1, // Moana SALA 3 2D 19 15
-                                                      CinemaHallID = 3,
-                                                      MovieID = 1,
-                                                      MovieTypeID = 1,
-                                                      StartTime = new DateTime(2025, 2, 2, 19, 15, 0),
-                                                      Price = 5
-
-                                                  }
-
-
-
-
-               );
-
-            // Benjamin -> Moana 2 -> Sjediste A1 u Sali 1 
-
-            modelBuilder.Entity<Ticket>().HasData(
-          new Ticket { ID = 1,TenantId = 1, OrderDate = new DateTime(2025,1,1,16,0,0), ProjectionID = 1, SeatID = 1, MyAppUserID = 3, Paid = true }
-            );
+            var tomorrow = DateTime.Today.AddDays(1);
+           modelBuilder.Entity<Ticket>().HasData(
+         new Ticket { ID = 1, TenantId = 1, OrderDate = tomorrow.AddHours(16).AddMinutes(0), ProjectionID = 1, SeatID = 1, MyAppUserID = 3, Paid = true }
+           );
 
 
             modelBuilder.Entity<Review>().HasData(
-          new Review { ID = 1, TenantId = 1, MovieID = 1, ReviewDate =  new DateTime(2025, 2, 2, 20, 0, 0) , Score = 4, Comment = "I really liked the movie but the main villain was a bit disappointing", MyAppUserID = 3 }
+          new Review { ID = 1, TenantId = 1, MovieID = 1, ReviewDate = tomorrow.AddHours(20).AddMinutes(0), Score = 4, Comment = "I really liked the movie but the main villain was a bit disappointing", MyAppUserID = 3 }
             );
 
 
             modelBuilder.Entity<Order>().HasData(
-          new Order { ID = 1, TenantId = 1, OrderDate = new DateTime(2025, 2, 1, 15, 47, 0), MenuID = 3, Quantity = 1,Paid = true, MyAppUserID = 3}
+          new Order { ID = 1, TenantId = 1, OrderDate = tomorrow.AddHours(15).AddMinutes(47), MenuID = 3, Quantity = 1, Paid = true, MyAppUserID = 3 }
             );
 
 
-            // Hasher i salt za password 
 
-            // Generate salt and hash for each user
             var salt1 = PasswordGenerator.GenerateSalt();
             var hash1 = PasswordGenerator.GenerateHash(salt1, "test");
 
