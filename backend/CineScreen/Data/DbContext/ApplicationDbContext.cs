@@ -64,7 +64,7 @@ public partial class ApplicationDbContext(DbContextOptions options, IHttpContext
 
 
     #region METHODS
-    public int? _CurrentTenantId = null;
+    public int? _CurrentTenantId = 1;
 
     public int CurrentTenantIdThrowIfFail
     {
