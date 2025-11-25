@@ -15,7 +15,10 @@ namespace CineScreen.Data.Models.SharedTables
         public byte[]? Poster { get; set; }
         public Status Status { get; set; }
 
-
-
+        // Navigation properties
+        public virtual ICollection<MovieGenre> MovieGenres { get; set; } = new List<MovieGenre>();
+        public virtual ICollection<MovieActor> MovieActors { get; set; } = new List<MovieActor>();
+        public virtual ICollection<MovieDirector> MovieDirectors { get; set; } = new List<MovieDirector>();
+        public virtual ICollection<MovieProductionHouse> MovieProductionHouses { get; set; } = new List<MovieProductionHouse>();
     }
 }
