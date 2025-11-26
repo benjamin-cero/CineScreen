@@ -1,4 +1,4 @@
-﻿using CineScreen.Data;
+using CineScreen.Data;
 using CineScreen.Helper.Api;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,34 +8,37 @@ namespace CineScreen.Endpoints.CityEndpoints;
 
 [Route("cities")]
 public class CityGetByIdEndpoint(ApplicationDbContext db) : MyEndpointBaseAsync
-    .WithRequest<int>
+    .WithRequest<CityGetByIdRequest>
     .WithActionResult<CityGetByIdResponse>
 {
     [HttpGet("{id}")]
-    public override async Task<ActionResult<CityGetByIdResponse>> HandleAsync(int id, CancellationToken cancellationToken = default)
+    public override async Task<ActionResult<CityGetByIdResponse>> HandleAsync([FromRoute] CityGetByIdRequest request, CancellationToken cancellationToken = default)
     {
         var city = await db.Cities
-                            .Where(c => c.ID == id)
-                            .Select(c => new CityGetByIdResponse
-                            {
-                                ID = c.ID,
-                                Name = c.Name
-                            })
-                            .FirstOrDefaultAsync(x => x.ID == id, cancellationToken);
+            .Where(c => c.ID == request.ID)
+            .Select(c => new CityGetByIdResponse
+            {
+                ID = c.ID,
+                Name = c.Name
+            })
+            .FirstOrDefaultAsync(cancellationToken);
 
         if (city == null)
         {
             return NotFound("City not found");
         }
 
-
         return Ok(city);
+    }
+
+    public class CityGetByIdRequest
+    {
+        public int ID { get; set; }
     }
 
     public class CityGetByIdResponse
     {
-        public required int ID { get; set; }
-        public required string Name { get; set; }
-
+        public int ID { get; set; }
+        public string Name { get; set; } = string.Empty;
     }
-}
+} 
