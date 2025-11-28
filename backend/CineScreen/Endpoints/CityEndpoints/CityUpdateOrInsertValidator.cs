@@ -1,18 +1,15 @@
-﻿namespace CineScreen.Endpoints.CityEndpoints;
+namespace CineScreen.Endpoints.CityEndpoints;
 
-using CineScreen.Data;
 using FluentValidation;
+using static CineScreen.Endpoints.CityEndpoints.CityUpdateOrInsertEndpoint;
 
 public class CityUpdateOrInsertValidator : AbstractValidator<CityUpdateOrInsertEndpoint.CityUpdateOrInsertRequest>
 {
-    public CityUpdateOrInsertValidator(ApplicationDbContext dbContext)
+    public CityUpdateOrInsertValidator()
     {
-        // Validacija naziva grada
         RuleFor(x => x.Name)
-            .NotEmpty().WithMessage("Naziv grada je obavezan.")
-            .MaximumLength(100).WithMessage("Naziv grada ne smije biti duži od 100 karaktera.")
-            .Matches("^[a-zA-Z0-9 šđčćžŠĐČĆŽ-]+$").WithMessage("Naziv grada može sadržavati samo slova, brojeve, razmake i crtice.");
-
-
+            .NotEmpty().WithMessage("City name is required")
+            .Matches(@"^[a-zA-ZÀ-ÿ\s]+$").WithMessage("City name can only contain letters and spaces")
+            .MaximumLength(100).WithMessage("City name cannot exceed 100 characters");
     }
-}
+} 
