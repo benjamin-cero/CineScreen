@@ -3,14 +3,305 @@
     "TITLE": "Dobrodošli u našu aplikaciju",
     "DESCRIPTION": "Ovo je primjer lokalizacije."
   },
+  "MENU": {
+    "TITLE": "Naš Meni",
+    "SUBTITLE": "Odaberite omiljene grickalice i pića i rezervišite svoje favorite",
+    "LOADING": "Učitavanje menija...",
+    "NO_ITEMS": "Nema dostupnih stavki",
+    "NO_ITEMS_DESCRIPTION": "Provjerite ponovo kasnije.",
+    "RESERVE": "Rezerviši",
+    "RESERVE_TITLE": "Rezervacija Proizvoda",
+    "QUANTITY": "Količina",
+    "CONFIRM": "Potvrdi",
+    "GENERIC_DESCRIPTION": "Ukusan kombo za vaše filmsko vrijeme",
+    "SEARCH": "Pretraži",
+    "SEARCH_PLACEHOLDER": "Pretraži po nazivu...",
+    "APPLY_FILTERS": "Primijeni Filtere",
+    "CLEAR": "Obriši",
+    "MIN_PRICE": "Minimalna Cijena",
+    "MAX_PRICE": "Maksimalna Cijena",
+    "FILTER": "Filtriraj",
+    "CLEAR": "Obriši"
+  },
+  "COMMON": {
+    "CANCEL": "Otkaži"
+  },
   "LOGIN": {
     "TITLE": "Prijava",
-    "USERNAME_LABEL": "Korisničko ime:",
-    "USERNAME_PLACEHOLDER": "Unesite korisničko ime",
-    "PASSWORD_LABEL": "Šifra:",
+    "SUBTITLE": "Prijavite se na svoj račun",
+    "USERNAME_LABEL": "E-mail Adresa",
+    "USERNAME_PLACEHOLDER": "Unesite e-mail adresu",
+    "PASSWORD_LABEL": "Šifra",
     "PASSWORD_PLACEHOLDER": "Unesite šifru",
-    "SAVE_LOGIN": "Sačuvaj prijavu",
-    "BUTTON": "Prijavi se"
+    "SAVE_LOGIN": "Zapamti me",
+    "BUTTON": "Prijavi se",
+    "EMAIL_ERROR": "Unesite validnu e-mail adresu",
+    "PASSWORD_ERROR": "Šifra mora imati najmanje 3 karaktera",
+    "FORGOT_PASSWORD": "Zaboravili ste šifru?",
+    "NO_ACCOUNT": "Nemate račun?",
+    "REGISTER": "Registrujte se",
+    "OR": "ili",
+    "GOOGLE": "Prijava sa Google",
+    "FACEBOOK": "Prijava sa Facebook"
+  },
+  "HEADER": {
+    "HOME": "Početna",
+    "MENU": "Meni",
+    "MOVIES": "Filmovi",
+    "CONTACT_US": "Kontakt",
+    "LOGIN": "Prijava"
+  },
+  "HOME": {
+    "FEATURED_MOVIES": {
+      "TITLE": "Izdvojeni Filmovi",
+      "FEATURED_BADGE": "Izdvojeno",
+      "MIN": "min",
+      "NO_MOVIES": "Trenutno nema izdvojenih filmova"
+    },
+    "MOVIE_CATEGORIES": {
+      "TITLE": "Istražite Filmove",
+      "SUBTITLE": "Otkrijte savršen film za svako raspoloženje i priliku",
+      "NO_MOVIES": "Nema dostupnih filmova",
+      "VIEW_ALL": "Pogledaj Sve",
+      "NOW_PLAYING": {
+        "TITLE": "Prikazuje Se",
+        "DESCRIPTION": "Trenutno u kinima"
+      },
+      "COMING_SOON": {
+        "TITLE": "Uskoro",
+        "DESCRIPTION": "Ekskluzivno u kinima"
+      },
+      "CLASSICS": {
+        "TITLE": "Klasici",
+        "DESCRIPTION": "Vječna remek-djela"
+      }
+    },
+    "MENU_SECTION": {
+      "TITLE": "Najpopularniji Kombo Paketi",
+      "SUBTITLE": "Omiljene kombinacije naših kupaca za ultimativno filmsko iskustvo",
+      "LOADING": "Učitavanje ukusnih poslastica...",
+      "ORDER_NOW": "Naruči Sada",
+      "PREMIUM_DESCRIPTION": "Premium kino kombinacija sa svježim sastojcima",
+      "VIEW_FULL_MENU": "Pogledaj Cijeli Meni"
+    },
+    "STATISTICS": {
+      "MOVIES_AVAILABLE": "Dostupnih Filmova",
+      "MOVIES_DESCRIPTION": "Opsežna kolekcija filmova",
+      "HAPPY_CUSTOMERS": "Zadovoljnih Kupaca",
+      "CUSTOMERS_DESCRIPTION": "Zadovoljni ljubitelji filmova",
+      "TICKETS_SOLD": "Prodanih Karata",
+      "TICKETS_DESCRIPTION": "Uspješne rezervacije",
+      "CINEMA_LOCATIONS": "Kino Lokacija",
+      "LOCATIONS_DESCRIPTION": "Širom zemlje"
+    },
+    "CTA_SECTION": {
+      "TITLE": "Spremni za Magiju?",
+      "SUBTITLE": "Pridružite se hiljadama ljubitelja filmova i otkrijte najbolja kinematografska iskustva. Rezervišite svoje karte sada i uživajte u ekskluzivnim prednostima!",
+      "EASY_BOOKING": "Laka online rezervacija",
+      "PRIORITY_SEATS": "Prioritetni izbor mjesta",
+      "PREMIUM_EXPERIENCE": "Premium iskustvo gledanja",
+      "REGISTER_NOW": "Registruj Se Sada",
+      "LEARN_MORE": "Saznaj Više"
+    }
+  },
+  "CONTACT_US": {
+    "TITLE": "Kontaktirajte Nas",
+    "SUBTITLE": "Voljeli bismo čuti od vas. Kontaktirajte nas za bilo kakva pitanja, povratne informacije ili podršku.",
+    "CONTACT_INFO": {
+      "ADDRESS": {
+        "TITLE": "Posjetite Nas",
+        "DESCRIPTION": "Mostar, Bosna i Hercegovina<br>88000<br>Lokacija Kina"
+      },
+      "PHONE": {
+        "TITLE": "Pozovite Nas",
+        "DESCRIPTION": "+387 36 123 456<br>Pon-Pet: 9:00 - 22:00"
+      },
+      "EMAIL": {
+        "TITLE": "Pošaljite Nam Email",
+        "DESCRIPTION": "info&#64;cinescreen.ba<br>support&#64;cinescreen.ba"
+      },
+      "WORKING_HOURS": {
+        "TITLE": "Radni Sati",
+        "W_DAYS": "Ponedjeljak - Petak: ",
+        "WKD_DAYS": "Subota - Nedjelja: "
+      }
+    },
+    "ABOUT_US": {
+      "TITLE": "O Našem Kinu",
+      "STORY": {
+        "TITLE": "Naša Priča",
+        "DESCRIPTION": "Osnovani sa strašću za donošenje magije kina našoj zajednici, CineScreen je bio premijerna destinacija za ljubitelje filmova od našeg otvaranja. Vjerujemo u stvaranje nezaboravnih iskustava koja prenose publiku u nove svjetove."
+      },
+      "OFFERINGS": {
+        "TITLE": "Što Nudimo",
+        "DESCRIPTION": "Od najnovijih blockbustera do vječnih klasika, prikazujemo raznolik izbor filmova u najmodernijim kinima. Naši premium zvučni sistemi i udobna sjedala osiguravaju da svaki posjet bude izuzetan."
+      },
+      "MISSION": {
+        "TITLE": "Naša Misija",
+        "DESCRIPTION": "Pružiti izuzetno kinematografsko iskustvo koje spaja ljude kroz snagu pripovijedanja. Težimo biti više od običnog kina - mi smo centar zajednice za zabavu i kulturu."
+      },
+      "WHY_CHOOSE": {
+        "TITLE": "Zašto Izabrati CineScreen",
+        "DESCRIPTION": "Doživite razliku sa našom predanošću kvalitetu, udobnosti i zadovoljstvu kupaca. Od našeg prijateljskog osoblja do naših modernih objekata, svaki detalj je dizajniran da unaprijedi vaše iskustvo gledanja filmova."
+      }
+    },
+    "MAP": {
+      "TITLE": "Pronađite Nas",
+      "DESCRIPTION": "Posjetite nas na našoj kino lokaciji u Mostaru"
+    },
+    "SOCIAL_MEDIA": {
+      "TITLE": "Pratite Nas",
+      "DESCRIPTION": "Ostanite povezani sa nama na društvenim mrežama za najnovije informacije, posebne ponude i sadržaj iza scene."
+    }
+  },
+  "PROFILE": {
+    "MY_PROFILE": "Moj Profil",
+    "MY_RESERVATIONS": "Moje Rezervacije",
+    "SETTINGS": "Postavke",
+    "LOGOUT": "Odjavi se",
+    "LOGGING_OUT": "Odjavljivanje..."
+  },
+  "PROFILE_PAGE": {
+    "LOADING": "Učitavanje profila...",
+    "BACK_TO_HOME": "Nazad na Početnu",
+    "MY_PROFILE": "Moj Profil",
+    "PERSONAL_INFO": "Lične Informacije",
+    "FIRST_NAME": "Ime",
+    "LAST_NAME": "Prezime",
+    "EMAIL": "E-mail Adresa",
+    "USER_ID": "ID Korisnika",
+    "TENANT_ID": "ID Tenanta",
+    "ACCOUNT_TYPE": "Tip Naloga",
+    "ACCOUNT_STATUS": "Status Naloga",
+    "LOGIN_STATUS": "Status Prijave",
+    "USER_STATUS": "Status Korisnika",
+    "ADMIN_STATUS": "Status",
+    "PROFILE_PICTURE": "Profilna Slika",
+    "NO_PICTURE": "Nema učitane profilne slike",
+    "EDIT_PROFILE": "Uredi Profil"
+  },
+  "RESERVATIONS": {
+    "TITLE": "Moje Rezervacije",
+    "SUBTITLE": "Pregledajte sve vaše rezervacije hrane i filmova",
+    "TABS": {
+      "FOOD": "Hrana",
+      "MOVIES": "Filmovi"
+    },
+    "FOOD_SECTION": {
+      "TITLE": "Rezervisana hrana",
+      "ORDER_COUNT": "narudžbi",
+      "LOADING": "Učitavanje rezervacija...",
+      "NO_RESERVATIONS": "Nema rezervacija",
+      "NO_RESERVATIONS_DESCRIPTION": "Još niste rezervisali nijednu stavku iz menija.",
+      "VIEW_MENU": "Pregledaj meni",
+      "RESERVATION_NUMBER": "Rezervacija #",
+      "PAID": "Plaćeno",
+      "RESERVED": "Rezervisano",
+      "PRODUCT_NAME": "Naziv proizvoda",
+      "QUANTITY": "Količina",
+      "PRICE_PER_ITEM": "Cijena po komadu",
+      "TOTAL_PRICE": "Ukupna cijena",
+      "MENU_ID": "ID menija",
+      "CANCEL": "Otkaži",
+      "CANCEL_RESERVATION": "Otkaži rezervaciju",
+      "CANCELLING": "Otkaživanje...",
+      "CANCEL_SUCCESS": "Rezervacija je uspješno otkazana",
+      "CANCEL_ERROR": "Greška pri otkazivanju rezervacije",
+      "LOAD_ERROR": "Greška pri učitavanju rezervacija"
+    },
+    "MOVIE_SECTION": {
+      "TITLE": "Rezervisani filmovi",
+      "RESERVATION_COUNT": "rezervacija",
+      "LOADING": "Učitavanje rezervacija filmova...",
+      "NO_RESERVATIONS": "Nema rezervacija filmova",
+      "NO_RESERVATIONS_DESCRIPTION": "Još niste rezervisali nijednu kartu za film.",
+      "VIEW_MOVIES": "Pogledaj filmove",
+      "RESERVATION_NUMBER": "Rezervacija #",
+      "PAID": "Plaćeno",
+      "RESERVED": "Rezervisano",
+      "MOVIE_TITLE": "Film",
+      "SEAT": "Sjedalo",
+      "SEATS": "Sjedala",
+      "CINEMA_HALL": "Sala",
+      "SHOWTIME": "Termin",
+      "DATE": "Datum",
+      "ORDER_DATE": "Datum rezervacije",
+      "TICKET_COUNT": "Broj karata",
+      "TICKETS": "karata",
+      "TOTAL_PRICE": "Ukupna cijena",
+      "CANCEL": "Otkaži",
+      "CANCEL_RESERVATION": "Otkaži rezervaciju",
+      "CANCELLING": "Otkazujem...",
+      "CANCEL_SUCCESS": "Rezervacija karte je uspješno otkazana",
+      "CANCEL_ERROR": "Greška pri otkazivanju rezervacije karte",
+      "LOAD_ERROR": "Greška pri učitavanju rezervacija filmova"
+    }
+  },
+  "MOVIES": {
+    "TITLE": "Filmovi",
+    "SUBTITLE": "Otkrijte nevjerovatne filmove i rezervišite svoje karte",
+    "LOADING": "Učitavanje filmova...",
+    "FILTERS": {
+      "SEARCH": "Pretraži Filmove",
+      "SEARCH_PLACEHOLDER": "Pretraži po nazivu ili opisu...",
+      "GENRE": "Žanr",
+      "ALL_GENRES": "Svi Žanrovi",
+      "APPLY": "Primijeni Filtere",
+      "CLEAR": "Obriši"
+    },
+    "TABS": {
+      "ACTIVE": "Prikazuje Se",
+      "UPCOMING": "Uskoro",
+      "CLASSIC": "Klasici"
+    },
+    "STATUS": {
+      "ACTIVE": "Prikazuje Se",
+      "UPCOMING": "Uskoro",
+      "CLASSIC": "Klasik",
+      "UNKNOWN": "Nepoznato"
+    },
+    "MINUTES": "min",
+    "PROJECTIONS": {
+      "TITLE": "Termini Prikazivanja",
+      "TOTAL": "ukupno",
+      "TIMES": "termina",
+      "NO_PROJECTIONS": "Nema dostupnih termina za ovaj film",
+      "SHOW_ALL_DAYS": "Prikaži Sve Dane",
+      "SHOW_LESS": "Prikaži Manje",
+      "CLICK_TO_SELECT": "Kliknite za odabir",
+      "SEAT_SELECTION_SOON": "Odabir sjedala će uskoro biti dostupan!"
+    },
+    "NO_ACTIVE_MOVIES": "Nema Aktivnih Filmova",
+    "NO_ACTIVE_MOVIES_DESCRIPTION": "Trenutno se ne prikazuje nijedan film. Provjerite uskoro za nove premijere!",
+    "NO_UPCOMING_MOVIES": "Nema Nadolazećih Filmova",
+    "NO_UPCOMING_MOVIES_DESCRIPTION": "Nema zakazanih nadolazećih filmova u ovom trenutku.",
+    "NO_CLASSIC_MOVIES": "Nema Klasika",
+    "NO_CLASSIC_MOVIES_DESCRIPTION": "Trenutno nema dostupnih klasika."
+  },
+  "SEAT_SELECTION": {
+    "RESERVE": "Rezerviši",
+    "PLEASE_SELECT_SEATS": "Molimo odaberite potreban broj sjedala",
+    "RESERVATION_SUCCESS": "Uspješno rezervisano {{count}} sjedalo/a: {{seats}}. Ukupno: ${{total}}",
+    "RESERVATION_ERROR": "Greška pri kreiranju rezervacije. Molimo pokušajte ponovo.",
+    "AVAILABLE_GREEN": "Dostupno",
+    "SELECTED_GOLD": "Odabrano",
+    "OCCUPIED_BLACK": "Zauzeto",
+    "LOVE_SEAT_RED": "Ljubavno sjedalo",
+    "WHEELCHAIR_PURPLE": "Sjedište za invalide",
+    "SELECT_YOUR_SEATS": "Odaberite vaša sjedala",
+    "SCREEN": "EKRAN",
+    "NUMBER_OF_TICKETS": "Broj karata",
+    "BASE_PRICE": "Osnovna cijena",
+    "TOTAL": "Ukupno",
+    "SELECTED_SEATS": "Odabrana sjedala",
+    "BACK_TO_MOVIES": "Nazad na filmove",
+    "LOADING_SEAT_SELECTION": "Učitavanje odabira sjedala...",
+    "LOGIN_REQUIRED": "Morate biti prijavljeni da rezervišete sjedišta",
+    "LOGIN_REQUIRED_TITLE": "Prijavite se da rezervišete",
+    "LOGIN_REQUIRED_DESCRIPTION": "Da biste mogli odabrati sjedišta i rezervisati karte, potrebno je da se prijavite.",
+    "LOGIN_NOW": "Prijavite se"
   }
 }
+
+
 
