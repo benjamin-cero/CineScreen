@@ -3,13 +3,302 @@
     "TITLE": "Welcome to our app",
     "DESCRIPTION": "This is an example of localization."
   },
+  "MENU": {
+    "TITLE": "Our Menu",
+    "SUBTITLE": "Choose your favorite snacks and drinks and reserve your favorites",
+    "LOADING": "Loading menu...",
+    "NO_ITEMS": "No items available",
+    "NO_ITEMS_DESCRIPTION": "Please check back later.",
+    "RESERVE": "Reserve",
+    "RESERVE_TITLE": "Reserve Product",
+    "QUANTITY": "Quantity",
+    "CONFIRM": "Confirm",
+    "GENERIC_DESCRIPTION": "Delicious combo for your movie time",
+    "SEARCH": "Search",
+    "SEARCH_PLACEHOLDER": "Search by name...",
+    "APPLY_FILTERS": "Apply Filters",
+    "CLEAR": "Clear",
+    "MIN_PRICE": "Min Price",
+    "MAX_PRICE": "Max Price",
+    "FILTER": "Filter",
+    "CLEAR": "Clear"
+  },
+  "COMMON": {
+    "CANCEL": "Cancel"
+  }, 
   "LOGIN": {
     "TITLE": "Login",
-    "USERNAME_LABEL": "Username:",
-    "USERNAME_PLACEHOLDER": "Enter username",
-    "PASSWORD_LABEL": "Password:",
-    "PASSWORD_PLACEHOLDER": "Enter password",
-    "SAVE_LOGIN": "Save login",
-    "BUTTON": "Login"
+    "SUBTITLE": "Sign in to your account",
+    "USERNAME_LABEL": "Email Address",
+    "USERNAME_PLACEHOLDER": "Enter your email address",
+    "PASSWORD_LABEL": "Password",
+    "PASSWORD_PLACEHOLDER": "Enter your password",
+    "SAVE_LOGIN": "Remember me",
+    "BUTTON": "Sign In",
+    "EMAIL_ERROR": "Please enter a valid email address",
+    "PASSWORD_ERROR": "Password must be at least 3 characters",
+    "FORGOT_PASSWORD": "Forgot password?",
+    "NO_ACCOUNT": "Don't have an account?",
+    "REGISTER": "Sign up",
+    "OR": "or",
+    "GOOGLE": "Sign in with Google",
+    "FACEBOOK": "Sign in with Facebook"
+  },
+  "HEADER": {
+    "HOME": "Homepage",
+    "MENU": "Menu",
+    "MOVIES": "Movies",
+    "CONTACT_US": "Contact Us",
+    "LOGIN": "Login"
+  },
+  "HOME": {
+    "FEATURED_MOVIES": {
+      "TITLE": "Featured Movies",
+      "FEATURED_BADGE": "Featured",
+      "MIN": "min",
+      "NO_MOVIES": "No featured movies available at the moment"
+    },
+    "MOVIE_CATEGORIES": {
+      "TITLE": "Explore Movies",
+      "SUBTITLE": "Discover the perfect movie for every mood and occasion",
+      "NO_MOVIES": "No movies available",
+      "VIEW_ALL": "View All",
+      "NOW_PLAYING": {
+        "TITLE": "Now Playing",
+        "DESCRIPTION": "Currently in theaters"
+      },
+      "COMING_SOON": {
+        "TITLE": "Coming Soon",
+        "DESCRIPTION": "Upcoming releases"
+      },
+      "CLASSICS": {
+        "TITLE": "Classics",
+        "DESCRIPTION": "Timeless masterpieces"
+      }
+    },
+    "MENU_SECTION": {
+      "TITLE": "Most Popular Combos",
+      "SUBTITLE": "Our customers' favorite combinations for the ultimate movie experience",
+      "LOADING": "Loading delicious treats...",
+      "ORDER_NOW": "Order Now",
+      "PREMIUM_DESCRIPTION": "Premium cinema combination with fresh ingredients",
+      "VIEW_FULL_MENU": "View Full Menu"
+    },
+    "STATISTICS": {
+      "MOVIES_AVAILABLE": "Movies Available",
+      "MOVIES_DESCRIPTION": "Extensive collection of films",
+      "HAPPY_CUSTOMERS": "Happy Customers",
+      "CUSTOMERS_DESCRIPTION": "Satisfied movie lovers",
+      "TICKETS_SOLD": "Tickets Sold",
+      "TICKETS_DESCRIPTION": "Successful bookings",
+      "CINEMA_LOCATIONS": "Cinema Locations",
+      "LOCATIONS_DESCRIPTION": "Across the country"
+    },
+    "CTA_SECTION": {
+      "TITLE": "Ready to Experience the Magic?",
+      "SUBTITLE": "Join thousands of movie lovers and discover the best cinematic experiences. Book your tickets now and enjoy exclusive benefits!",
+      "EASY_BOOKING": "Easy online booking",
+      "PRIORITY_SEATS": "Priority seat selection",
+      "PREMIUM_EXPERIENCE": "Premium viewing experience",
+      "REGISTER_NOW": "Register Now",
+      "LEARN_MORE": "Learn More"
+    }
+  },
+  "CONTACT_US": {
+    "TITLE": "Get in Touch",
+    "SUBTITLE": "We'd love to hear from you. Contact us for any questions, feedback, or support.",
+    "CONTACT_INFO": {
+      "ADDRESS": {
+        "TITLE": "Visit Us",
+        "DESCRIPTION": "Mostar, Bosnia and Herzegovina<br>88000<br>Cinema Location"
+      },
+      "PHONE": {
+        "TITLE": "Call Us",
+        "DESCRIPTION": "+387 36 123 456<br>Mon-Fri: 9:00 AM - 10:00 PM"
+      },
+      "EMAIL": {
+        "TITLE": "Email Us",
+        "DESCRIPTION": "info&#64;cinescreen.ba<br>support&#64;cinescreen.ba"
+      },
+      "WORKING_HOURS": {
+        "TITLE": "Working Hours",
+        "W_DAYS": "Monday - Friday: ",
+        "WKD_DAYS": "Saturday - Sunday: "
+      }
+    },
+    "ABOUT_US": {
+      "TITLE": "About Our Cinema",
+      "STORY": {
+        "TITLE": "Our Story",
+        "DESCRIPTION": "Founded with a passion for bringing the magic of cinema to our community, CineScreen has been the premier destination for movie lovers since our opening. We believe in creating unforgettable experiences that transport audiences to new worlds."
+      },
+      "OFFERINGS": {
+        "TITLE": "What We Offer",
+        "DESCRIPTION": "From the latest blockbusters to timeless classics, we showcase a diverse selection of films in state-of-the-art theaters. Our premium sound systems and comfortable seating ensure every visit is exceptional."
+      },
+      "MISSION": {
+        "TITLE": "Our Mission",
+        "DESCRIPTION": "To provide an exceptional cinematic experience that brings people together through the power of storytelling. We strive to be more than just a cinema - we're a community hub for entertainment and culture."
+      },
+      "WHY_CHOOSE": {
+        "TITLE": "Why Choose CineScreen",
+        "DESCRIPTION": "Experience the difference with our commitment to quality, comfort, and customer satisfaction. From our friendly staff to our modern facilities, every detail is designed to enhance your movie-going experience."
+      }
+    },
+    "MAP": {
+      "TITLE": "Find Us",
+      "DESCRIPTION": "Visit us at our cinema location in Mostar"
+    },
+    "SOCIAL_MEDIA": {
+      "TITLE": "Follow Us",
+      "DESCRIPTION": "Stay connected with us on social media for the latest updates, special offers, and behind-the-scenes content."
+    }
+  },
+  "PROFILE": {
+    "MY_PROFILE": "My Profile",
+    "MY_RESERVATIONS": "My Reservations",
+    "SETTINGS": "Settings",
+    "LOGOUT": "Logout",
+    "LOGGING_OUT": "Logging out..."
+  },
+  "PROFILE_PAGE": {
+    "LOADING": "Loading profile...",
+    "BACK_TO_HOME": "Back to Home",
+    "MY_PROFILE": "My Profile",
+    "PERSONAL_INFO": "Personal Information",
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "EMAIL": "Email Address",
+    "USER_ID": "User ID",
+    "TENANT_ID": "Tenant ID",
+    "ACCOUNT_TYPE": "Account Type",
+    "ACCOUNT_STATUS": "Account Status",
+    "LOGIN_STATUS": "Login Status",
+    "USER_STATUS": "User Status",
+    "ADMIN_STATUS": "Status",
+    "PROFILE_PICTURE": "Profile Picture",
+    "NO_PICTURE": "No profile picture uploaded",
+    "EDIT_PROFILE": "Edit Profile"
+  },
+  "RESERVATIONS": {
+    "TITLE": "My Reservations",
+    "SUBTITLE": "Review all your food and movie reservations",
+    "TABS": {
+      "FOOD": "Food",
+      "MOVIES": "Movies"
+    },
+    "FOOD_SECTION": {
+      "TITLE": "Reserved Food",
+      "ORDER_COUNT": "orders",
+      "LOADING": "Loading reservations...",
+      "NO_RESERVATIONS": "No reservations",
+      "NO_RESERVATIONS_DESCRIPTION": "You haven't reserved any menu items yet.",
+      "VIEW_MENU": "View Menu",
+      "RESERVATION_NUMBER": "Reservation #",
+      "PAID": "Paid",
+      "RESERVED": "Reserved",
+      "PRODUCT_NAME": "Product Name",
+      "QUANTITY": "Quantity",
+      "PRICE_PER_ITEM": "Price per item",
+      "TOTAL_PRICE": "Total Price",
+      "MENU_ID": "Menu ID",
+      "CANCEL": "Cancel",
+      "CANCEL_RESERVATION": "Cancel Reservation",
+      "CANCELLING": "Cancelling...",
+      "CANCEL_SUCCESS": "Reservation successfully cancelled",
+      "CANCEL_ERROR": "Error cancelling reservation",
+      "LOAD_ERROR": "Error loading reservations"
+    },
+    "MOVIE_SECTION": {
+      "TITLE": "Reserved Movies",
+      "RESERVATION_COUNT": "reservations",
+      "LOADING": "Loading movie reservations...",
+      "NO_RESERVATIONS": "No Movie Reservations",
+      "NO_RESERVATIONS_DESCRIPTION": "You haven't reserved any movie tickets yet.",
+      "VIEW_MOVIES": "Browse Movies",
+      "RESERVATION_NUMBER": "Reservation #",
+      "PAID": "Paid",
+      "RESERVED": "Reserved",
+      "MOVIE_TITLE": "Movie",
+      "SEAT": "Seat",
+      "SEATS": "Seats",
+      "CINEMA_HALL": "Cinema Hall",
+      "SHOWTIME": "Showtime",
+      "DATE": "Date",
+      "ORDER_DATE": "Order Date",
+      "TICKET_COUNT": "Number of Tickets",
+      "TICKETS": "tickets",
+      "TOTAL_PRICE": "Total Price",
+      "CANCEL": "Cancel",
+      "CANCEL_RESERVATION": "Cancel Reservation",
+      "CANCELLING": "Cancelling...",
+      "CANCEL_SUCCESS": "Ticket reservation cancelled successfully",
+      "CANCEL_ERROR": "Error cancelling ticket reservation",
+      "LOAD_ERROR": "Error loading movie reservations"
+    }
+  },
+  "MOVIES": {
+    "TITLE": "Movies",
+    "SUBTITLE": "Discover amazing films and book your tickets",
+    "LOADING": "Loading movies...",
+    "FILTERS": {
+      "SEARCH": "Search Movies",
+      "SEARCH_PLACEHOLDER": "Search by title or description...",
+      "GENRE": "Genre",
+      "ALL_GENRES": "All Genres",
+      "APPLY": "Apply Filters",
+      "CLEAR": "Clear"
+    },
+    "TABS": {
+      "ACTIVE": "Now Playing",
+      "UPCOMING": "Coming Soon",
+      "CLASSIC": "Classics"
+    },
+    "STATUS": {
+      "ACTIVE": "Now Playing",
+      "UPCOMING": "Coming Soon",
+      "CLASSIC": "Classic",
+      "UNKNOWN": "Unknown"
+    },
+    "MINUTES": "min",
+    "PROJECTIONS": {
+      "TITLE": "Showtimes",
+      "TOTAL": "total",
+      "TIMES": "times",
+      "NO_PROJECTIONS": "No showtimes available for this movie",
+      "SHOW_ALL_DAYS": "Show All Days",
+      "SHOW_LESS": "Show Less",
+      "CLICK_TO_SELECT": "Click to select",
+      "SEAT_SELECTION_SOON": "Seat selection will be available soon!"
+    },
+    "NO_ACTIVE_MOVIES": "No Active Movies",
+    "NO_ACTIVE_MOVIES_DESCRIPTION": "There are currently no movies playing. Check back soon for new releases!",
+    "NO_UPCOMING_MOVIES": "No Upcoming Movies",
+    "NO_UPCOMING_MOVIES_DESCRIPTION": "No upcoming movies scheduled at this time.",
+    "NO_CLASSIC_MOVIES": "No Classic Movies",
+    "NO_CLASSIC_MOVIES_DESCRIPTION": "No classic movies available at the moment."
+  },
+  "SEAT_SELECTION": {
+    "RESERVE": "Reserve",
+    "PLEASE_SELECT_SEATS": "Please select the required number of seats",
+    "RESERVATION_SUCCESS": "Successfully reserved {{count}} seat(s): {{seats}}. Total: ${{total}}",
+    "RESERVATION_ERROR": "Error creating reservation. Please try again.",
+    "AVAILABLE_GREEN": "Available (Green)",
+    "SELECTED_GOLD": "Selected (Gold)", 
+    "OCCUPIED_BLACK": "Occupied (Black)",
+    "LOVE_SEAT_RED": "Love Seat (Red +50%)",
+    "WHEELCHAIR_PURPLE": "Wheelchair (Purple)",
+    "SELECT_YOUR_SEATS": "Select Your Seats",
+    "SCREEN": "SCREEN",
+    "NUMBER_OF_TICKETS": "Number of Tickets",
+    "BASE_PRICE": "Base Price",
+    "TOTAL": "Total",
+    "SELECTED_SEATS": "Selected Seats",
+    "BACK_TO_MOVIES": "Back to Movies",
+    "LOADING_SEAT_SELECTION": "Loading seat selection...",
+    "LOGIN_REQUIRED": "You must be logged in to reserve seats",
+    "LOGIN_REQUIRED_TITLE": "Login to Reserve",
+    "LOGIN_REQUIRED_DESCRIPTION": "To select seats and reserve tickets, you need to be logged in.",
+    "LOGIN_NOW": "Login Now"
   }
 }
