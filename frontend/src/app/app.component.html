@@ -1,17 +1,69 @@
 <app-my-page-progressbar></app-my-page-progressbar>
 
-<mat-form-field appearance="fill">
-  <mat-label>Jezik</mat-label>
-  <mat-select (selectionChange)="changeLanguage($event.value)" [value]="'bs'">
-    <mat-option *ngFor="let lang of languages" [value]="lang.code">
-      {{ lang.label }}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+<nav class="navbar">
+  <div class="nav-container">
+    <!-- Logo -->
+    <div class="nav-logo" routerLink="/public/home" class="logo-button">
+      <span class="logo-text">CineScreen</span>
+    </div>
 
-<div style="border: 1px solid blue; position: absolute; top:60px; bottom: 0; left: 0px; right: 0">
-  <router-outlet>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" *ngIf="isMobile">
+      <mat-icon>{{ showMobileMenu ? 'close' : 'menu' }}</mat-icon>
+    </button>
 
-  </router-outlet>
+    <!-- Navigation Menu -->
+    <div class="nav-menu" [class.mobile-open]="showMobileMenu">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a routerLink="/public/home" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">{{'HEADER.HOME' | translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/public/movies" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">{{'HEADER.MOVIES' | translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/client/menus" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">{{'HEADER.MENU' | translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/public/contact-us" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">{{'HEADER.CONTACT_US' | translate}}</a>
+        </li>
+      </ul>
+    </div>
 
-</div>
+
+    <!-- Language Selector and Login -->
+    <div class="nav-actions">
+      <!-- Language Selector -->
+      <div class="language-selector">
+        <div class="current-language" (click)="toggleLanguageMenu()">
+          <img [src]="getCurrentLanguageFlag()" [alt]="getCurrentLanguageLabel()" class="flag-icon">
+          <span class="language-text">{{ getCurrentLanguageLabel() }}</span>
+          <i class="dropdown-icon">▼</i>
+        </div>
+
+        <div class="language-menu" [class.show]="showLanguageMenu">
+          <div class="language-option"
+               *ngFor="let lang of languages"
+               (click)="changeLanguage(lang.code)"
+               [class.active]="lang.code === currentLanguage">
+            <img [src]="getFlagForLanguage(lang.code)" [alt]="lang.label" class="flag-icon">
+            <span class="language-text">{{ lang.label }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Login Button or Profile -->
+      <button *ngIf="!authService.isLoggedIn()" class="login-btn" routerLink="/auth/login">
+        <span class="login-text">{{'HEADER.LOGIN' | translate}}</span>
+        <i class="login-icon">👤</i>
+      </button>
+      
+      <!-- Profile Component for logged in users -->
+      <app-profile *ngIf="authService.isLoggedIn()"></app-profile>
+    </div>
+  </div>
+</nav>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
