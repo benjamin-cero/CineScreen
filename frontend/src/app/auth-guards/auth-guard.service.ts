@@ -18,13 +18,11 @@ export class AuthGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot): boolean {
     const guardData = route.data as AuthGuardData;  // Cast to AuthGuardData
 
-
     // Provjera da li je korisnik prijavljen
-    /*
     if (!this.authService.isLoggedIn()) {
       this.router.navigate(['/auth/login']);
       return false;
-    }*/
+    }
 
     // Provjera prava pristupa za administratora
     if (guardData.isAdmin && !this.authService.isAdmin()) {
@@ -32,7 +30,7 @@ export class AuthGuard implements CanActivate {
       return false;
     }
 
-    // Provjera prava pristupa za menadžera
+    // Provjera prava pristupa za korisnika
     if (guardData.isUser && !this.authService.isUser()) {
       this.router.navigate(['/unauthorized']);
       return false;
