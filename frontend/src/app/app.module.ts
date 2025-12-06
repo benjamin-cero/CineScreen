@@ -13,14 +13,17 @@ import {MyErrorHandlingInterceptor} from './services/auth-services/my-error-hand
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {MatFormField, MatLabel} from '@angular/material/form-field';
 import {MatOption, MatSelect} from '@angular/material/select';
+import {MatIcon} from '@angular/material/icon';
 import {CustomTranslateLoader} from './services/custom-translate-loader';
+import {ProfileComponent} from './modules/client/profile/profile.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProfileComponent
   ],
   imports: [
-    BrowserAnimationsModule, // Potrebno za animacije
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -35,22 +38,22 @@ import {CustomTranslateLoader} from './services/custom-translate-loader';
     MatFormField,
     MatSelect,
     MatOption,
-    MatLabel
-
+    MatLabel,
+    MatIcon
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MyAuthInterceptor,
-      multi: true // Ensures multiple interceptors can be used if needed
+      multi: true
     },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MyErrorHandlingInterceptor,
-      multi: true // Dodaje ErrorHandlingInterceptor u lanac
+      multi: true
     },
     MyAuthService,
-    provideAnimationsAsync() // Ensure MyAuthService is available for the interceptor
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
