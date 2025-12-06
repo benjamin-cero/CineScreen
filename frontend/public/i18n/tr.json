@@ -1,0 +1,304 @@
+{
+  "APP": {
+    "TITLE": "Uygulamamıza hoş geldiniz",
+    "DESCRIPTION": "Bu yerelleştirme örneğidir."
+  },
+  "MENU": {
+    "TITLE": "Menümüz",
+    "SUBTITLE": "En sevdiğiniz atıştırmalık ve içecekleri seçin ve favorilerinizi rezerve edin",
+    "LOADING": "Menü yükleniyor...",
+    "NO_ITEMS": "Ürün bulunmuyor",
+    "NO_ITEMS_DESCRIPTION": "Lütfen daha sonra tekrar deneyin.",
+    "RESERVE": "Rezerve Et",
+    "RESERVE_TITLE": "Ürünü Rezerve Et",
+    "QUANTITY": "Adet",
+    "CONFIRM": "Onayla",
+    "GENERIC_DESCRIPTION": "Film keyfiniz için lezzetli kombo",
+    "SEARCH": "Ara",
+    "SEARCH_PLACEHOLDER": "İsme göre ara...",
+    "APPLY_FILTERS": "Filtreleri Uygula",
+    "CLEAR": "Temizle",
+    "MIN_PRICE": "Min Fiyat",
+    "MAX_PRICE": "Max Fiyat",
+    "FILTER": "Filtrele",
+    "CLEAR": "Temizle"
+  },
+  "COMMON": {
+    "CANCEL": "İptal"
+  },
+  "LOGIN": {
+    "TITLE": "Giriş",
+    "SUBTITLE": "Hesabınıza giriş yapın",
+    "USERNAME_LABEL": "E-posta Adresi",
+    "USERNAME_PLACEHOLDER": "E-posta adresinizi girin",
+    "PASSWORD_LABEL": "Şifre",
+    "PASSWORD_PLACEHOLDER": "Şifrenizi girin",
+    "SAVE_LOGIN": "Beni hatırla",
+    "BUTTON": "Giriş Yap",
+    "EMAIL_ERROR": "Geçerli bir e-posta adresi girin",
+    "PASSWORD_ERROR": "Şifre en az 3 karakter olmalıdır",
+    "FORGOT_PASSWORD": "Şifremi unuttum",
+    "NO_ACCOUNT": "Hesabınız yok mu?",
+    "REGISTER": "Kayıt ol",
+    "OR": "veya",
+    "GOOGLE": "Google ile giriş",
+    "FACEBOOK": "Facebook ile giriş"
+  },
+  "HEADER": {
+    "HOME": "Ana Sayfa",
+    "MENU": "Menü",
+    "MOVIES": "Filmler",
+    "CONTACT_US": "İletişim",
+    "LOGIN": "Giriş"
+  },
+  "HOME": {
+    "FEATURED_MOVIES": {
+      "TITLE": "Öne Çıkan Filmler",
+      "FEATURED_BADGE": "Öne Çıkan",
+      "MIN": "dk",
+      "NO_MOVIES": "Şu anda öne çıkan film bulunmuyor"
+    },
+    "MOVIE_CATEGORIES": {
+      "TITLE": "Filmleri Keşfedin",
+      "SUBTITLE": "Her ruh hali ve fırsat için mükemmel filmi keşfedin",
+      "NO_MOVIES": "Film bulunmuyor",
+      "VIEW_ALL": "Tümünü Gör",
+      "NOW_PLAYING": {
+        "TITLE": "Şimdi Oynuyor",
+        "DESCRIPTION": "Şu anda sinemalarda"
+      },
+      "COMING_SOON": {
+        "TITLE": "Yakında",
+        "DESCRIPTION": "Sinemalarda özel gösterim"
+      },
+      "CLASSICS": {
+        "TITLE": "Klasikler",
+        "DESCRIPTION": "Sonsuz başyapıtlar"
+      }
+    },
+    "MENU_SECTION": {
+      "TITLE": "En Popüler Kombo Paketleri",
+      "SUBTITLE": "Müşterilerimizin favori kombinasyonları ile nihai film deneyimi",
+      "LOADING": "Lezzetli ikramlar yükleniyor...",
+      "ORDER_NOW": "Şimdi Sipariş Ver",
+      "PREMIUM_DESCRIPTION": "Taze malzemelerle premium sinema kombinasyonu",
+      "VIEW_FULL_MENU": "Tam Menüyü Gör"
+    },
+    "STATISTICS": {
+      "MOVIES_AVAILABLE": "Mevcut Filmler",
+      "MOVIES_DESCRIPTION": "Kapsamlı film koleksiyonu",
+      "HAPPY_CUSTOMERS": "Mutlu Müşteriler",
+      "CUSTOMERS_DESCRIPTION": "Memnun film severler",
+      "TICKETS_SOLD": "Satılan Biletler",
+      "TICKETS_DESCRIPTION": "Başarılı rezervasyonlar",
+      "CINEMA_LOCATIONS": "Sinema Lokasyonları",
+      "LOCATIONS_DESCRIPTION": "Ülke genelinde"
+    },
+    "CTA_SECTION": {
+      "TITLE": "Sihri Deneyimlemeye Hazır mısınız?",
+      "SUBTITLE": "Binlerce film severine katılın ve en iyi sinematik deneyimleri keşfedin. Biletlerinizi şimdi rezerve edin ve özel avantajlardan yararlanın!",
+      "EASY_BOOKING": "Kolay online rezervasyon",
+      "PRIORITY_SEATS": "Öncelikli koltuk seçimi",
+      "PREMIUM_EXPERIENCE": "Premium izleme deneyimi",
+      "REGISTER_NOW": "Şimdi Kayıt Ol",
+      "LEARN_MORE": "Daha Fazla Bilgi"
+    }
+  },
+  "CONTACT_US": {
+    "TITLE": "Bizimle İletişime Geçin",
+    "SUBTITLE": "Sizden haber almak isteriz. Herhangi bir soru, geri bildirim veya destek için bizimle iletişime geçin.",
+    "CONTACT_INFO": {
+      "ADDRESS": {
+        "TITLE": "Bizi Ziyaret Edin",
+        "DESCRIPTION": "Mostar, Bosna Hersek<br>88000<br>Sinema Lokasyonu"
+      },
+      "PHONE": {
+        "TITLE": "Bizi Arayın",
+        "DESCRIPTION": "+387 36 123 456<br>Pzt-Cum: 9:00 - 22:00"
+      },
+      "EMAIL": {
+        "TITLE": "Bize E-posta Gönderin",
+        "DESCRIPTION": "info&#64;cinescreen.ba<br>support&#64;cinescreen.ba"
+      },
+      "WORKING_HOURS": {
+        "TITLE": "Çalışma Saatleri",
+        "W_DAYS": "Pazartesi - Cuma: ",
+        "WKD_DAYS": "Cumartesi - Pazar: "
+      }
+    },
+    "ABOUT_US": {
+      "TITLE": "Sinemamız Hakkında",
+      "STORY": {
+        "TITLE": "Hikayemiz",
+        "DESCRIPTION": "Sinema sihrini topluluğumuza getirme tutkusuyla kurulan CineScreen, açılışımızdan beri film severlerin öncelikli destinasyonu olmuştur. İzleyicileri yeni dünyalara taşıyan unutulmaz deneyimler yaratmaya inanıyoruz."
+      },
+      "OFFERINGS": {
+        "TITLE": "Neler Sunuyoruz",
+        "DESCRIPTION": "En son gişe rekorları kıran filmlerden zamansız klasiklere kadar, en modern sinemalarda çeşitli film seçkisi sunuyoruz. Premium ses sistemlerimiz ve rahat koltuklarımız her ziyaretin olağanüstü olmasını sağlar."
+      },
+      "MISSION": {
+        "TITLE": "Misyonumuz",
+        "DESCRIPTION": "Hikaye anlatımının gücüyle insanları bir araya getiren olağanüstü bir sinematik deneyim sunmak. Sadece bir sinema olmaktan daha fazlası olmaya çalışıyoruz - eğlence ve kültür için bir topluluk merkeziyiz."
+      },
+      "WHY_CHOOSE": {
+        "TITLE": "Neden CineScreen'i Seçmelisiniz",
+        "DESCRIPTION": "Kalite, konfor ve müşteri memnuniyetine olan bağlılığımızla farkı deneyimleyin. Dostane personelimizden modern tesislerimize kadar, her detay film izleme deneyiminizi geliştirmek için tasarlanmıştır."
+      }
+    },
+    "MAP": {
+      "TITLE": "Bizi Bulun",
+      "DESCRIPTION": "Mostar'daki sinema lokasyonumuzda bizi ziyaret edin"
+    },
+    "SOCIAL_MEDIA": {
+      "TITLE": "Bizi Takip Edin",
+      "DESCRIPTION": "En son güncellemeler, özel teklifler ve sahne arkası içerik için sosyal medyada bizimle bağlantıda kalın."
+    }
+  },
+  "PROFILE": {
+    "MY_PROFILE": "Profilim",
+    "MY_RESERVATIONS": "Rezervasyonlarım",
+    "SETTINGS": "Ayarlar",
+    "LOGOUT": "Çıkış Yap",
+    "LOGGING_OUT": "Çıkış yapılıyor..."
+  },
+  "PROFILE_PAGE": {
+    "LOADING": "Profil yükleniyor...",
+    "BACK_TO_HOME": "Ana Sayfaya Dön",
+    "MY_PROFILE": "Profilim",
+    "PERSONAL_INFO": "Kişisel Bilgiler",
+    "FIRST_NAME": "Ad",
+    "LAST_NAME": "Soyad",
+    "EMAIL": "E-posta Adresi",
+    "USER_ID": "Kullanıcı ID",
+    "TENANT_ID": "Tenant ID",
+    "ACCOUNT_TYPE": "Hesap Türü",
+    "ACCOUNT_STATUS": "Hesap Durumu",
+    "LOGIN_STATUS": "Giriş Durumu",
+    "USER_STATUS": "Kullanıcı Durumu",
+    "ADMIN_STATUS": "Durumu",
+    "PROFILE_PICTURE": "Profil Resmi",
+    "NO_PICTURE": "Profil resmi yüklenmemiş",
+    "EDIT_PROFILE": "Profili Düzenle"
+  },
+  "RESERVATIONS": {
+    "TITLE": "Rezervasyonlarım",
+    "SUBTITLE": "Tüm yemek ve film rezervasyonlarınızı inceleyin",
+    "TABS": {
+      "FOOD": "Yemek",
+      "MOVIES": "Filmler"
+    },
+    "FOOD_SECTION": {
+      "TITLE": "Rezerve Edilen Yemekler",
+      "ORDER_COUNT": "sipariş",
+      "LOADING": "Rezervasyonlar yükleniyor...",
+      "NO_RESERVATIONS": "Rezervasyon yok",
+      "NO_RESERVATIONS_DESCRIPTION": "Henüz menüden hiçbir ürün rezerve etmediniz.",
+      "VIEW_MENU": "Menüyü Görüntüle",
+      "RESERVATION_NUMBER": "Rezervasyon #",
+      "PAID": "Ödendi",
+      "RESERVED": "Rezerve Edildi",
+      "PRODUCT_NAME": "Ürün Adı",
+      "QUANTITY": "Adet",
+      "PRICE_PER_ITEM": "Birim Fiyat",
+      "TOTAL_PRICE": "Toplam Fiyat",
+      "MENU_ID": "Menü ID",
+      "CANCEL": "İptal Et",
+      "CANCEL_RESERVATION": "Rezervasyonu İptal Et",
+      "CANCELLING": "İptal ediliyor...",
+      "CANCEL_SUCCESS": "Rezervasyon başarıyla iptal edildi",
+      "CANCEL_ERROR": "Rezervasyon iptal edilirken hata oluştu",
+      "LOAD_ERROR": "Rezervasyonlar yüklenirken hata oluştu"
+    },
+    "MOVIE_SECTION": {
+      "TITLE": "Rezerve Edilen Filmler",
+      "RESERVATION_COUNT": "rezervasyon",
+      "LOADING": "Film rezervasyonları yükleniyor...",
+      "NO_RESERVATIONS": "Film rezervasyonu yok",
+      "NO_RESERVATIONS_DESCRIPTION": "Henüz hiç film bileti rezerve etmediniz.",
+      "VIEW_MOVIES": "Filmlere gözat",
+      "RESERVATION_NUMBER": "Rezervasyon #",
+      "PAID": "Ödendi",
+      "RESERVED": "Rezerve edildi",
+      "MOVIE_TITLE": "Film",
+      "SEAT": "Koltuk",
+      "SEATS": "Koltuklar",
+      "CINEMA_HALL": "Sinema salonu",
+      "SHOWTIME": "Seans",
+      "DATE": "Tarih",
+      "ORDER_DATE": "Sipariş tarihi",
+      "TICKET_COUNT": "Bilet sayısı",
+      "TICKETS": "bilet",
+      "TOTAL_PRICE": "Toplam fiyat",
+      "CANCEL": "İptal Et",
+      "CANCEL_RESERVATION": "Rezervasyonu iptal et",
+      "CANCELLING": "İptal ediliyor...",
+      "CANCEL_SUCCESS": "Bilet rezervasyonu başarıyla iptal edildi",
+      "CANCEL_ERROR": "Bilet rezervasyonu iptal edilirken hata",
+      "LOAD_ERROR": "Film rezervasyonları yüklenirken hata"
+    }
+  },
+  "MOVIES": {
+    "TITLE": "Filmler",
+    "SUBTITLE": "Harika filmleri keşfedin ve biletlerinizi rezerve edin",
+    "LOADING": "Filmler yükleniyor...",
+    "FILTERS": {
+      "SEARCH": "Film Ara",
+      "SEARCH_PLACEHOLDER": "Başlık veya açıklamaya göre ara...",
+      "GENRE": "Tür",
+      "ALL_GENRES": "Tüm Türler",
+      "APPLY": "Filtreleri Uygula",
+      "CLEAR": "Temizle"
+    },
+    "TABS": {
+      "ACTIVE": "Şimdi Oynuyor",
+      "UPCOMING": "Yakında",
+      "CLASSIC": "Klasikler"
+    },
+    "STATUS": {
+      "ACTIVE": "Şimdi Oynuyor",
+      "UPCOMING": "Yakında",
+      "CLASSIC": "Klasik",
+      "UNKNOWN": "Bilinmiyor"
+    },
+    "MINUTES": "dk",
+    "PROJECTIONS": {
+      "TITLE": "Gösterim Saatleri",
+      "TOTAL": "toplam",
+      "TIMES": "seans",
+      "NO_PROJECTIONS": "Bu film için gösterim saati bulunmuyor",
+      "SHOW_ALL_DAYS": "Tüm Günleri Göster",
+      "SHOW_LESS": "Daha Az Göster",
+      "CLICK_TO_SELECT": "Seçmek için tıklayın",
+      "SEAT_SELECTION_SOON": "Koltuk seçimi yakında kullanılabilir olacak!"
+    },
+    "NO_ACTIVE_MOVIES": "Aktif Film Yok",
+    "NO_ACTIVE_MOVIES_DESCRIPTION": "Şu anda oynatılan film bulunmuyor. Yeni yayınlar için yakında tekrar kontrol edin!",
+    "NO_UPCOMING_MOVIES": "Yaklaşan Film Yok",
+    "NO_UPCOMING_MOVIES_DESCRIPTION": "Şu anda yaklaşan film planlanmamış.",
+    "NO_CLASSIC_MOVIES": "Klasik Film Yok",
+    "NO_CLASSIC_MOVIES_DESCRIPTION": "Şu anda klasik film bulunmuyor."
+  },
+  "SEAT_SELECTION": {
+    "RESERVE": "Rezerve Et",
+    "PLEASE_SELECT_SEATS": "Lütfen gerekli sayıda koltuğu seçin",
+    "RESERVATION_SUCCESS": "{{count}} koltuk başarıyla rezerve edildi: {{seats}}. Toplam: ${{total}}",
+    "RESERVATION_ERROR": "Rezervasyon oluşturulurken hata. Lütfen tekrar deneyin.",
+    "AVAILABLE_GREEN": "Müsait (Yeşil)",
+    "SELECTED_GOLD": "Seçili (Altın)", 
+    "OCCUPIED_BLACK": "Dolu (Siyah)",
+    "LOVE_SEAT_RED": "Çift Koltuk (Kırmızı +50%)",
+    "WHEELCHAIR_PURPLE": "Tekerlekli Sandalye (Mor)",
+    "SELECT_YOUR_SEATS": "Koltuklarınızı Seçin",
+    "SCREEN": "EKRAN",
+    "NUMBER_OF_TICKETS": "Bilet Sayısı",
+    "BASE_PRICE": "Temel Fiyat",
+    "TOTAL": "Toplam",
+    "SELECTED_SEATS": "Seçili Koltuklar",
+    "BACK_TO_MOVIES": "Filmlere Dön",
+    "LOADING_SEAT_SELECTION": "Koltuk seçimi yükleniyor...",
+    "LOGIN_REQUIRED": "Koltuk rezerve etmek için giriş yapmalısınız",
+    "LOGIN_REQUIRED_TITLE": "Rezerve Etmek İçin Giriş Yapın",
+    "LOGIN_REQUIRED_DESCRIPTION": "Koltuk seçmek ve bilet rezerve etmek için giriş yapmanız gerekir.",
+    "LOGIN_NOW": "Şimdi Giriş Yap"
+  }
+} 
