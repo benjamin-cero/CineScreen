@@ -15,4 +15,4 @@ export class CityDeleteEndpointService implements MyBaseEndpointAsync<number, vo
   handleAsync(id: number) {
     return this.httpClient.delete<void>(`${this.apiUrl}/${id}`);
   }
-}
+} 
