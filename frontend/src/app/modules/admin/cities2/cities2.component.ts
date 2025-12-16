@@ -1,9 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {
-  CityGetAll1EndpointService,
-  CityGetAll1Response
-} from '../../../endpoints/city-endpoints/city-get-all1-endpoint.service';
+  CityGetAllEndpointService,
+  CityGetAllResponse
+} from '../../../endpoints/city-endpoints/city-get-all-endpoint.service';
 import {CityDeleteEndpointService} from '../../../endpoints/city-endpoints/city-delete-endpoint.service';
 import {MyDialogConfirmComponent} from '../../shared/dialogs/my-dialog-confirm/my-dialog-confirm.component';
 import {MatDialog} from '@angular/material/dialog';
@@ -20,16 +20,16 @@ import {MatSort} from '@angular/material/sort';
 export class Cities2Component implements OnInit {
   //ovdje je koristeno Angular Reactive forms
   displayedColumns: string[] = ['name', 'actions'];
-  dataSource: MatTableDataSource<CityGetAll1Response> = new MatTableDataSource<CityGetAll1Response>();
+  dataSource: MatTableDataSource<CityGetAllResponse> = new MatTableDataSource<CityGetAllResponse>();
 
-  cities: CityGetAll1Response[] = [];
+  cities: CityGetAllResponse[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
 
   constructor(
-    private cityGetService: CityGetAll1EndpointService,
+    private cityGetService: CityGetAllEndpointService,
     private cityDeleteService: CityDeleteEndpointService,
     private router: Router,
     private dialog: MatDialog
@@ -49,16 +49,16 @@ export class Cities2Component implements OnInit {
   }
 
   fetchCities(): void {
-    this.cityGetService.handleAsync().subscribe({
-      next: (data) => {
-        this.cities = data;
-        this.dataSource = new MatTableDataSource<CityGetAll1Response>(this.cities);
+    this.cityGetService.handleAsync({ pageNumber: 1, pageSize: 50 }, true).subscribe({
+      next: (response) => {
+        this.cities = response.dataItems;
+        this.dataSource = new MatTableDataSource<CityGetAllResponse>(this.cities);
 
         // Ponovno postavljanje paginatora i sorta
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       },
-      error: (err) => console.error('Error fetching cities1:', err)
+      error: (err: any) => console.error('Error fetching cities1:', err)
     });
   }
 
@@ -73,7 +73,7 @@ export class Cities2Component implements OnInit {
         console.log(`City with ID ${id} deleted successfully`);
         this.cities = this.cities.filter(city => city.id !== id); // Uklanjanje iz lokalne liste
       },
-      error: (err) => console.error('Error deleting city:', err)
+      error: (err: any) => console.error('Error deleting city:', err)
     });
   }
 
