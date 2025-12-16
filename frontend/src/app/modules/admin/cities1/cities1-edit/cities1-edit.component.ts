@@ -18,6 +18,7 @@ import {MySnackbarHelperService} from '../../../shared/snackbars/my-snackbar-hel
 export class Cities1EditComponent implements OnInit {
   cityId: number;
   city: CityGetByIdResponse = {
+    id: 0,
     name: '',
   };
 
@@ -63,7 +64,7 @@ export class Cities1EditComponent implements OnInit {
 
     this.cityUpdateService.handleAsync({
       id: this.cityId,
-      ...this.city
+      name: this.city.name
     }).subscribe({
       next: () => {
         this.snackbarHelper.showMessage('Uspješno snimljene izmjene');
