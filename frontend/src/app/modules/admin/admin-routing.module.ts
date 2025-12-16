@@ -11,7 +11,8 @@ import {Cities2EditComponent} from './cities2/cities2-edit/cities2-edit.componen
 import {Cities2Component} from './cities2/cities2.component';
 import {Cities3Component} from './cities3/cities3.component';
 import {Cities3EditComponent} from './cities3/cities3-edit/cities3-edit.component';
-import {MyChatComponent} from '../shared/mychat/mychat.component';
+import {ActorsComponent} from './actors/actors.component';
+import {ActorsEditComponent} from './actors/actors-edit/actors-edit.component';
 import {
   RxjsSubjectMessageExampleComponent
 } from './rxjs-subject-message-example/rxjs-subject-message-example.component';
@@ -27,15 +28,17 @@ const routes: Routes = [
       {path: 'cities1', component: Cities1Component},
       {path: 'cities2', component: Cities2Component},
       {path: 'cities3', component: Cities3Component},
+      {path: 'actors', component: ActorsComponent},
       {path: 'cities1/new', component: Cities1EditComponent},
       {path: 'cities2/new', component: Cities2EditComponent},
       {path: 'cities3/new', component: Cities3EditComponent},
+      {path: 'actors/new', component: ActorsEditComponent},
       {path: 'cities1/edit/:id', component: Cities1EditComponent},
       {path: 'cities2/edit/:id', component: Cities2EditComponent},
       {path: 'cities3/edit/:id', component: Cities3EditComponent},
+      {path: 'actors/edit/:id', component: ActorsEditComponent},
       {path: 'destination', component: DestinationComponent},
       {path: 'order', component: ReservationComponent},
-      {path: 'chat', component: MyChatComponent},
       {path: 'rxjs-subject-message-example', component: RxjsSubjectMessageExampleComponent},
       {path: '**', component: AdminErrorPageComponent} // Default ruta
     ]
