@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
-import {CityGetAll1Response} from '../../../endpoints/city-endpoints/city-get-all1-endpoint.service';
+import {CityGetAllResponse} from '../../../endpoints/city-endpoints/city-get-all-endpoint.service';
 import {CityDeleteEndpointService} from '../../../endpoints/city-endpoints/city-delete-endpoint.service';
 import {MyDialogConfirmComponent} from '../../shared/dialogs/my-dialog-confirm/my-dialog-confirm.component';
 import {MatDialog} from '@angular/material/dialog';
@@ -8,9 +8,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {
-  CityGetAll3EndpointService,
-  CityGetAll3Response
-} from '../../../endpoints/city-endpoints/city-get-all3-endpoint.service';
+  CityGetAllEndpointService
+} from '../../../endpoints/city-endpoints/city-get-all-endpoint.service';
 import {debounceTime, distinctUntilChanged, Subject} from 'rxjs';
 
 @Component({
@@ -22,14 +21,14 @@ import {debounceTime, distinctUntilChanged, Subject} from 'rxjs';
 export class Cities3Component implements OnInit, AfterViewInit {
   //ovdje je koristeno Angular Reactive forms
   displayedColumns: string[] = ['name', 'actions'];
-  dataSource: MatTableDataSource<CityGetAll3Response> = new MatTableDataSource<CityGetAll3Response>();
-  cities: CityGetAll1Response[] = [];
+  dataSource: MatTableDataSource<CityGetAllResponse> = new MatTableDataSource<CityGetAllResponse>();
+  cities: CityGetAllResponse[] = [];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   private searchSubject: Subject<string> = new Subject();
 
   constructor(
-    private cityGetService: CityGetAll3EndpointService,
+    private cityGetService: CityGetAllEndpointService,
     private cityDeleteService: CityDeleteEndpointService,
     private router: Router,
     private dialog: MatDialog
@@ -71,11 +70,11 @@ export class Cities3Component implements OnInit, AfterViewInit {
       },
       true,
     ).subscribe({
-      next: (data) => {
-        this.dataSource = new MatTableDataSource<CityGetAll3Response>(data.dataItems);
-        this.paginator.length = data.totalCount; // Postavljanje ukupnog broja stavki
+      next: (response) => {
+        this.dataSource = new MatTableDataSource<CityGetAllResponse>(response.dataItems);
+        this.paginator.length = response.totalCount; // Postavljanje ukupnog broja stavki
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Error fetching cities:', err);
       },
     });
@@ -92,7 +91,7 @@ export class Cities3Component implements OnInit, AfterViewInit {
         console.log(`City with ID ${id} deleted successfully`);
         this.cities = this.cities.filter(city => city.id !== id); // Uklanjanje iz lokalne liste
       },
-      error: (err) => console.error('Error deleting city:', err)
+      error: (err: any) => console.error('Error deleting city:', err)
     });
   }
 
