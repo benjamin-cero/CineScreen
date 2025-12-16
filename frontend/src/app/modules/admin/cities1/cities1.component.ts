@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {
-  CityGetAll1EndpointService,
-  CityGetAll1Response
-} from '../../../endpoints/city-endpoints/city-get-all1-endpoint.service';
+  CityGetAllEndpointService,
+  CityGetAllResponse
+} from '../../../endpoints/city-endpoints/city-get-all-endpoint.service';
 import {CityDeleteEndpointService} from '../../../endpoints/city-endpoints/city-delete-endpoint.service';
 import {MatDialog} from '@angular/material/dialog';
 import {MyDialogConfirmComponent} from '../../shared/dialogs/my-dialog-confirm/my-dialog-confirm.component';
@@ -18,10 +18,10 @@ import {MyDialogSimpleComponent} from '../../shared/dialogs/my-dialog-simple/my-
 })
 export class Cities1Component implements OnInit {
   //ovdje je koristeno NgModel
-  cities: CityGetAll1Response[] = [];
+  cities: CityGetAllResponse[] = [];
 
   constructor(
-    private cityGetService: CityGetAll1EndpointService,
+    private cityGetService: CityGetAllEndpointService,
     private cityDeleteService: CityDeleteEndpointService,
     private router: Router,
     private dialog: MatDialog,
@@ -34,9 +34,9 @@ export class Cities1Component implements OnInit {
   }
 
   fetchCities(): void {
-    this.cityGetService.handleAsync().subscribe({
-      next: (data) => (this.cities = data),
-      error: (err) => console.error('Error fetching cities1:', err)
+    this.cityGetService.handleAsync({ pageNumber: 1, pageSize: 50 }, true).subscribe({
+      next: (response) => (this.cities = response.dataItems),
+      error: (err: any) => console.error('Error fetching cities1:', err)
     });
   }
 
@@ -81,7 +81,7 @@ export class Cities1Component implements OnInit {
           }
         );
       },
-      error: (err) => console.error('Error deleting city:', err)
+      error: (err: any) => console.error('Error deleting city:', err)
     });
   }
 
