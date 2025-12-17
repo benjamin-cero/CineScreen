@@ -1,0 +1,68 @@
+  <div class="dialog-container">
+    <h2 mat-dialog-title class="dialog-title">
+      <mat-icon>shopping_cart</mat-icon>
+      Rezervacija proizvoda
+    </h2>
+
+    <mat-dialog-content class="dialog-content">
+      <div class="product-info">
+        <div class="product-image">
+          <img [src]="'data:image/jpeg;base64,' + data.menuItem.image" 
+               [alt]="data.menuItem.name" 
+               class="menu-image">
+        </div>
+        
+        <div class="product-details">
+          <h3 class="product-name">{{ data.menuItem.name }}</h3>
+          <p class="unit-price">{{ data.menuItem.price | number:'1.2-2' }} KM po komadu</p>
+        </div>
+      </div>
+
+      <form [formGroup]="reservationForm" class="reservation-form">
+        <div class="quantity-section">
+          <div class="section-header">
+            <mat-icon>add_shopping_cart</mat-icon>
+            <h4>Količina</h4>
+          </div>
+          
+          <div class="quantity-controls">
+            <button type="button" 
+                    class="quantity-btn decrease-btn"
+                    (click)="decreaseQuantity()"
+                    [disabled]="quantity <= 1">
+              <mat-icon>remove</mat-icon>
+            </button>
+            
+            <span class="quantity-display">{{ quantity }}</span>
+            
+            <button type="button" 
+                    class="quantity-btn increase-btn"
+                    (click)="increaseQuantity()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="total-section">
+          <div class="total-label">Ukupno:</div>
+          <div class="total-price">{{ getTotalPrice() | number:'1.2-2' }} KM</div>
+        </div>
+      </form>
+    </mat-dialog-content>
+
+    <mat-dialog-actions class="dialog-actions">
+      <button mat-button 
+              class="cancel-btn"
+              (click)="onCancel()">
+        Otkaži
+      </button>
+      
+      <button mat-raised-button 
+              class="confirm-btn"
+              color="primary"
+              (click)="onConfirm()"
+              [disabled]="quantity <= 0">
+        Rezerviši
+      </button>
+    </mat-dialog-actions>
+  </div>
