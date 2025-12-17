@@ -1,23 +1,72 @@
-<div class="login-container">
-  <h2>{{ 'LOGIN.TITLE' | translate }}</h2>
-  <form (ngSubmit)="onLogin()" [formGroup]="form">
-    <app-my-input-text
-      [myLabel]="'LOGIN.USERNAME_LABEL' | translate "
-      [myPlaceholder]="'LOGIN.USERNAME_PLACEHOLDER' | translate"
-      myControlName="email"
-    ></app-my-input-text>
+<div class="login-page">
+  <div class="login-container">
+    <div class="login-header">
+      <div class="logo">
+        <span class="logo-text">CineScreen</span>
+      </div>
+      <h1 class="login-title">{{ 'LOGIN.TITLE' | translate }}</h1>
+      <p class="login-subtitle">{{ 'LOGIN.SUBTITLE' | translate }}</p>
+    </div>
 
+    <form (ngSubmit)="onLogin()" [formGroup]="form" class="login-form">
+      <div class="form-group">
+        <label class="form-label">{{ 'LOGIN.USERNAME_LABEL' | translate }}</label>
+        <div class="input-wrapper">
+          <i class="input-icon">👤</i>
+          <input 
+            type="email" 
+            formControlName="email"
+            [placeholder]="'LOGIN.USERNAME_PLACEHOLDER' | translate"
+            class="form-input"
+            [class.error]="form.get('email')?.invalid && form.get('email')?.touched"
+          >
+        </div>
+        <div class="error-message" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+          {{ 'LOGIN.EMAIL_ERROR' | translate }}
+        </div>
+      </div>
 
-    <app-my-input-text
-      [myLabel]="'LOGIN.PASSWORD_LABEL' | translate"
-      [myPlaceholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate"
-      [myType]="MyInputTextType.Password"
-      myControlName="password"
-    ></app-my-input-text>
+      <div class="form-group">
+        <label class="form-label">{{ 'LOGIN.PASSWORD_LABEL' | translate }}</label>
+        <div class="input-wrapper">
+          <i class="input-icon">🔒</i>
+          <input 
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate"
+            class="form-input"
+            [class.error]="form.get('password')?.invalid && form.get('password')?.touched"
+          >
+          <button 
+            type="button" 
+            class="password-toggle"
+            (click)="togglePassword()"
+          >
+            {{ showPassword ? '🙈' : '👁️' }}
+          </button>
+        </div>
+        <div class="error-message" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+          {{ 'LOGIN.PASSWORD_ERROR' | translate }}
+        </div>
+      </div>
 
-    <mat-slide-toggle>{{ 'LOGIN.SAVE_LOGIN' | translate }}</mat-slide-toggle>
+      <div class="form-options">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" formControlName="rememberMe" class="checkbox">
+          <span class="checkmark"></span>
+          {{ 'LOGIN.SAVE_LOGIN' | translate }}
+        </label>
+      </div>
 
-    <button class="login-button" color="primary" type="submit">{{ 'LOGIN.BUTTON' | translate }}</button>
+      <button 
+        type="submit" 
+        class="login-button"
+        [disabled]="form.invalid || isLoading"
+      >
+        <span *ngIf="!isLoading">{{ 'LOGIN.BUTTON' | translate }}</span>
+        <span *ngIf="isLoading" class="loading-spinner">⏳</span>
+      </button>
 
-  </form>
+    </form>
+  </div>
 </div>
