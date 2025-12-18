@@ -1,0 +1,52 @@
+<div class="profile-container">
+  <div class="profile-button" (click)="toggleProfileMenu()">
+    <div class="profile-avatar">
+      <span class="avatar-text">{{ userInfo?.firstName?.charAt(0)?.toUpperCase() || 'U' }}</span>
+    </div>
+    <div class="profile-info">
+      <span class="username">{{ userInfo?.firstName }} {{ userInfo?.lastName }}</span>
+      <span class="user-role">{{ userInfo?.isAdmin ? 'Admin' : 'User' }}</span>
+    </div>
+    <i class="dropdown-icon">▼</i>
+  </div>
+
+  <div class="profile-menu" [class.show]="showProfileMenu">
+    <div class="menu-header">
+      <div class="menu-avatar">
+        <span class="avatar-text">{{ userInfo?.firstName?.charAt(0)?.toUpperCase() || 'U' }}</span>
+      </div>
+      <div class="menu-user-info">
+        <span class="menu-username">{{ userInfo?.firstName }} {{ userInfo?.lastName }}</span>
+        <span class="menu-email">{{ userInfo?.email || 'user@example.com' }}</span>
+      </div>
+    </div>
+
+    <div class="menu-divider"></div>
+
+    <div class="menu-items">
+      <div class="menu-item" (click)="onProfileClick()">
+        <i class="menu-icon">👤</i>
+        <span>{{ 'PROFILE.MY_PROFILE' | translate }}</span>
+      </div>
+      
+      <div class="menu-item" (click)="onReservationsClick()">
+        <i class="menu-icon">🎫</i>
+        <span>{{ 'PROFILE.MY_RESERVATIONS' | translate }}</span>
+      </div>
+      
+      <div class="menu-item" (click)="onSettingsClick()">
+        <i class="menu-icon">⚙️</i>
+        <span>{{ 'PROFILE.SETTINGS' | translate }}</span>
+      </div>
+    </div>
+
+    <div class="menu-divider"></div>
+
+    <div class="menu-items">
+      <div class="menu-item logout" (click)="onLogout()" [class.disabled]="isLoggingOut">
+        <i class="menu-icon">{{ isLoggingOut ? '⏳' : '🚪' }}</i>
+        <span>{{ isLoggingOut ? ('PROFILE.LOGGING_OUT' | translate) : ('PROFILE.LOGOUT' | translate) }}</span>
+      </div>
+    </div>
+  </div>
+</div> 
