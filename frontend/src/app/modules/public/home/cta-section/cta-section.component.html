@@ -1,0 +1,36 @@
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <div class="cta-text">
+        <h2>{{ 'HOME.CTA_SECTION.TITLE' | translate }}</h2>
+        <p>{{ 'HOME.CTA_SECTION.SUBTITLE' | translate }}</p>
+        
+                 <div class="cta-features">
+           <div class="feature">
+             <mat-icon>check_circle</mat-icon>
+             <span>{{ 'HOME.CTA_SECTION.EASY_BOOKING' | translate }}</span>
+           </div>
+           <div class="feature">
+             <mat-icon>check_circle</mat-icon>
+             <span>{{ 'HOME.CTA_SECTION.PRIORITY_SEATS' | translate }}</span>
+           </div>
+           <div class="feature">
+             <mat-icon>check_circle</mat-icon>
+             <span>{{ 'HOME.CTA_SECTION.PREMIUM_EXPERIENCE' | translate }}</span>
+           </div>
+         </div>
+      </div>
+      
+      <div class="cta-actions">
+        <button mat-raised-button class="primary-btn" (click)="registerNow()">
+          <mat-icon>person_add</mat-icon>
+          {{ 'HOME.CTA_SECTION.REGISTER_NOW' | translate }}
+        </button>
+        <button mat-stroked-button class="secondary-btn" (click)="learnMore()">
+          <mat-icon>info</mat-icon>
+          {{ 'HOME.CTA_SECTION.LEARN_MORE' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section> 
