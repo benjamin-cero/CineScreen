@@ -1,0 +1,87 @@
+<div class="profile-page-container">
+  <!-- Loading State -->
+  <div *ngIf="isLoading" class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>{{ 'PROFILE_PAGE.LOADING' | translate }}</p>
+  </div>
+
+  <div *ngIf="!isLoading && userInfo" class="profile-content">
+
+    <div class="profile-header">
+
+      <h1 class="page-title">{{ 'PROFILE_PAGE.MY_PROFILE' | translate }}</h1>
+    </div>
+
+
+    <div class="profile-card">
+
+      <div class="avatar-section">
+        <div class="profile-avatar">
+          <span class="avatar-text">{{ userInfo.firstName?.charAt(0)?.toUpperCase() || 'U' }}</span>
+        </div>
+        <div class="avatar-info">
+          <h2 class="user-name">{{ userInfo.firstName }} {{ userInfo.lastName }}</h2>
+          <p class="user-email">{{ userInfo.email }}</p>
+          <span class="user-role-badge" [class.admin]="userInfo.isAdmin">
+            {{ userInfo.isAdmin ? 'ADMIN' : 'USER' }}
+          </span>
+        </div>
+      </div>
+
+
+      <div class="profile-details">
+        <div class="detail-section">
+          <h3 class="section-title">{{ 'PROFILE_PAGE.PERSONAL_INFO' | translate }}</h3>
+
+          <div class="detail-grid">
+            <div class="detail-item">
+              <label class="detail-label">{{ 'PROFILE_PAGE.FIRST_NAME' | translate }}</label>
+              <span class="detail-value">{{ userInfo.firstName || 'N/A' }}</span>
+            </div>
+
+            <div class="detail-item">
+              <label class="detail-label">{{ 'PROFILE_PAGE.LAST_NAME' | translate }}</label>
+              <span class="detail-value">{{ userInfo.lastName || 'N/A' }}</span>
+            </div>
+
+            <div class="detail-item">
+              <label class="detail-label">{{ 'PROFILE_PAGE.EMAIL' | translate }}</label>
+              <span class="detail-value">{{ userInfo.email || 'N/A' }}</span>
+            </div>
+
+
+            <div class="detail-item">
+              <label class="detail-label">{{ 'PROFILE_PAGE.ACCOUNT_TYPE' | translate }}</label>
+              <span class="detail-value">{{ userInfo.isAdmin ? 'Administrator' : 'Regular User' }}</span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="detail-section">
+          <h3 class="section-title">{{ 'PROFILE_PAGE.ACCOUNT_STATUS' | translate }}</h3>
+
+          <div class="status-grid">
+            <div class="status-item">
+              <div class="status-indicator" [class.active]="userInfo.isLoggedIn"></div>
+              <span class="status-label">{{ 'PROFILE_PAGE.LOGIN_STATUS' | translate }}</span>
+              <span class="status-value">{{ userInfo.isLoggedIn ? 'Active' : 'Inactive' }}</span>
+            </div>
+
+            <div class="status-item">
+              <div class="status-indicator" [class.active]="userInfo.isUser"></div>
+              <span class="status-label">{{ 'PROFILE_PAGE.USER_STATUS' | translate }}</span>
+              <span class="status-value">{{ userInfo.isUser ? 'Verified' : 'Unverified' }}</span>
+            </div>
+
+            <div class="status-item">
+              <div class="status-indicator" [class.active]="userInfo.isAdmin"></div>
+              <span class="status-label">{{ 'PROFILE_PAGE.ADMIN_STATUS' | translate }}</span>
+              <span class="status-value">{{ userInfo.isAdmin ? 'Administrator' : 'Regular User' }}</span>
+            </div>
+          </div>
+        </div>
+  </div>
+  </div>
+</div>
+</div>
