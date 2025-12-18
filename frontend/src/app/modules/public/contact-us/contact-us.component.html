@@ -1,1 +1,127 @@
-<p>contact-us works!</p>
+<div class="contact-section">
+  <div class="background-pattern"></div>
+
+  <div class="container">
+    <div class="section-header">
+      <h1>{{ 'CONTACT_US.TITLE' | translate }}</h1>
+      <p>{{ 'CONTACT_US.SUBTITLE' | translate }}</p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">
+            <mat-icon>location_on</mat-icon>
+          </div>
+          <div class="info-content">
+            <h3>{{ 'CONTACT_US.CONTACT_INFO.ADDRESS.TITLE' | translate }}</h3>
+            <p [innerHTML]="'CONTACT_US.CONTACT_INFO.ADDRESS.DESCRIPTION' | translate"></p>
+          </div>
+        </div>
+
+
+
+        <div class="info-card">
+          <div class="info-icon">
+            <mat-icon>phone</mat-icon>
+          </div>
+          <div class="info-content">
+            <h3>{{ 'CONTACT_US.CONTACT_INFO.PHONE.TITLE' | translate }}</h3>
+            <p [innerHTML]="'CONTACT_US.CONTACT_INFO.PHONE.DESCRIPTION' | translate"></p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <mat-icon>email</mat-icon>
+          </div>
+          <div class="info-content">
+            <h3>{{ 'CONTACT_US.CONTACT_INFO.EMAIL.TITLE' | translate }}</h3>
+            <p [innerHTML]="'CONTACT_US.CONTACT_INFO.EMAIL.DESCRIPTION' | translate"></p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <mat-icon>schedule</mat-icon>
+          </div>
+          <div class="info-content">
+            <h3>{{ 'CONTACT_US.CONTACT_INFO.WORKING_HOURS.TITLE' | translate }}</h3>
+            <p>{{ 'CONTACT_US.CONTACT_INFO.WORKING_HOURS.W_DAYS' | translate }} 9:00 AM - 10:00 PM<br>{{ 'CONTACT_US.CONTACT_INFO.WORKING_HOURS.WKD_DAYS' | translate }} 10:00 AM - 11:00 PM</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="about-us-container">
+        <div class="about-card">
+          <h2>{{ 'CONTACT_US.ABOUT_US.TITLE' | translate }}</h2>
+          <div class="about-content">
+            <div class="about-section">
+              <h3>{{ 'CONTACT_US.ABOUT_US.STORY.TITLE' | translate }}</h3>
+              <p>{{ 'CONTACT_US.ABOUT_US.STORY.DESCRIPTION' | translate }}</p>
+            </div>
+
+            <div class="about-section">
+              <h3>{{ 'CONTACT_US.ABOUT_US.OFFERINGS.TITLE' | translate }}</h3>
+              <p>{{ 'CONTACT_US.ABOUT_US.OFFERINGS.DESCRIPTION' | translate }}</p>
+            </div>
+
+            <div class="about-section">
+              <h3>{{ 'CONTACT_US.ABOUT_US.MISSION.TITLE' | translate }}</h3>
+              <p>{{ 'CONTACT_US.ABOUT_US.MISSION.DESCRIPTION' | translate }}</p>
+            </div>
+
+            <div class="about-section">
+              <h3>{{ 'CONTACT_US.ABOUT_US.WHY_CHOOSE.TITLE' | translate }}</h3>
+              <p>{{ 'CONTACT_US.ABOUT_US.WHY_CHOOSE.DESCRIPTION' | translate }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-section">
+      <div class="map-header">
+        <h2>{{ 'CONTACT_US.MAP.TITLE' | translate }}</h2>
+        <p>{{ 'CONTACT_US.MAP.DESCRIPTION' | translate }}</p>
+      </div>
+
+      <div class="map-container">
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps?q=43.679247851176285,17.843912731375504&z=15&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-section">
+      <h2>{{ 'CONTACT_US.SOCIAL_MEDIA.TITLE' | translate }}</h2>
+      <div class="social-links">
+        <a href="#" class="social-link facebook">
+          <mat-icon>facebook</mat-icon>
+          <span>Facebook</span>
+        </a>
+        <a href="#" class="social-link instagram">
+          <mat-icon>camera_alt</mat-icon>
+          <span>Instagram</span>
+        </a>
+        <a href="#" class="social-link twitter">
+          <mat-icon>twitter</mat-icon>
+          <span>Twitter</span>
+        </a>
+        <a href="#" class="social-link youtube">
+          <mat-icon>play_circle</mat-icon>
+          <span>YouTube</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
