@@ -1,0 +1,147 @@
+    <div class="reservations-container">
+      <div class="page-header">
+        <h1 class="page-title">
+          <mat-icon>receipt_long</mat-icon>
+          {{ 'RESERVATIONS.TITLE' | translate }}
+        </h1>
+        <p class="page-subtitle">{{ 'RESERVATIONS.SUBTITLE' | translate }}</p>
+      </div>
+
+      <mat-tab-group class="reservations-tabs" [(selectedIndex)]="selectedTabIndex">
+        <!-- Food Reservations Tab -->
+        <mat-tab [label]="'RESERVATIONS.FOOD_SECTION.TITLE' | translate">
+          <div class="tab-content">
+            <div *ngIf="isLoadingOrders" class="loading-container">
+              <mat-spinner diameter="40"></mat-spinner>
+              <p>{{ 'RESERVATIONS.FOOD_SECTION.LOADING' | translate }}</p>
+            </div>
+
+            <div *ngIf="!isLoadingOrders && userOrders.length === 0" class="no-data">
+              <mat-icon>restaurant_menu</mat-icon>
+              <h3>{{ 'RESERVATIONS.FOOD_SECTION.NO_RESERVATIONS' | translate }}</h3>
+              <p>{{ 'RESERVATIONS.FOOD_SECTION.NO_RESERVATIONS_DESCRIPTION' | translate }}</p>
+            </div>
+
+            <div *ngIf="!isLoadingOrders && userOrders.length > 0" class="orders-grid">
+              <mat-card *ngFor="let order of userOrders" class="order-card">
+                <mat-card-header>
+                  <mat-card-title>{{ order.menuName }}</mat-card-title>
+                  <mat-card-subtitle>{{ order.orderDate | date:'dd.MM.yyyy HH:mm' }}</mat-card-subtitle>
+                </mat-card-header>
+                
+                <div class="order-image">
+                  <mat-icon>restaurant</mat-icon>
+                </div>
+                
+                <mat-card-content>
+                  <div class="order-details">
+                    <div class="detail-item">
+                      <mat-icon>shopping_cart</mat-icon>
+                      <span>{{ 'RESERVATIONS.FOOD_SECTION.QUANTITY' | translate }}: {{ order.quantity }}</span>
+                    </div>
+                    <div class="detail-item">
+                      <mat-icon>attach_money</mat-icon>
+                      <span>{{ 'RESERVATIONS.FOOD_SECTION.TOTAL_PRICE' | translate }}: {{ order.totalPrice | number:'1.2-2' }} KM</span>
+                    </div>
+                    <div class="detail-item">
+                      <mat-icon>store</mat-icon>
+                      <span>{{ 'RESERVATIONS.FOOD_SECTION.MENU_ID' | translate }}: {{ order.menuId }}</span>
+                    </div>
+                  </div>
+                  
+                  <div class="order-status" [class]="order.paid ? 'paid' : 'reserved'">
+                    <mat-icon>{{ order.paid ? 'check_circle' : 'schedule' }}</mat-icon>
+                    <span>{{ order.paid ? ('RESERVATIONS.FOOD_SECTION.PAID' | translate) : ('RESERVATIONS.FOOD_SECTION.RESERVED' | translate) }}</span>
+                  </div>
+                </mat-card-content>
+                
+                <mat-card-actions>
+                  <button mat-raised-button 
+                          color="warn" 
+                          (click)="cancelReservation(order)"
+                          [disabled]="cancellingOrderId === order.id">
+                    <mat-icon>cancel</mat-icon>
+                    <span *ngIf="cancellingOrderId !== order.id">{{ 'RESERVATIONS.FOOD_SECTION.CANCEL' | translate }}</span>
+                    <span *ngIf="cancellingOrderId === order.id">{{ 'RESERVATIONS.FOOD_SECTION.CANCELLING' | translate }}</span>
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </mat-tab>
+
+        <!-- Movie Reservations Tab -->
+        <mat-tab [label]="'RESERVATIONS.MOVIE_SECTION.TITLE' | translate">
+          <div class="tab-content">
+            <div *ngIf="isLoadingTickets" class="loading-container">
+              <mat-spinner diameter="40"></mat-spinner>
+              <p>{{ 'RESERVATIONS.MOVIE_SECTION.LOADING' | translate }}</p>
+            </div>
+
+            <div *ngIf="!isLoadingTickets && movieReservations.length === 0" class="no-data">
+              <mat-icon>movie</mat-icon>
+              <h3>{{ 'RESERVATIONS.MOVIE_SECTION.NO_RESERVATIONS' | translate }}</h3>
+              <p>{{ 'RESERVATIONS.MOVIE_SECTION.NO_RESERVATIONS_DESCRIPTION' | translate }}</p>
+            </div>
+
+            <div *ngIf="!isLoadingTickets && movieReservations.length > 0" class="reservations-grid">
+              <mat-card *ngFor="let reservation of movieReservations; let i = index" class="reservation-card">
+                <mat-card-header>
+                  <mat-card-title>{{ getReservationNumber(i + 1) }}</mat-card-title>
+                  <mat-card-subtitle>{{ reservation.movieTitle }}</mat-card-subtitle>
+                </mat-card-header>
+                
+                <mat-card-content>
+                  <div class="reservation-details">
+                    <div class="detail-item">
+                      <mat-icon>movie</mat-icon>
+                      <span>{{ reservation.movieTitle }}</span>
+                    </div>
+                    <div class="detail-item">
+                      <mat-icon>schedule</mat-icon>
+                      <span>{{ reservation.projectionStartTime | date:'dd.MM.yyyy HH:mm' }}</span>
+                    </div>
+                    <div class="detail-item">
+                      <mat-icon>location_on</mat-icon>
+                      <span>{{ reservation.cinemaHallName }}</span>
+                    </div>
+                    <div class="detail-item">
+                      <mat-icon>event_seat</mat-icon>
+                      <span>{{ 'RESERVATIONS.MOVIE_SECTION.SEATS' | translate }}: {{ reservation.seats.join(', ') }}</span>
+                    </div>
+                    <div class="detail-item">
+                      <mat-icon>confirmation_number</mat-icon>
+                      <span>{{ 'RESERVATIONS.MOVIE_SECTION.TICKET_COUNT' | translate }}: {{ reservation.ticketCount }}</span>
+                    </div>
+                    <div class="detail-item">
+                      <mat-icon>attach_money</mat-icon>
+                      <span>{{ 'RESERVATIONS.MOVIE_SECTION.TOTAL_PRICE' | translate }}: {{ reservation.totalPrice | number:'1.2-2' }} KM</span>
+                    </div>
+                    <div class="detail-item">
+                      <mat-icon>today</mat-icon>
+                      <span>{{ 'RESERVATIONS.MOVIE_SECTION.ORDER_DATE' | translate }}: {{ reservation.orderDate | date:'dd.MM.yyyy HH:mm' }}</span>
+                    </div>
+                  </div>
+                  
+                  <div class="order-status reserved">
+                    <mat-icon>schedule</mat-icon>
+                    <span>{{ 'RESERVATIONS.MOVIE_SECTION.RESERVED' | translate }}</span>
+                  </div>
+                </mat-card-content>
+                
+                <mat-card-actions>
+                  <button mat-raised-button 
+                          color="warn" 
+                          (click)="cancelMovieReservation(reservation)"
+                          [disabled]="cancellingReservationId === reservation.id">
+                    <mat-icon>cancel</mat-icon>
+                    <span *ngIf="cancellingReservationId !== reservation.id">{{ 'RESERVATIONS.MOVIE_SECTION.CANCEL' | translate }}</span>
+                    <span *ngIf="cancellingReservationId === reservation.id">{{ 'RESERVATIONS.MOVIE_SECTION.CANCELLING' | translate }}</span>
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
