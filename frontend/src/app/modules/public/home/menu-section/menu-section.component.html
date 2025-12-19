@@ -1,0 +1,61 @@
+<section class="menu-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ 'HOME.MENU_SECTION.TITLE' | translate }}</h2>
+      <p>{{ 'HOME.MENU_SECTION.SUBTITLE' | translate }}</p>
+    </div>
+
+    <div *ngIf="loading" class="loading-container">
+      <mat-icon class="loading-icon">restaurant</mat-icon>
+      <p>{{ 'HOME.MENU_SECTION.LOADING' | translate }}</p>
+    </div>
+
+    <div *ngIf="!loading" class="menu-grid">
+      <div *ngFor="let menuItem of popularMenuItems" class="menu-card">
+        <mat-card class="menu-mat-card">
+          <div class="menu-image-container">
+            <img [src]="getMenuImage(menuItem.image)" [alt]="menuItem.name" class="menu-image">
+            <div class="menu-overlay">
+              <button mat-raised-button class="order-btn" (click)="orderNow(menuItem)">
+                <mat-icon>add_shopping_cart</mat-icon>
+                {{ 'HOME.MENU_SECTION.ORDER_NOW' | translate }}
+              </button>
+            </div>
+          </div>
+
+                     <mat-card-content>
+             <div class="menu-info">
+               <div class="menu-details">
+                 <h3 class="menu-name">{{ menuItem.name }}</h3>
+                 <div class="menu-description">
+                   {{ 'HOME.MENU_SECTION.PREMIUM_DESCRIPTION' | translate }}
+                 </div>
+               </div>
+                               <div class="menu-price">
+                  <span class="price-amount">{{ menuItem.price.toFixed(2) }}</span>
+                  <span class="price-currency">KM</span>
+                </div>
+             </div>
+
+                           <div class="manufacturer-tags" *ngIf="getManufacturerNames(menuItem).length > 0">
+                <mat-chip 
+                  *ngFor="let manufacturer of getManufacturerNames(menuItem); let i = index" 
+                  class="manufacturer-chip"
+                  [style.--chip-index]="i">
+                                     <mat-icon class="manufacturer-icon">restaurant</mat-icon>
+                  {{ manufacturer }}
+                </mat-chip>
+              </div>
+           </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="view-all-container" *ngIf="!loading">
+      <button mat-stroked-button class="view-all-btn" (click)="viewFullMenu()">
+        <mat-icon>restaurant_menu</mat-icon>
+        {{ 'HOME.MENU_SECTION.VIEW_FULL_MENU' | translate }}
+      </button>
+    </div>
+  </div>
+</section> 
