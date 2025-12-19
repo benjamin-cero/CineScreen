@@ -1,0 +1,5 @@
+/* Home Component - Minimal styles since child components handle their own styling */
+app-home {
+  display: block;
+  width: 100%;
+}
