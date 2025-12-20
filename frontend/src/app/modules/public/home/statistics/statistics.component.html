@@ -1,0 +1,14 @@
+<section class="statistics-section">
+  <div class="container">
+    <div class="statistics-grid">
+      <div *ngFor="let stat of statistics" class="statistic-item">
+        <div class="stat-icon">
+          <mat-icon>{{ stat.icon }}</mat-icon>
+        </div>
+        <div class="stat-number">{{ stat.number }}</div>
+        <div class="stat-label">{{ stat.label | translate }}</div>
+        <div class="stat-description">{{ stat.description | translate }}</div>
+      </div>
+    </div>
+  </div>
+</section> 
