@@ -1,0 +1,354 @@
+<div class="movies-container">
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1 class="page-title">
+      <mat-icon>movie</mat-icon>
+      {{ 'MOVIES.TITLE' | translate }}
+    </h1>
+    <p class="page-subtitle">{{ 'MOVIES.SUBTITLE' | translate }}</p>
+  </div>
+
+  <!-- Filter Section -->
+  <div class="filter-section">
+    <mat-card class="filter-card">
+      <mat-card-content>
+        <form [formGroup]="filterForm" class="filter-form">
+          <div class="filter-row">
+            <mat-form-field appearance="outline" class="search-field">
+              <mat-label>{{ 'MOVIES.FILTERS.SEARCH' | translate }}</mat-label>
+              <input matInput formControlName="search" [placeholder]="'MOVIES.FILTERS.SEARCH_PLACEHOLDER' | translate">
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="genre-field">
+              <mat-label>{{ 'MOVIES.FILTERS.GENRE' | translate }}</mat-label>
+              <mat-select formControlName="genre">
+                <mat-option value="">{{ 'MOVIES.FILTERS.ALL_GENRES' | translate }}</mat-option>
+                <mat-option *ngFor="let genre of genres" [value]="genre.name">
+                  {{ genre.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="button" (click)="applyFilters()">
+              <mat-icon>filter_list</mat-icon>
+              {{ 'MOVIES.FILTERS.APPLY' | translate }}
+            </button>
+
+            <button mat-button type="button" (click)="filterForm.reset(); applyFilters()">
+              <mat-icon>clear</mat-icon>
+              {{ 'MOVIES.FILTERS.CLEAR' | translate }}
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngIf="loading" class="loading-container">
+    <mat-spinner diameter="60"></mat-spinner>
+    <p>{{ 'MOVIES.LOADING' | translate }}</p>
+  </div>
+
+  <!-- Movies Content -->
+  <div *ngIf="!loading" class="movies-content">
+    <!-- Active Movies Tab -->
+    <mat-tab-group class="movies-tabs" animationDuration="300ms" [(selectedIndex)]="selectedTabIndex">
+      <mat-tab [label]="'MOVIES.TABS.ACTIVE' | translate">
+        <ng-template matTabContent>
+          <div class="tab-content">
+            <div class="movies-grid" *ngIf="activeMovies.length > 0; else noActiveMovies">
+              <mat-card *ngFor="let movie of activeMovies" class="movie-card">
+                <div class="movie-header">
+                  <div class="movie-poster">
+                    <img [src]="getMovieImage(movie.poster)" [alt]="movie.title" (error)="onImageError($event)">
+                    <div class="status-badge" [class]="getStatusBadgeClass(movie.status)">
+                      {{ getStatusText(movie.status) | translate }}
+                    </div>
+                  </div>
+                  <div class="movie-info">
+                    <h2 class="movie-title">{{ movie.title }}</h2>
+
+                    <!-- Genres - moved up -->
+                    <div class="movie-genres" *ngIf="movie.genres.length > 0">
+                      <mat-chip *ngFor="let genre of movie.genres" class="genre-chip">
+                        {{ genre }}
+                      </mat-chip>
+                    </div>
+
+                    <div class="movie-meta">
+                      <div class="meta-item">
+                        <mat-icon>schedule</mat-icon>
+                        <span>{{ movie.duration }} {{ 'MOVIES.MINUTES' | translate }}</span>
+                      </div>
+                      <div class="meta-item" *ngIf="movie.earliestDate">
+                        <mat-icon>calendar_today</mat-icon>
+                        <span>{{ movie.earliestDate | date:'dd.MM' }}</span>
+                      </div>
+                    </div>
+
+                    <!-- Description - moved here -->
+                    <div class="movie-description">
+                      <p>{{ movie.description }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Projections Section -->
+                <div class="projections-section">
+                  <h3 class="projections-title">
+                    <mat-icon>schedule</mat-icon>
+                    {{ 'MOVIES.PROJECTIONS.TITLE' | translate }}
+                    <span class="projection-count" *ngIf="movie.projections.length > 0">({{ movie.projections.length }} {{ 'MOVIES.PROJECTIONS.TOTAL' | translate }})</span>
+                  </h3>
+
+                  <div *ngIf="movie.projections.length > 0; else noProjections" class="projection-groups">
+                    <div *ngFor="let group of getProjectionGroups(movie, 2)" class="projection-group">
+                      <h4 class="projection-date">
+                        <mat-icon>calendar_today</mat-icon>
+                        {{ formatDate(group.projections[0].startTime) }}
+                        <span class="projection-count-small">({{ group.projections.length }} {{ 'MOVIES.PROJECTIONS.TIMES' | translate }})</span>
+                      </h4>
+                      <div class="projection-times">
+                        <button
+                          *ngFor="let projection of group.projections"
+                          class="projection-time-btn simple-btn instant-click"
+                          (click)="onProjectionTimeClick(projection)"
+                          type="button">
+                          <span class="time">{{ formatTime(projection.startTime) }}</span>
+                          <span class="type">{{ projection.movieType?.type }}</span>
+                          <span class="hall">{{ projection.cinemaHall?.name }}</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Show More Button -->
+                    <div *ngIf="getProjectionGroups(movie).length > 2" class="show-more-section">
+                      <button
+                        mat-button
+                        class="show-more-btn"
+                        (click)="toggleShowAllProjections(movie)"
+                        [matTooltip]="isShowingAllProjections(movie) ? ('MOVIES.PROJECTIONS.SHOW_LESS' | translate) : ('MOVIES.PROJECTIONS.SHOW_ALL_DAYS' | translate)">
+                        <mat-icon>{{ isShowingAllProjections(movie) ? 'expand_less' : 'expand_more' }}</mat-icon>
+                        {{ isShowingAllProjections(movie) ? ('MOVIES.PROJECTIONS.SHOW_LESS' | translate) : ('MOVIES.PROJECTIONS.SHOW_ALL_DAYS' | translate) }}
+                      </button>
+                    </div>
+
+                    <!-- Additional Days (Hidden by default) -->
+                    <div *ngIf="isShowingAllProjections(movie)" class="additional-days">
+                      <div *ngFor="let group of getProjectionGroups(movie).slice(2)" class="projection-group">
+                        <h4 class="projection-date">
+                          <mat-icon>calendar_today</mat-icon>
+                          {{ formatDate(group.projections[0].startTime) }}
+                          <span class="projection-count-small">({{ group.projections.length }} {{ 'MOVIES.PROJECTIONS.TIMES' | translate }})</span>
+                        </h4>
+                        <div class="projection-times">
+                          <button
+                            *ngFor="let projection of group.projections"
+                            class="projection-time-btn simple-btn instant-click"
+                            (click)="onProjectionTimeClick(projection)"
+                            type="button">
+                            <span class="time">{{ formatTime(projection.startTime) }}</span>
+                            <span class="type">{{ projection.movieType?.type }}</span>
+                            <span class="hall">{{ projection.cinemaHall?.name }}</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <ng-template #noProjections>
+                    <div class="no-projections">
+                      <mat-icon>schedule</mat-icon>
+                      <p>{{ 'MOVIES.PROJECTIONS.NO_PROJECTIONS' | translate }}</p>
+                    </div>
+                  </ng-template>
+                </div>
+              </mat-card>
+            </div>
+
+            <ng-template #noActiveMovies>
+              <div class="empty-state">
+                <mat-icon>movie_creation</mat-icon>
+                <h3>{{ 'MOVIES.NO_ACTIVE_MOVIES' | translate }}</h3>
+                <p>{{ 'MOVIES.NO_ACTIVE_MOVIES_DESCRIPTION' | translate }}</p>
+              </div>
+            </ng-template>
+          </div>
+        </ng-template>
+      </mat-tab>
+
+      <!-- Upcoming Movies Tab -->
+      <mat-tab [label]="'MOVIES.TABS.UPCOMING' | translate">
+        <ng-template matTabContent>
+          <div class="tab-content">
+            <div class="movies-grid" *ngIf="upcomingMovies.length > 0; else noUpcomingMovies">
+              <mat-card *ngFor="let movie of upcomingMovies" class="movie-card">
+                <div class="movie-header">
+                  <div class="movie-poster">
+                    <img [src]="getMovieImage(movie.poster)" [alt]="movie.title" (error)="onImageError($event)">
+                    <div class="status-badge" [class]="getStatusBadgeClass(movie.status)">
+                      {{ getStatusText(movie.status) | translate }}
+                    </div>
+                  </div>
+                  <div class="movie-info">
+                    <h2 class="movie-title">{{ movie.title }}</h2>
+
+                    <!-- Genres - moved up -->
+                    <div class="movie-genres" *ngIf="movie.genres.length > 0">
+                      <mat-chip *ngFor="let genre of movie.genres" class="genre-chip">
+                        {{ genre }}
+                      </mat-chip>
+                    </div>
+
+                    <div class="movie-meta">
+                      <div class="meta-item">
+                        <mat-icon>schedule</mat-icon>
+                        <span>{{ movie.duration }} {{ 'MOVIES.MINUTES' | translate }}</span>
+                      </div>
+                      <div class="meta-item" *ngIf="movie.releaseDate">
+                        <mat-icon>calendar_today</mat-icon>
+                        <span>{{ movie.releaseDate | date:'dd.MM' }}</span>
+                      </div>
+                    </div>
+
+                    <!-- Description - moved here -->
+                    <div class="movie-description">
+                      <p>{{ movie.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              </mat-card>
+            </div>
+
+            <ng-template #noUpcomingMovies>
+              <div class="empty-state">
+                <mat-icon>schedule</mat-icon>
+                <h3>{{ 'MOVIES.NO_UPCOMING_MOVIES' | translate }}</h3>
+                <p>{{ 'MOVIES.NO_UPCOMING_MOVIES_DESCRIPTION' | translate }}</p>
+              </div>
+            </ng-template>
+          </div>
+        </ng-template>
+      </mat-tab>
+
+      <!-- Classic Movies Tab -->
+      <mat-tab [label]="'MOVIES.TABS.CLASSIC' | translate">
+        <ng-template matTabContent>
+          <div class="tab-content">
+            <div class="movies-grid" *ngIf="classicMovies.length > 0; else noClassicMovies">
+              <mat-card *ngFor="let movie of classicMovies" class="movie-card">
+                <div class="movie-header">
+                  <div class="movie-poster">
+                    <img [src]="getMovieImage(movie.poster)" [alt]="movie.title" (error)="onImageError($event)">
+                    <div class="status-badge" [class]="getStatusBadgeClass(movie.status)">
+                      {{ getStatusText(movie.status) | translate }}
+                    </div>
+                  </div>
+                  <div class="movie-info">
+                    <h2 class="movie-title">{{ movie.title }}</h2>
+
+                    <!-- Genres - moved up -->
+                    <div class="movie-genres" *ngIf="movie.genres.length > 0">
+                      <mat-chip *ngFor="let genre of movie.genres" class="genre-chip">
+                        {{ genre }}
+                      </mat-chip>
+                    </div>
+
+                    <div class="movie-meta">
+                      <div class="meta-item">
+                        <mat-icon>schedule</mat-icon>
+                        <span>{{ movie.duration }} {{ 'MOVIES.MINUTES' | translate }}</span>
+                      </div>
+                      <div class="meta-item" *ngIf="movie.releaseDate">
+                        <mat-icon>calendar_today</mat-icon>
+                        <span>{{ movie.releaseDate | date:'dd.MM' }}</span>
+                      </div>
+                    </div>
+
+                    <!-- Description - moved here -->
+                    <div class="movie-description">
+                      <p>{{ movie.description }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Projections Section for Classic Movies -->
+                <div class="projections-section" *ngIf="movie.projections.length > 0">
+                  <h3 class="projections-title">
+                    <mat-icon>schedule</mat-icon>
+                    {{ 'MOVIES.PROJECTIONS.TITLE' | translate }}
+                    <span class="projection-count">({{ movie.projections.length }} {{ 'MOVIES.PROJECTIONS.TOTAL' | translate }})</span>
+                  </h3>
+
+                  <div class="projection-groups">
+                    <div *ngFor="let group of getProjectionGroups(movie, 2)" class="projection-group">
+                      <h4 class="projection-date">
+                        <mat-icon>calendar_today</mat-icon>
+                        {{ formatDate(group.projections[0].startTime) }}
+                        <span class="projection-count-small">({{ group.projections.length }} {{ 'MOVIES.PROJECTIONS.TIMES' | translate }})</span>
+                      </h4>
+                      <div class="projection-times">
+                        <button
+                          *ngFor="let projection of group.projections"
+                          class="projection-time-btn simple-btn instant-click"
+                          (click)="onProjectionTimeClick(projection)"
+                          type="button">
+                          <span class="time">{{ formatTime(projection.startTime) }}</span>
+                          <span class="type">{{ projection.movieType?.type }}</span>
+                          <span class="hall">{{ projection.cinemaHall?.name }}</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Show More Button for Classic Movies -->
+                    <div *ngIf="getProjectionGroups(movie).length > 2" class="show-more-section">
+                      <button
+                        mat-button
+                        class="show-more-btn"
+                        (click)="toggleShowAllProjections(movie)"
+                        [matTooltip]="isShowingAllProjections(movie) ? ('MOVIES.PROJECTIONS.SHOW_LESS' | translate) : ('MOVIES.PROJECTIONS.SHOW_ALL_DAYS' | translate)">
+                        <mat-icon>{{ isShowingAllProjections(movie) ? 'expand_less' : 'expand_more' }}</mat-icon>
+                        {{ isShowingAllProjections(movie) ? ('MOVIES.PROJECTIONS.SHOW_LESS' | translate) : ('MOVIES.PROJECTIONS.SHOW_ALL_DAYS' | translate) }}
+                      </button>
+                    </div>
+
+                    <!-- Additional Days (Hidden by default) -->
+                    <div *ngIf="isShowingAllProjections(movie)" class="additional-days">
+                      <div *ngFor="let group of getProjectionGroups(movie).slice(2)" class="projection-group">
+                        <h4 class="projection-date">
+                          <mat-icon>calendar_today</mat-icon>
+                          {{ formatDate(group.projections[0].startTime) }}
+                          <span class="projection-count-small">({{ group.projections.length }} {{ 'MOVIES.PROJECTIONS.TIMES' | translate }})</span>
+                        </h4>
+                        <div class="projection-times">
+                          <button
+                            *ngFor="let projection of group.projections"
+                            class="projection-time-btn simple-btn instant-click"
+                            (click)="onProjectionTimeClick(projection)"
+                            type="button">
+                            <span class="time">{{ formatTime(projection.startTime) }}</span>
+                            <span class="type">{{ projection.movieType?.type }}</span>
+                            <span class="hall">{{ projection.cinemaHall?.name }}</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-card>
+            </div>
+
+            <ng-template #noClassicMovies>
+              <div class="empty-state">
+                <mat-icon>movie_filter</mat-icon>
+                <h3>{{ 'MOVIES.NO_CLASSIC_MOVIES' | translate }}</h3>
+                <p>{{ 'MOVIES.NO_CLASSIC_MOVIES_DESCRIPTION' | translate }}</p>
+              </div>
+            </ng-template>
+          </div>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
