@@ -1,0 +1,48 @@
+<section class="categories-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ 'HOME.MOVIE_CATEGORIES.TITLE' | translate }}</h2>
+      <p>{{ 'HOME.MOVIE_CATEGORIES.SUBTITLE' | translate }}</p>
+    </div>
+
+    <div class="categories-grid">
+      <div *ngFor="let category of categories" class="category-card">
+        <mat-card class="category-mat-card">
+          <mat-card-header>
+            <div class="category-icon" [class]="'icon-' + category.cssClass">
+              <mat-icon>{{ category.icon }}</mat-icon>
+            </div>
+                         <mat-card-title>{{ category.titleKey | translate }}</mat-card-title>
+             <mat-card-subtitle>{{ category.descriptionKey | translate }}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content>
+            <div class="movies-preview">
+              <div *ngFor="let movie of category.movies" class="movie-preview">
+                <div class="movie-poster-small">
+                  <img [src]="getMoviePoster(movie.poster)" [alt]="movie.title">
+                </div>
+                <div class="movie-info-small">
+                  <h4>{{ movie.title }}</h4>
+                  <p>{{ movie.releaseDate | date:'dd.MM' }}</p>
+                </div>
+              </div>
+
+              <div *ngIf="category.movies.length === 0" class="no-movies">
+                <mat-icon>movie</mat-icon>
+                <p>{{ 'HOME.MOVIE_CATEGORIES.NO_MOVIES' | translate }}</p>
+              </div>
+            </div>
+
+            <button mat-raised-button
+                    class="view-all-btn"
+                    [class]="'btn-' + category.cssClass"
+                    (click)="viewAllMovies(category.id)">
+                             {{ 'HOME.MOVIE_CATEGORIES.VIEW_ALL' | translate }}
+            </button>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
