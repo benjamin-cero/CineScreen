@@ -6,6 +6,8 @@ import {AboutComponent} from './about/about.component';
 import {BlogComponent} from './blog/blog.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {TravelsComponent} from './travels/travels.component';
+import {MoviesComponent} from './movies/movies.component';
+import {SeatSelectionComponent} from './seat-selection/seat-selection.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,8 @@ const routes: Routes = [
       {path: 'blog', component: BlogComponent},
       {path: 'contact-us', component: ContactUsComponent},
       {path: 'travels', component: TravelsComponent},
+      {path: 'movies', component: MoviesComponent},
+      {path: 'seat-selection/:projectionId', component: SeatSelectionComponent},
       {path: '**', redirectTo: 'home', pathMatch: 'full'}  // Default ruta koja vodi na public
     ]
   }
