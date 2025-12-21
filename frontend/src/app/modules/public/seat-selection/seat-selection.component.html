@@ -1,0 +1,177 @@
+<div class="seat-selection-container" *ngIf="!loading">
+  <!-- Header Section -->
+  <div class="header-section">
+    <button mat-icon-button class="back-button" (click)="onBackToMovies()" matTooltip="Back to Movies">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    <div class="movie-info">
+      <div class="movie-poster">
+        <img [src]="getMovieImage()" [alt]="movie?.title" (error)="onImageError($event)">
+      </div>
+      <div class="movie-details">
+        <h2>{{ movie?.title }}</h2>
+        <div class="projection-info">
+          <div class="info-item">
+            <mat-icon>schedule</mat-icon>
+            <span>{{ formatDate(projection!.startTime) }} at {{ formatTime(projection!.startTime) }}</span>
+          </div>
+          <div class="info-item">
+            <mat-icon>theaters</mat-icon>
+            <span>{{ cinemaHall?.name }} - {{ movieType?.type }}</span>
+          </div>
+          <div class="info-item">
+            <mat-icon>timer</mat-icon>
+            <span>{{ movie?.duration }} min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticket-quantity-section">
+    <mat-card class="quantity-card">
+      <mat-card-content>
+        <div class="quantity-selector">
+          <label for="quantity">{{ 'SEAT_SELECTION.NUMBER_OF_TICKETS' | translate }}:</label>
+          <div class="quantity-controls">
+            <button mat-icon-button (click)="ticketQuantity = ticketQuantity - 1; onTicketQuantityChange()" [disabled]="ticketQuantity <= 1">
+              <mat-icon>remove</mat-icon>
+            </button>
+            <span class="quantity-display">{{ ticketQuantity }}</span>
+            <button mat-icon-button (click)="ticketQuantity = ticketQuantity + 1; onTicketQuantityChange()" [disabled]="ticketQuantity >= 8">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="price-info">
+          <div class="base-price">{{ 'SEAT_SELECTION.BASE_PRICE' | translate }}: {{ basePrice.toFixed(2) }} KM</div>
+          <div class="total-price" *ngIf="totalPrice > 0">{{ 'SEAT_SELECTION.TOTAL' | translate }}: {{ totalPrice.toFixed(2) }} KM</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Cinema Hall Layout -->
+  <div class="cinema-hall-section">
+    <mat-card class="hall-card">
+      <mat-card-header>
+        <mat-card-title>{{ cinemaHall?.name }} - {{ 'SEAT_SELECTION.SELECT_YOUR_SEATS' | translate }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <!-- Screen -->
+        <div class="screen-container">
+          <div class="screen">
+            <mat-icon>tv</mat-icon>
+            <span>{{ 'SEAT_SELECTION.SCREEN' | translate }}</span>
+          </div>
+        </div>
+
+        <!-- Seat Legend -->
+        <div class="seat-legend">
+          <div class="legend-item">
+            <div class="seat-sample available regular">
+              <mat-icon>event_seat</mat-icon>
+            </div>
+            <span>{{ 'SEAT_SELECTION.AVAILABLE_GREEN' | translate }}</span>
+          </div>
+          <div class="legend-item">
+            <div class="seat-sample selected">
+              <mat-icon>event_seat</mat-icon>
+            </div>
+            <span>{{ 'SEAT_SELECTION.SELECTED_GOLD' | translate }}</span>
+          </div>
+          <div class="legend-item">
+            <div class="seat-sample occupied">
+              <mat-icon>event_seat</mat-icon>
+            </div>
+            <span>{{ 'SEAT_SELECTION.OCCUPIED_BLACK' | translate }}</span>
+          </div>
+          <div class="legend-item">
+            <div class="seat-sample available love">
+              <mat-icon>favorite</mat-icon>
+            </div>
+            <span>{{ 'SEAT_SELECTION.LOVE_SEAT_RED' | translate }}</span>
+          </div>
+          <div class="legend-item">
+            <div class="seat-sample available wheelchair">
+              <mat-icon>accessible</mat-icon>
+            </div>
+            <span>{{ 'SEAT_SELECTION.WHEELCHAIR_PURPLE' | translate }}</span>
+          </div>
+        </div>
+
+        <!-- Seat Grid -->
+        <div class="seat-grid">
+          <div class="seat-row" *ngFor="let row of seatRows">
+            <div class="row-label">{{ row.rowLetter }}</div>
+            <div class="seats">
+              <div
+                *ngFor="let seat of row.seats"
+                class="seat-container"
+                [class.gap-before]="shouldAddGap(seat, row.seats)"
+              >
+                <button
+                  class="seat-button"
+                  [class]="getSeatClass(seat)"
+                  [disabled]="seat.isOccupied"
+                  (click)="onSeatClick(seat)"
+                  [matTooltip]="getSeatTooltip(seat)"
+                >
+                  <mat-icon>{{ getSeatIcon(seat) }}</mat-icon>
+                  <span class="seat-number">{{ seat.seatNumber }}</span>
+                </button>
+              </div>
+            </div>
+            <div class="row-label">{{ row.rowLetter }}</div>
+          </div>
+        </div>
+
+        <!-- Selected Seats Summary -->
+        <div class="selected-seats-summary" *ngIf="selectedSeats.length > 0">
+          <h3>{{ 'SEAT_SELECTION.SELECTED_SEATS' | translate }}:</h3>
+          <div class="selected-seats-list">
+            <mat-chip-listbox>
+              <mat-chip-option *ngFor="let seat of selectedSeats" [removable]="true" (removed)="onSeatClick(seat)">
+                {{ seat.seatNumber }}
+                <mat-icon matChipRemove>cancel</mat-icon>
+              </mat-chip-option>
+            </mat-chip-listbox>
+          </div>
+        </div>
+
+        <div *ngIf="!isLoggedIn" class="login-required-message">
+          <h3>{{ 'SEAT_SELECTION.LOGIN_REQUIRED_TITLE' | translate }}</h3>
+          <p>{{ 'SEAT_SELECTION.LOGIN_REQUIRED_DESCRIPTION' | translate }}</p>
+          <button mat-raised-button color="primary" routerLink="/auth/login" class="login-button">
+            <mat-icon>login</mat-icon>
+            {{ 'SEAT_SELECTION.LOGIN_NOW' | translate }}
+          </button>
+        </div>
+
+        <div class="action-buttons" *ngIf="isLoggedIn">
+          <button mat-raised-button color="primary"
+                  [disabled]="!canProceedToCheckout()"
+                  (click)="onReserveTickets()"
+                  class="checkout-button">
+            <mat-icon>confirmation_number</mat-icon>
+            {{ 'SEAT_SELECTION.RESERVE' | translate }} ({{ totalPrice.toFixed(2) }} KM)
+          </button>
+
+          <button mat-stroked-button (click)="onBackToMovies()" class="back-to-movies-button">
+            <mat-icon>movie</mat-icon>
+            {{ 'SEAT_SELECTION.BACK_TO_MOVIES' | translate }}
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<!-- Loading State -->
+<div class="loading-container" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+  <p>{{ 'SEAT_SELECTION.LOADING_SEAT_SELECTION' | translate }}</p>
+</div>
