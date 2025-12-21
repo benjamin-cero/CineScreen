@@ -1,4 +1,4 @@
 export class MyConfig {
   // IIS Express address
-  static api_address = "https://localhost:44357"
+  static api_address = "http://localhost:5174"
 }
